@@ -77,7 +77,7 @@
   type: time_table
   contents:
     - title: <a href="https://github.com/TuoooLiu666/Arizona-Pesticide-Usage-Map">Arizona Pesticide Use Shiny Application (to be published)</a>
-      year: 2022
+      year: 2022/8
       description: A web-based Shiny application built with R to explore pesticide use in the State of Arizona, 1992-2016.
     - title: <a href="https://github.com/TuoooLiu666/expense-tracker">Expense Tracker</a>
       year: 2021/12
@@ -106,7 +106,7 @@
     - title: Metabolomics.
       items: 
         - Data preprocessing & normalization to remove unwanted variation
-        - Metabolomics signals for early prostate cancer detection
+        - Metabolomics signals for early bladder cancer detection
     - title: Exposomics
       items:
         - Exposome-wide Association Study
