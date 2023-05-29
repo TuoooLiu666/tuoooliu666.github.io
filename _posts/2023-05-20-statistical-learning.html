@@ -11,9 +11,9 @@
 
 <meta name="author" content="LT" />
 
-<meta name="date" content="2023-05-21" />
+<meta name="date" content="2023-05-29" />
 
-<title>notes</title>
+<title>2023-05-20-statistical-learning</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,9 +350,9 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">notes</h1>
+<h1 class="title toc-ignore">2023-05-20-statistical-learning</h1>
 <h4 class="author">LT</h4>
-<h4 class="date">2023-05-21</h4>
+<h4 class="date">2023-05-29</h4>
 
 </div>
 
@@ -363,7 +363,30 @@ display: none;
 <li><a href="#overview" id="toc-overview">Overview</a></li>
 <li><a href="#history" id="toc-history">History</a></li>
 <li><a href="#organization" id="toc-organization">organization</a></li>
-<li><a href="#chap-2" id="toc-chap-2">chap 2</a></li>
+<li><a href="#chap-2" id="toc-chap-2">chap 2</a>
+<ul>
+<li><a href="#whats-statistical-learning" id="toc-whats-statistical-learning">What’s statistical
+learning?</a></li>
+<li><a href="#assessing-model-accuracy" id="toc-assessing-model-accuracy">Assessing model accuracy</a></li>
+</ul></li>
+<li><a href="#chap-3" id="toc-chap-3">chap 3</a>
+<ul>
+<li><a href="#estimatig-the-coefficients" id="toc-estimatig-the-coefficients">estimatig the coefficients</a></li>
+<li><a href="#assess-the-accuracy-of-coefficient-estiamtes" id="toc-assess-the-accuracy-of-coefficient-estiamtes">assess the
+accuracy of coefficient estiamtes</a></li>
+<li><a href="#assess-tte-accuracy-of-the-model" id="toc-assess-tte-accuracy-of-the-model">assess tte accuracy of the
+model</a></li>
+<li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression">multiple linear regression</a></li>
+<li><a href="#other-cosiderations-in-the-regression-model" id="toc-other-cosiderations-in-the-regression-model">other cosiderations
+in the regression model</a></li>
+</ul></li>
+<li><a href="#classification" id="toc-classification">classification</a>
+<ul>
+<li><a href="#why-not-linear-regression" id="toc-why-not-linear-regression">Why not linear regression?</a></li>
+<li><a href="#logitstic-regression" id="toc-logitstic-regression">logitstic regression</a></li>
+<li><a href="#generative-models-for-classification" id="toc-generative-models-for-classification">generative models for
+classification</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </div>
@@ -374,7 +397,7 @@ display: none;
 <h2>Overview</h2>
 <ul>
 <li><strong>statistical learning</strong> refers to a vast set of tools
-for understanding data. These tools can be classfied as:
+for understanding data. These tools can be classified as:
 <ul>
 <li>supervised: building a statistical model for predicting, or
 estimating, an <em>output</em> based on one or more inputs.</li>
@@ -402,7 +425,7 @@ networks</em> gained popularity.</li>
 <div id="organization" class="section level2">
 <h2>organization</h2>
 <ul>
-<li>chap 2: terminology and concenpts behind statistical learning +
+<li>chap 2: terminology and concepts behind statistical learning +
 K-means classifier</li>
 <li>chap 3: linear regression</li>
 <li>chap 4: logistic regression + linear discriminant analysis</li>
@@ -441,6 +464,8 @@ formulation, <span class="math inline">\(f\)</span> represents the
 systematic information that X provides about Y.</p>
 <p>In essence, statistical learning refers to a set of approaches for
 estimating <span class="math inline">\(f\)</span>.</p>
+<div id="whats-statistical-learning" class="section level3">
+<h3>What’s statistical learning?</h3>
 <div id="why-estimate-f" class="section level4">
 <h4>Why estimate f?</h4>
 <ul>
@@ -479,14 +504,518 @@ complicated?</li>
 </ul></li>
 </ul>
 </div>
-<div id="how-do-we-rstimate-f" class="section level4">
-<h4>How do we rstimate f?</h4>
+<div id="how-do-we-estimate-f" class="section level4">
+<h4>How do we estimate f?</h4>
 <ul>
 <li>parametric methods: involve a two-step model-based approach
 <ul>
-<li></li>
+<li>first, we make an assumption about the functional form, or shape of
+<span class="math inline">\(f\)</span>. for example, we assume <span class="math inline">\(f\)</span> is linear:</li>
+</ul>
+<span class="math display">\[
+f(X)=\beta_0+\beta_1X_1+\dots+\beta_pX_p
+\]</span></li>
+</ul>
+<p>instead of estimating the black-box function <span class="math inline">\(f(X)\)</span>, we only need to estimate <span class="math inline">\(p+1\)</span> coefficients <span class="math inline">\(\beta_0, \beta_1, \dots, \beta_p\)</span>. *
+second, we need a procedure to train our model using training data, that
+is we want to find values of estimates of parameters such that</p>
+<p><span class="math display">\[
+  Y \approx \beta_0+\beta_1X_1+\dots+\beta_pX_p
+  \]</span></p>
+<p>the most common approach to fitting/training the <em>linear
+model</em> is referred to as <em>(ordinary) least squares</em>.</p>
+<p>The model-based approach is referred to as parametric: it reduces the
+problem of estimating f down to one of estimating a set of parameters.
+Assuming a parametric form for f simplifies the problem of estimating f
+because it is generally much easier to estimate a set of parameters than
+it is to fit an entirely arbitrary function f. The downside of
+parametric approach is that the model we choose will usually not match
+the true unknown form of f. If the choice of f is too off, then the
+estimate will be poor. To overcome this, we can choose flexible models
+that can fit many different possible functional forms for f. But in
+general, fitting a flexible model requires estimating a greater number
+of parameters, which can lead to a phenomenon known as
+<strong>overfitting</strong> the data, meaning they follow the error o
+noise too closely.</p>
+<ul>
+<li>non-parametric methods: no assumption about the functional form of
+f</li>
+</ul>
+<p>Instead, they seek an estimate of f that gets as close to the data
+points as possible. The advantage over parametric approach is by
+avoiding the assumption of a particular form for f, they have the
+potential to accurately fit a wider range of possible shapes for f. But
+non-parametric approaches do suffer from a major disadvantage: since
+they do not reduce the problem of estimating f to a small number of
+parameters,<em>a very large number of observations</em> is required in
+order to obtain an accurate estimate for f, such as
+<strong>splines</strong>.</p>
+</div>
+<div id="the-trade-off-between-prediction-accuracy-and-model-interpretability" class="section level4">
+<h4>The trade-off between prediction accuracy and model
+interpretability</h4>
+<p>Why choosing inflexible method instead of a very flexible approach? *
+when inference is the goal, linear model may be a good choice since it
+is quite easy to understand the relationship between Y and X; in
+contrast, flexible approaches, such as splines and boosting methods can
+lead to such complicated estimates of f that it is difficult to
+understand how any individual predictors is associated with the
+response.</p>
+<div class="figure">
+<img src="%22flexibilit-interpretability.png%22" alt />
+<p class="caption">trade-off.</p>
+</div>
+</div>
+<div id="supervised-vs.-unsupervised" class="section level4">
+<h4>supervised vs. unsupervised</h4>
+<ul>
+<li>supervised
+<ul>
+<li>linear regression</li>
+<li>logisitic regression</li>
+<li>GAM</li>
+<li>boosting</li>
+<li>support vector machines</li>
+</ul></li>
+<li>unsupervised
+<ul>
+<li>clustering</li>
+</ul></li>
+<li>semi-supervised learning
+<ul>
+<li>for part of the observations, we don’t have response</li>
 </ul></li>
 </ul>
+</div>
+<div id="regression-vs.-classification" class="section level4">
+<h4>regression vs. classification</h4>
+<p>There is no clear-cut distinction:</p>
+<ul>
+<li>we tend to refer to problems with a quantitative response as
+regression problems</li>
+<li>those involving qualitative response as classification problems</li>
+</ul>
+<p>Least squares linear regression is used with a quantitative response,
+where as logistic regression is typically used with a qualitative
+response (binary). Thus, despite its name, logistic regression is a
+classification method. But since it estimates class probabilities, it
+can be thought of as a regression method as well.</p>
+<p>We tend to select statistical methods based on the fact that if the
+response is quantitative or qualitative. However, whether the predictors
+are qualitative or quantitative is generally considered less important,
+provided that ant qualitative predictors are properly coded before
+analysis is performed.</p>
+</div>
+</div>
+<div id="assessing-model-accuracy" class="section level3">
+<h3>Assessing model accuracy</h3>
+<p>There is no free lunch in statistics: no one method dominates all
+others over all possible data sets. Hence, it is an important task to
+decide for any given set of data which method produces the best
+results.</p>
+<div id="measuring-the-quality-of-fit" class="section level4">
+<h4>measuring the quality of fit</h4>
+<p>To measure the performance of a statistical learning method on a
+given data set, we need some ways to measure how well its predictions
+actually <em>match</em> the observed data. That is, we need to quantify
+the extent to which the predicted response value for a given observation
+is close to the true response value for that observation.</p>
+<p>in regression setting, the most commonly-used measure is the mean
+squared error (<strong>MSE</strong>): <span class="math display">\[
+MSE=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{f}(x_1))^2
+\]</span> * training MSE * test MSE: we care about this!</p>
+<p>When a given method yields a small training MSE but a large test MSE,
+we are said to be overfitting the data. That is, our statistical
+learning procedure is working too hard to find patterns in the training
+data and may be picking up some patterns that are just caused by random
+chance rather than by true properties of the unknown function of f. </p>
+</div>
+<div id="bias-variance-trade-off" class="section level4">
+<h4>bias-variance trade-off</h4>
+<p>The expected test MSE, for a given value <span class="math inline">\(x_0\)</span>, can always be decomposed into the
+sum of three fundamental quantities:<br />
+* the variance of <span class="math inline">\(\hat{f}(x_0)\)</span> *
+the squared bias of <span class="math inline">\(\hat{f}(x_0)\)</span> *
+the variance of the error</p>
+<p>A good statistical learning method would simultaneously achieve low
+variance and low bias. * variance: the amount by which <span class="math inline">\(\hat{f}\)</span> would change if we estimate it
+using a different training data set. Since the training data are used to
+fit the statistical learning method different <em>training</em> data
+sets will result in a different <span class="math inline">\(\hat{f}\)</span>. If a method has high variance
+then small changes in the training data can result in large changes in
+<span class="math inline">\(\hat{f}\)</span>. In general, more flexible
+statistical methods have higher variance.</p>
+<ul>
+<li>bias: the error introduced by approximating a real-life problem by a
+much simpler model. Generally, more flexible methods result in less
+bias.</li>
+</ul>
+<p>As a general rule, as we use more flexible methods, the variance will
+increase and the bias will decrease. The relative rate of change of
+these two quantities determines whether the test MSE increases or
+decreases.</p>
+<p>The relationship between bias, variance, and test MSE is referred to
+as the bias-variance trade-off. Good test set performance of a
+statistical leanring method required low variance as well as low squared
+biasa. The challenge lies in finding a method for which both the
+variance and the squared bias are low. in a real-life case in which
+<span class="math inline">\(f\)</span> is unobserbed, it is generally
+not possible to explicitly compute the test MSE, bia, or variance for a
+statistical learning method. Nevertheless, we should alway keep in mind
+the bias-variacne trade-off. Cross-validation, which is a way to
+estimate the test MSE using the training data. Bias-variance trade-off
+transfer to the classification setting with only some modifications.</p>
+</div>
+<div id="classification-setting" class="section level4">
+<h4>classification setting</h4>
+<ul>
+<li>training error rate</li>
+<li>test error rate</li>
+</ul>
+<p>Suppose that we seek to estimate f on the basis of training
+observations <span class="math inline">\({(x_1, y_1), \dots,
+(x_n,y_n)}\)</span>, where <span class="math inline">\(y_1, \dots,
+y_n\)</span> are qualitative. The most common approach for quantifying
+the accuracy of our estimate f is the <em>training error rate</em>, the
+proportion of mistakes that are made if we apply our estimate <span class="math inline">\(\hat{f}\)</span> to the training observations:</p>
+<p><span class="math display">\[
+\frac{1}{n}\sum_{i=1}^{n}I(y_i\ne\hat{y_i})
+\]</span></p>
+<p>I is an indicator variable that equals 1 if observed y does not euqal
+predicted y and 0 if it does. A good classifier is one for which the
+<em>test error rate</em> is smallest</p>
+<p><span class="math display">\[
+Ave(I(y_0\ne\hat{y_0}))
+\]</span></p>
+<p>The Bayes classifier: we should simply assign a test observation with
+predictor vector <span class="math inline">\(x_0\)</span> to the class j
+for which <span class="math display">\[
+Pr(Y=j|X=x_0)
+\]</span> is largest. This is a conditional probability and it is the
+probability that Y=j given the observed predictor vector <span class="math inline">\(x_0\)</span>. This very simple classifier is
+called <strong>Bayes classifier</strong>. in a two-class problem where
+there are only two possible response values, the Bayes classifier
+corresponds to predicting class one if <span class="math inline">\(Pr(Y=1|X=x_0)&gt;0.5\)</span>, and class two
+otherwise.</p>
+<p>K-nearest Neighbors: * in theory, we would always like to predict
+qualitative responses using the Bayes classifier. But for real data, we
+do not know the conditional distribution of Y given X, and so computing
+the Bayes classifier is impossible. That means, the Bayes classifier
+serves as an unattainable gold standard against which to compare other
+methods. * K-nearest neighbors (KNN), like many other approaches,
+attempts to estiamte the conditional distribution of Y given X. Despite
+KNN is a very simple approach, it can often produce classifiers that are
+surprisingly close to the optimal Bayes classifier.</p>
+</div>
+</div>
+</div>
+<div id="chap-3" class="section level2">
+<h2>chap 3</h2>
+<div id="estimatig-the-coefficients" class="section level3">
+<h3>estimatig the coefficients</h3>
+<p>Let <span class="math inline">\(\hat{y_i}=\hat{\beta_0}+\hat{\beta_1}x_i\)</span>
+be the prediction for Y based on the ith value of X. Then <span class="math inline">\(e_i=y_i-\hat{y_i}\)</span> represents the ith
+residual. We define the residual sum of squares (RSS) as:</p>
+<p><span class="math display">\[
+RSS=e^2_1+e^2_2+\dots+e^2_n
+\]</span> The least squares approach chooses <span class="math inline">\(\hat{beta_0}, \hat{beta_1}\)</span> to minimize
+the RSS.</p>
+</div>
+<div id="assess-the-accuracy-of-coefficient-estiamtes" class="section level3">
+<h3>assess the accuracy of coefficient estiamtes</h3>
+<p>Notice that different data sets generated from the same true model
+result in slightly different least squares lines, but the unobserved
+population regression line does not change. How accurate is the sample
+mean <span class="math inline">\(\hat{\mu}\)</span> as an estimate of
+<span class="math inline">\(\mu\)</span>? We have established that the
+average of <span class="math inline">\(\hat{\mu}\)</span>s over many
+data sets will be very close to <span class="math inline">\(\mu\)</span>, but that a single estimate <span class="math inline">\(\hat{\mu}\)</span> may be a substantial
+underestimate or overestimate of <span class="math inline">\(\mu\)</span>.</p>
+<ul>
+<li>How far off will that single estimate of <span class="math inline">\(\hat{\mu}\)</span> be?</li>
+</ul>
+<p>In general, we answer this question by computing the standard error
+of <span class="math inline">\(\hat{\mu}\)</span>, written as SE(<span class="math inline">\(\hat{\mu}\)</span>). We have the well-known
+formula:</p>
+<p><span class="math display">\[
+Var(\hat{\mu})=SE(\hat{\mu})^2=\frac{\sigma^2}{n}
+\]</span> The estimate of <span class="math inline">\(sigma\)</span> is
+known as the residual standard error (RSE), and is given by: <span class="math display">\[
+RSE=\sqrt{RSS/(n-2)}=\sqrt{\frac{1}{n-2}\sum_{i=1}^{n}(y_i-\hat{y_i})^2}
+\]</span></p>
+<ul>
+<li>Standard errors can be used to construct confidence intervals.</li>
+<li>Standard error can be used to perform hypothesis tests.</li>
+</ul>
+</div>
+<div id="assess-tte-accuracy-of-the-model" class="section level3">
+<h3>assess tte accuracy of the model</h3>
+<p>The quality of a linear regression fit is typically assessed using
+two related quantities * residual standard error * <span class="math inline">\(R^2\)</span></p>
+<p>The RSE is considered an absolute measure of the lack of fit of the
+linear model to data. If the predictions obtained using the model are
+very close to the true outcome values, then the RSE will be small;
+otherwise, RSE will be large.</p>
+<p><span class="math inline">\(R^2\)</span> statistics provides an
+alternative measure of fit. It takes the form of a proportion-the
+proportion of variance explained-and so it always takes on a value
+between 0 and 1, and is independent of the scale of Y.</p>
+<p><span class="math display">\[
+R^2=\frac{TSS-RSS}{TSS}=1-\frac{RSS}{TSS}
+\]</span> The <span class="math inline">\(R^2\)</span> has an
+interpretational advantage over the RSE, since it always takes value
+between 0 and 1; however, it can still be challenging to determine what
+is a good <span class="math inline">\(R^2\)</span>.</p>
+</div>
+<div id="multiple-linear-regression" class="section level3">
+<h3>multiple linear regression</h3>
+<p>linear regression model takes the form <span class="math display">\[
+Y=\beta_0+\beta_1X_1+\dots+\beta_pX_p+\epsilon
+\]</span></p>
+<p>We interpret <span class="math inline">\(\beta_j\)</span> as the
+average effect on Y of a one unit increase in <span class="math inline">\(X_j\)</span> , holding all other predictors
+fixed.</p>
+<div id="estimating-the-regression-coefficients" class="section level4">
+<h4>estimating the regression coefficients</h4>
+<p>We choose <span class="math inline">\(\beta_0,
+\beta_1,\dots,\beta_p\)</span> to minimize the <strong>sum of squared
+residuals</strong>.</p>
+</div>
+<div id="some-important-questions" class="section level4">
+<h4>some important questions</h4>
+<p>when performing multiple linear regression, we usually are interested
+in answering a few important questions:</p>
+<ul>
+<li>is at least one of the predictors useful in predicting the response?
+<ul>
+<li>F-test</li>
+</ul></li>
+<li>do all the predictors help to explain Y, or is only a subset of the
+predictors useful?
+<ul>
+<li>forward selection</li>
+<li>backward selection</li>
+<li>mixed selection</li>
+</ul></li>
+<li>how well does the model fit the data?
+<ul>
+<li>RSE</li>
+<li><span class="math inline">\(R^2\)</span></li>
+</ul></li>
+<li>given a set of predictor values, what response value should we
+predict, and how accurate is our prediction?
+<ul>
+<li>confidence intervals</li>
+<li>prediction intervals</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="other-cosiderations-in-the-regression-model" class="section level3">
+<h3>other cosiderations in the regression model</h3>
+<div id="qualitative-predictors" class="section level4">
+<h4>qualitative predictors</h4>
+<p>So far, we have assumed that all variables in our linear regression
+model are quantitative. In practise, this is not necessarily the
+case.</p>
+<ul>
+<li>predictors with two levels: indicator or dummy variables using
+one-hot encoding</li>
+<li>qualitative predictors with more than two levels</li>
+</ul>
+</div>
+<div id="extensions-of-the-linear-model" class="section level4">
+<h4>extensions of the linear model</h4>
+<ul>
+<li>additive: we assume the association between a predictor <span class="math inline">\(X_j\)</span> and the response Y does not depend on
+the values of the other predictors</li>
+<li>linear: the change in response associated with a one-unit change in
+<span class="math inline">\(X_j\)</span> is constant, regardless of the
+value of <span class="math inline">\(X_j\)</span>.</li>
+</ul>
+<p>interaction term. non-linear relationship: polynomial functional
+form. * collinearity: correlation matrix for pairs; better way using
+variance inflation factor(VIF) * outliers: unusual <span class="math inline">\(y_i\)</span> * high leverage: unusual <span class="math inline">\(x_i\)</span></p>
+</div>
+</div>
+</div>
+<div id="classification" class="section level2">
+<h2>classification</h2>
+<p>There are many classification techniques or classifier: <em>logistic
+regression, linear discriminant analysis, quadratic discriminant
+analysis, naive Bayes, and K-nearest neighbors</em>.<br />
+* The discussion of logistic regression is used as a jumping-off point
+for a discussion of generalized linear models, and in particular,
+Poisson regression. * more computer-intensive classification methods:
+<em>generalized additive methods, tree, random forests</em>, and
+<em>boosting</em>; and <em>support vector machines</em></p>
+<div id="why-not-linear-regression" class="section level3">
+<h3>Why not linear regression?</h3>
+<p>Suppose we have a qualitative response with three levels: stroke,
+drug overdose, and epileptic seizure. We could consider encoding these
+values as a quantitative response variables as follows:</p>
+<p><span class="math display">\[
+Y= \begin{cases}
+    {1}, &amp; \text{if stroke;} \\
+    {2}, &amp; \text{if drug overdose;} \\
+    {3}, &amp; \text{if epileptic serzure.} \\
+\end{cases}
+\]</span></p>
+<p>Least squares could be used to fit a linear regression model to
+predict Y on the basis of a set of predictors. However, this encondig
+implies an ordering on the outcomes, rendering drug overdose in between
+stroke and epileptic seizure and insisting that the difference between
+stroke and drug overdose is the same as the difference between drug
+overdose and epileptic seizure. In practice, there is no particular
+reason that this needs to be the case.</p>
+<p>Even with only two classes, say a binary response with 0/1 coding
+where least squares is not completely unreasonable, a regression method
+has some problems: it can be shown that the <span class="math inline">\(X\hat{\beta}\)</span> obtained using linear
+regression is an estimate of the probability of Y given X in this case.
+However, if we use linear regression, some of our estimates might be
+outside the [0,1] interval, making them hard to interpret as
+probabilities.</p>
+<p>There are at least two reasons not to perform classification using a
+regression method:<br />
+* a regression method cannot accommodate a qualitative response with
+more than two classes * a regression method will not provide meaningful
+estimate of Pr(Y|X), even with just two classes.</p>
+</div>
+<div id="logitstic-regression" class="section level3">
+<h3>logitstic regression</h3>
+<p>logistic regression models the probability of Y given X, which can be
+written as</p>
+<p><span class="math display">\[
+p(X)=Pr(Y=1|X)
+\]</span> The values of p(X) will range between 0 and 1, then for any
+given value of X, a prediction can be made for Y.</p>
+<div id="the-logistic-model" class="section level4">
+<h4>The logistic model</h4>
+<p>How should we model the relationship between <span class="math inline">\(p(X)=Pr(Y=1|X)\)</span> and X? we consider using a
+linear regression model to represent these probabiities: <span class="math display">\[
+p(X)=\beta_0+\beta_1X
+\]</span></p>
+<p>The problem with this approach is that with for X close to 0, we
+predict a negative probability of Y; if we were to predict for very
+large X, we would get values bigger than 1. These predictions are not
+sensible, since the true probabilities must fall between 0 and 1.</p>
+<p>To avoid this problem, we must model p(X) using a function that gives
+outputs between 0 and 1 for all values of X. There are many candidate
+functions that meet this criteria. In logistic regression, we use the
+<strong>logistic function</strong>: <span class="math display">\[
+p(X)=\frac{e^{\beta_0+\beta_1X}}{1+e^{\beta_0+\beta_1X}}
+\]</span> To fit the model, we use a method called <em>maximum
+likelihood</em>. We rewrite the logistic function: <span class="math display">\[
+\frac{p(X)}{1-p(X)}=e^{\beta_1+\beta_1X}
+\]</span></p>
+<p>The quantity <span class="math inline">\(\frac{p(X)}{1-p(X)}\)</span>
+is called odds, taking the range from <span class="math inline">\([0,
+\infty]\)</span>. By taking the logarithm of both sides, we arrive at
+<span class="math display">\[
+log(\frac{p(X)}{1-p(X)})=\beta_1+\beta_1X
+\]</span> The left-hand side is called the <strong>log odds</strong> or
+<strong>logit</strong>. We see that the logistic regression model has a
+logit that is linear in X. What we can observe from the relationship
+between p(X) and X are: * the relationship is not linear * the change in
+p(X) caused by one unit change in X depends on the actual value of X *
+p(X) and X is positively associated if <span class="math inline">\(\beta_1\)</span> is positive; and vice versa.</p>
+</div>
+<div id="estimating-the-regression-coefficients-1" class="section level4">
+<h4>estimating the regression coefficients</h4>
+<p>The coefficients are unknown and must be estimated based on available
+training data. non-linear least squares can be used to fit the model but
+maximum likelihood is preferred because of its better statistical
+properties. We seek estimates for <span class="math inline">\(\beta_0,
+\beta_1\)</span> such that the predicted probability <span class="math inline">\(\hat{p}(x_i)\)</span> of <span class="math inline">\(x_i\)</span> for each individual corresponds as
+closely as to the individual’s observed X status. In other words, we try
+to find such estimates that plugging these estimates into the model for
+p(X) yields a number close to 1 for all individuals who are classified
+as group 1, and a number close to 0 for all individuals who are
+classified as group 0. Formulating it in mathematical equation in a
+<strong>likelihood function</strong>: <span class="math display">\[
+\ell(\beta_0, \beta_1)=\prod_{i:y_i=1}
+p(x_i)\prod_{i&#39;:y_{i&#39;}=1}(1-p(x_{i&#39;}))
+\]</span> The estimates <span class="math inline">\(\hat{bet_0}\)</span>
+and <span class="math inline">\(\hat{\beta_1}\)</span> are chosen to
+maximize this likelihood function. maximum likelihood is a very general
+approach that is used to fit many of the non-linear models. In the
+linear regression setting, the least squares approach is a special case
+of maximum likelihood. One can use qualitative predictors with the
+logistic regression model using the dummy variable approach.</p>
+</div>
+<div id="multiple-logistic-regression" class="section level4">
+<h4>multiple logistic regression</h4>
+<p>The results obtained using one predictor may be different from those
+obtained using multiple predictors when there is correlation among the
+predictors. In general, the phenomenon is known as
+<strong>confounding</strong>.</p>
+</div>
+<div id="multinomial-logistic-regression" class="section level4">
+<h4>multinomial logistic regression</h4>
+<p>when we have a response variable with more than two levels, we extend
+the two-level case to multinomial logistic regression. To do this, we
+first select a single level (the Kth level) to serve as the baseline,
+and then we rewrite the model : <span class="math display">\[
+Pr(Y=k|X=x)=\frac{e^{\beta_{k0}+\beta_{k1}x_1+\dots+\beta_{kp}x_p}}{1+\sum_{l=1}^{K-1}e^{\beta_{l0}+\beta_{l1}x_1+\dots+\beta_{lp}x_p}}
+\]</span> for <span class="math inline">\(k=1,\dots,K-1\)</span>, and
+<span class="math display">\[
+Pr(Y=K|X=x)=\frac{1}{1+\sum_{l=1}^{K-1}e^{\beta_{l0}+\beta_{l1}x_1+\dots+\beta_{lp}x_p}}
+\]</span> it can be shown that for <span class="math inline">\(k=1,\dots,K-1\)</span>: <span class="math display">\[
+log\frac{Pr(Y=k|X=x)}{Pr(Y=K|X=x)}=\beta_{k0}+\beta_{k1}x_1+\dots+\beta_{kp}x_p
+\]</span> This equation again indicates that the log odds between any
+pair of classes is linear in the features/predictors.</p>
+</div>
+</div>
+<div id="generative-models-for-classification" class="section level3">
+<h3>generative models for classification</h3>
+<p>In statistical jargon, we model the the conditional distribution of
+the response Y given the predictors. We now consider an alternative and
+less direct approach to estimating these probabilities. Now we model the
+distribution of the predictors X separately in each of the response
+classes, and then use Bayes’ theorem to flip these around into estimates
+for Pr(Y=k|X=x).</p>
+<p>why do we need another method when we already have logistic
+regression? * when there is substantial separation between the two
+classes, the parameters for the logistic regression model are
+surprisingly unstable. * if the distribution fo the predictors X is
+approximately normal in each of the classes and the sample size is
+small, then the new approaches may be more accurate than logistic
+regression. * the new methods can be naturally extended to the case of
+more than two response levels.</p>
+<p>suppose we wish to classify an observation into one of K (<span class="math inline">\(\ge2\)</span>) classes, meaning the qualitative
+response Y can take on K possible distinct and unordered values. Let
+<span class="math inline">\(\pi_k\)</span> denote the prior probability
+that a randomly chosen observation comes from the kth class, and <span class="math inline">\(f_k(X)=Pr(X|Y=k)\)</span> denote the density
+function of X for an observation that comes from the kth class.
+According to Bayes’ theorem: <span class="math display">\[
+Pr(Y=k|X=x)=\frac{\pi_kf_k(x)}{\sum_{l=1}^{K}\pi_lf_l(x)}
+\]</span> this is the posterior probability that an observation <span class="math inline">\(X=x\)</span> belongs to the kth class. That is, it
+is the probability that the observation belongs to the kth class, given
+the predictor value for that observation. The posterior probability
+equation suggests that instead of directly computing the posterior
+probability, we can simply plug in estimates of <span class="math inline">\(\pi_k\)</span> and <span class="math inline">\(f_k(x)\)</span> into it. In general, estimating
+<span class="math inline">\(\pi_k\)</span> is easy if we have a random
+sample from the population: we simply compute the fraction of the
+training observations that belong to the kth class. However, estimating
+the density function <span class="math inline">\(f_k(x)\)</span> is much
+more challenging.</p>
+<div id="classifiers-with-different-estimates-of-the-density-function" class="section level4">
+<h4>classifiers with different estimates of the density function</h4>
+<ul>
+<li>linear discriminant analysis for p=1
+<ul>
+<li>assumption: <span class="math inline">\(f_k(x)\)</span> is normal or
+Gaussian</li>
+<li>estimates omitted</li>
+</ul></li>
+</ul>
+<p>LDA classifier plugs in the estimates and assigns an observation
+<span class="math inline">\(X=x\)</span> to the class for which <span class="math display">\[
+\hat{\delta}(x)=x\frac{\hat{\mu_k}}{\hat{\sigma^2}}-\frac{\hat{\mu^2_k}}{\hat{2\sigma^2}}+log(\hat{\pi}_k)
+\]</span> is largest. The word <em>linear</em> in the classifier’s name
+stems from the fact that the discriminant function <span class="math inline">\(\hat{\delta}(x)\)</span> are linear function of x
+as compared to a more complex form of x.</p>
+</div>
 </div>
 </div>
 </div>
