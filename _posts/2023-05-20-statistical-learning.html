@@ -11,7 +11,7 @@
 
 <meta name="author" content="LT" />
 
-<meta name="date" content="2023-05-29" />
+<meta name="date" content="2023-06-02" />
 
 <title>2023-05-20-statistical-learning</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">2023-05-20-statistical-learning</h1>
 <h4 class="author">LT</h4>
-<h4 class="date">2023-05-29</h4>
+<h4 class="date">2023-06-02</h4>
 
 </div>
 
@@ -380,12 +380,15 @@ model</a></li>
 <li><a href="#other-cosiderations-in-the-regression-model" id="toc-other-cosiderations-in-the-regression-model">other cosiderations
 in the regression model</a></li>
 </ul></li>
-<li><a href="#classification" id="toc-classification">classification</a>
+<li><a href="#chap-4" id="toc-chap-4">chap 4</a>
 <ul>
 <li><a href="#why-not-linear-regression" id="toc-why-not-linear-regression">Why not linear regression?</a></li>
 <li><a href="#logitstic-regression" id="toc-logitstic-regression">logitstic regression</a></li>
 <li><a href="#generative-models-for-classification" id="toc-generative-models-for-classification">generative models for
 classification</a></li>
+<li><a href="#comparison-of-classification-methods" id="toc-comparison-of-classification-methods">comparison of
+classification methods</a></li>
+<li><a href="#generalized-linear-models" id="toc-generalized-linear-models">generalized linear models</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -839,8 +842,8 @@ variance inflation factor(VIF) * outliers: unusual <span class="math inline">\(y
 </div>
 </div>
 </div>
-<div id="classification" class="section level2">
-<h2>classification</h2>
+<div id="chap-4" class="section level2">
+<h2>chap 4</h2>
 <p>There are many classification techniques or classifier: <em>logistic
 regression, linear discriminant analysis, quadratic discriminant
 analysis, naive Bayes, and K-nearest neighbors</em>.<br />
@@ -977,13 +980,13 @@ for Pr(Y=k|X=x).</p>
 <p>why do we need another method when we already have logistic
 regression? * when there is substantial separation between the two
 classes, the parameters for the logistic regression model are
-surprisingly unstable. * if the distribution fo the predictors X is
+surprisingly unstable. * if the distribution of the predictors X is
 approximately normal in each of the classes and the sample size is
 small, then the new approaches may be more accurate than logistic
 regression. * the new methods can be naturally extended to the case of
 more than two response levels.</p>
 <p>suppose we wish to classify an observation into one of K (<span class="math inline">\(\ge2\)</span>) classes, meaning the qualitative
-response Y can take on K possible distinct and unordered values. Let
+response Y can take on K possible distinct and un-ordered values. Let
 <span class="math inline">\(\pi_k\)</span> denote the prior probability
 that a randomly chosen observation comes from the kth class, and <span class="math inline">\(f_k(X)=Pr(X|Y=k)\)</span> denote the density
 function of X for an observation that comes from the kth class.
@@ -1013,8 +1016,297 @@ Gaussian</li>
 <span class="math inline">\(X=x\)</span> to the class for which <span class="math display">\[
 \hat{\delta}(x)=x\frac{\hat{\mu_k}}{\hat{\sigma^2}}-\frac{\hat{\mu^2_k}}{\hat{2\sigma^2}}+log(\hat{\pi}_k)
 \]</span> is largest. The word <em>linear</em> in the classifier’s name
-stems from the fact that the discriminant function <span class="math inline">\(\hat{\delta}(x)\)</span> are linear function of x
-as compared to a more complex form of x.</p>
+stems from the fact that the <strong>discriminant function</strong>
+<span class="math inline">\(\hat{\delta}(x)\)</span> are linear function
+of x as compared to a more complex form of x.</p>
+<ul>
+<li>linear discriminant analysis for p&gt;1
+<ul>
+<li>assumption: we assume that <span class="math inline">\(\vec{X}=(X_1,
+\dots, X_p)\)</span> is drawn from a multivariate Gaussian distribution,
+with a class-specific mean vector and a common covariance matrix.</li>
+</ul></li>
+</ul>
+<p>The multivariate Gaussian distribution assumes that each individual
+predictor follows a one-dimensional normal distribution, with some
+correlation between each pair of predictors. Put it in mathematical
+term, we write <span class="math inline">\(X \sim N(\mu,
+\mathbb{\Sigma})\)</span>. here <span class="math inline">\(E(X)=\mu\)</span> is the mean of X (a vector of p
+components), and <span class="math inline">\(Cov(X)=\mathbb{\Sigma}\)</span> is the <span class="math inline">\(p \times p\)</span> covariance matrix of X.</p>
+<p>in practise, a binary classifier can make two types of errors: *
+incorrectly assign an individual who belongs to class 1 to class 2 *
+incorrectly assign an individual of class 2 to class 1</p>
+<p>A <strong>confusion matrix</strong> is a convenient way to display
+this information.</p>
+<ul>
+<li>sensitivity: the percentage of true class Yes that are
+predicted</li>
+<li>specificity: the percentage of class No that are correctly
+identified</li>
+</ul>
+<p>The Bayes classifier works by assigning an observation to the class
+for which the posterior probability <span class="math inline">\(p_k(X)\)</span> is greatest. In the two-class
+casem this amounts to assigning an observation to class 1 if the
+posterior probability of class 1 is greater than 0.5. However, if we are
+concerned about the incorrectly predicting the class 1 status for
+individuals who belong to class 1, then we can consider lowering the
+threshold. Choice on the best threshold must be based on domain
+knowledge, such as detailed information about the costs associated with
+class 1.</p>
+<p><strong>ROC</strong> curve is a popular graphic for simultaneously
+displaying two types of errors for all possible thresholds. ROC is an
+acronym for receiver operating characteristics.The overall performance
+of a classifier, summarized over all possible thresholds, is given by
+the area under the ROC curve (AUC). An ideal ROC curve will hug the top
+left corner, so the larger the AUC the better the classifier. We expect
+a classifier that performs no better than chance to have an AUC of 0.5
+on test sets. ROC curves are useful for comparing different classifiers
+since they take into account all possible thresholds.</p>
+<p>When we apply a classifier, possible results are:<br />
+* true positive (TP) and true negative (TN) * false positive (FP) and
+false negative (FN)</p>
+<ul>
+<li>false positive rate = FP/N, type I error, 1-specificity</li>
+<li>true positive rate = TP/P, 1-type II error, power, sensitivity</li>
+<li>positive predicted value: TP/P*, precision, 1-false discovery
+proportion</li>
+<li>negative predicted value: TN/N*</li>
+</ul>
+</div>
+<div id="quadratic-discriminant-analysis" class="section level4">
+<h4>quadratic discriminant analysis</h4>
+<p>LDA assumes that the observations within each class are drawn from a
+multivariate Gaussian distribution withi a class specific mean vector
+and a covariance matrix that is common to all K classes. Quadratic
+discriminant analysis (QDA) provides an alternative approach.</p>
+<ul>
+<li>assumption: observations are drawn from a Gaussian distribution</li>
+<li>unlike LDA, QDA assumes that each class has its own covariance
+matrix.</li>
+</ul>
+<p>that is, QDA assumes that an observation from the kth class is of the
+form <span class="math inline">\(X \sim N(\mu_k, \Sigma_k)\)</span>,
+where <span class="math inline">\(\Sigma_k\)</span> is a covariance
+matrix for the kth class. For QDA, the quantity x appears as a quadratic
+function in the <strong>discriminant function</strong>. this is where
+QDA gets its name.</p>
+<p>Why assuming different covariance matrices for different classes of
+Y? or why prefer LDA over QDA? The answer lies in the bias-variance
+trade-off.</p>
+<ul>
+<li>when there are <span class="math inline">\(p\)</span> predictors,
+then estimating a covariance matrix requires estimating <span class="math inline">\(p(p+1)/2\)</span> parameters.</li>
+<li>QDA estimates a separate covariance matrix for each class, for a
+total of <span class="math inline">\(Kp(p+1)/2\)</span> parameters.</li>
+<li>LDA estimates <span class="math inline">\(Kp\)</span> linear
+coefficients</li>
+</ul>
+<p>Consequently, LDA is a much less flexible classifier than QDA, and
+has substantially lower <strong>variance</strong>, which could
+potentially lead to improved prediction performance. However, if the K
+classes share a common covariance matrix is badly off, then LDA can
+suffer from high bias.</p>
+<p>In general, LDA tends to be a better bet than QDA if there are
+relatively few training observations and so reducing variance is
+crucial. QDA is recommended if the training data set is very large where
+the variance of the classifier is not a major concern, or the assumption
+of a common covariance matrix for all K classes is clearly
+untenable.</p>
+</div>
+<div id="naive-bayes" class="section level4">
+<h4>naive Bayes</h4>
+<p>naive Bayes classifier takes a different tract for estimating <span class="math inline">\(f_1(x), f_2(x), \dots, f_K(x)\)</span>. Instead of
+assuming that these functions belong to a particular family of
+distributions, e.g., multivariate normal distribution, it makes a single
+assumption: within the kth class, the p predictors are independent.</p>
+<p>Stated mathematically, this assumption means that for <span class="math inline">\(k=1,\dots, K\)</span>, <span class="math display">\[
+f_k(x)=f_{k1}(x_1) \times f_{k2}(x_2) \times \dots \times f_{kp}(x_p)
+\]</span> where <span class="math inline">\(f_{kj}\)</span> is the
+density function of the jth predictor among observations in the kth
+class. This is a powerful assumption. Essentially, estimating a
+p-dimensional density function is challenging because we must consider
+not only the marginal distribution of each predictor-that is the
+distribution of each predictor on its own-but also the joint
+distribution of the predictors-that is, the association among different
+predictors. in the case of multivariate normal distribution, the
+association among predictors is summarized by the off-diagonal elements
+of the covariance matrix. However, in general, this association can be
+hard to characterize, and exceedingly challenging to estimate. by
+assuming independence of predictors, we completely eliminate the worry
+about the association.</p>
+<p>In most settings, we do not believe the naive Bayes assumption that
+all predictors are independent. Essentially, the naive Bayes assumption
+introduces some bias, but reduces variance, leading to a classifier that
+works quite well in practise as a result of <strong>bias-variance
+trade-off</strong>. When p is large or n is small, naive Bayes relative
+to LDA or QDA presents a greater pay-off in where reducing variance is
+very important.</p>
+</div>
+</div>
+<div id="comparison-of-classification-methods" class="section level3">
+<h3>comparison of classification methods</h3>
+<p>To compare performance of LDA, QDA, naive Bayes, and logistic
+regression, we consider these approaches in a setting with K classes, so
+that we assign an observation to the class that maximizes Pr(Y=k|X=x).
+Equivalently, we can set K as the baseline class and assign an
+observation to the class that maximizes <span class="math display">\[
+log\frac{Pr(Y=k|X=x)}{Pr(Y=K|X=x)}
+\]</span> for <span class="math inline">\(k=1,\dots,K\)</span>.</p>
+<p>comparison</p>
+<ul>
+<li>LDA is a special case of QDA with <span class="math inline">\(c_{kjl}=0\)</span> for all <span class="math inline">\(j, l=1, \dots, p, k=1,\dots,K\)</span>, which is
+not surprising since LDA is simply a restricted version of QDA with
+<span class="math inline">\(\Sigma_1=\Sigma_2=\dots=\Sigma_K=\Sigma\)</span>.</li>
+<li>Any classifier with a linear decision boundary is a special case of
+naive Bayes with <span class="math inline">\(g_{kj}(x_j)=b_{kj}(x_j)\)</span>. This means LDA
+is a special case of naive Bayes.</li>
+<li>naive Bayes is a special case of LDA with p=1.</li>
+<li>neither QDA nor naive Bayes is a special case of the other. QDA has
+the potential to be more accurate in settings where interactions among
+predictors are important in discriminating classes.</li>
+</ul>
+<p>None of these methods dominates the others: in any setting, the
+choice of method will depend on the true distribution of the predictors
+in each of the K classes, as well as other considerations, such as the
+values of n and p.</p>
+<ul>
+<li>logistic regression: the posterior probability function is identical
+to that of LDA. We expect LDA to outperform logistic regression when the
+normality assumption (approximately) holds, and we expect logistic
+regression to perform better when it does not.</li>
+</ul>
+<div id="k-nearest-neighbors-knn" class="section level4">
+<h4>K-nearest neighbors (KNN)</h4>
+<p>No assumptions are made in KNN so it’s a non-parametric approach: no
+assumptions are made about the shape of the decision boundary.</p>
+<ul>
+<li>because KNN is completely non-parametric, we can expect this
+approach to dominate LDA and logistic regression when the decision
+boundary is highly non-linear, provided that n is very large and p is
+small</li>
+<li>in order to provide accurate classification, KNN required a lot of
+observations relative to the number of predictors.</li>
+<li>in settings where the decision boundary is non-linear but n is only
+modest ,or p is not very small, QDA may be preferred to KNN because QDA
+can provide non-linear boundary while taking parametric forms, meaning
+it required a smaller sample size for accurate classification, relative
+to KNN.</li>
+<li>unlike logistic regression, KNN does not tell us which predictors
+are important: we don;t get a table of coefficients as from model
+summary of a logistic regression model.</li>
+</ul>
+</div>
+</div>
+<div id="generalized-linear-models" class="section level3">
+<h3>generalized linear models</h3>
+<p>Sometimes we have response variable that are neither qualitative nor
+quantitative, rendering linear regression and classification untenable.
+Suppose we have counts of bikers as Y, problems fitting a linear
+regression model are:</p>
+<ul>
+<li>negative predictions</li>
+<li>violation of constant variance assumption</li>
+<li>continuous predictions instead of integers</li>
+</ul>
+<div id="poisson-regression" class="section level4">
+<h4>Poisson regression</h4>
+<p>Suppose a random variable Y takes on non-negative integer values, and
+it follows the Poisson distribution, then <span class="math display">\[
+Pr(Y=k)=\frac{e^{-\lambda}\lambda^k}{k!}, k=0,1,2\dots
+\]</span> important properties of Poisson distribution are: <span class="math inline">\(E(Y)=Var(Y)=\lambda\)</span>. IN stead of modeling
+the count directly, we model the mean to vary as a function of the
+covariates. IN particular, we consider the following model for the mean
+<span class="math inline">\(\lambda=E(Y)\)</span>, which we write as
+<span class="math inline">\(\lambda(X_1,\dots,X_p)\)</span> to emphasize
+that it is a function of the covariates <span class="math inline">\(X_1,\dots,X_p\)</span>: <span class="math display">\[
+log\lambda(X_1,\dots,X_p)=\beta_0+\beta_1X_1+\dots+\beta_pX_p
+\]</span> we take a log of <span class="math inline">\(\lambda(X_1,\dots,X_p)\)</span> to be linear in
+predictors in order to ensure that <span class="math inline">\(\lambda(X_1,\dots,X_p)\)</span> takes on
+non-negative values for all values of the covariates. To estimate the
+coefficients <span class="math inline">\(\beta_0,\beta_1,\dots,\beta_p\)</span>, we use the
+same maximum likelihood approach that we adopt for logistic regression.
+Specifically, given n observations from the Poisson regression model,
+the likelihood takes the form <span class="math display">\[
+\ell(\beta_0, \beta_1,
+\dots,\beta_p)=\prod_{i=1}^{n}\frac{e^{-\lambda(x_i)}\lambda(X_i)^{y_i}}{y_i!}
+\]</span> where <span class="math inline">\(\lambda(x_i)=e^{\beta_0+\beta_1x_{i1}+\dots+\beta_px_{ip}}\)</span>.
+we estimate the coefficients that maximize the likelihood <span class="math inline">\(\ell(\beta_0, \beta_1,
+\dots,\beta_p)\)</span>.</p>
+<ul>
+<li>interpretation: an increase in <span class="math inline">\(X_j\)</span> by one unit is associated with a
+change in <span class="math inline">\(E(Y)=\lambda\)</span> by a factor
+of <span class="math inline">\(exp(\beta_j)\)</span>.<br />
+</li>
+<li>mean-variance relationship: by modeling with Poisson regression, we
+explicitly assume that, in Bike example, mean bike usage in a given hour
+equals the variance of bike usage during that hour. By contrast, under a
+linear regression model, the variance of bike usage always takes on
+constant value. IN general, Poisson regression model is able to handle
+the mean-variance relationship in a way that the linear regression model
+is not.<br />
+</li>
+<li>non-negative fitted values: there are no negative predictions using
+the Poisson regression model. By contrast, when we fit a linear
+regression model to the Bike data set, almost 10% of the prediction are
+negative.<br />
+</li>
+<li>over-dispersion: in the Bike example, the variance appears to be
+much higher than the mean, a situation referred to as over-dispersion.
+this cause the Z-values to be inflated.</li>
+</ul>
+</div>
+<div id="generalized-linear-models-in-greater-generality" class="section level4">
+<h4>generalized linear models in greater generality</h4>
+<p>we have covered three types of regression models: linear, logistic,
+and Poisson. they share some characteristics:</p>
+<ul>
+<li>each approach uses predictors <span class="math inline">\(X_1,
+\dots, X_p\)</span> to predict a response Y. we assume that conditional
+on <span class="math inline">\(X_1, \dots, X_p\)</span>, Y belongs to a
+certain family of distributions. for linear regression, we typically
+assume that Y follows a Gaussian or normal distribution; for logistic
+regression, we assume that Y follows a Bernoulli distribution; for
+Poisson regression, we assume that Y follows a Poisson
+distribution.<br />
+</li>
+<li>each approach models the mean of Y as a function of the predictors.
+in linear regression, the mean of Y takes the form <span class="math display">\[
+E(Y|X_1, \dots, X_p)=\beta_0+\beta_1X_1+\dots+\beta_pX_p
+\]</span> i.e., it is a linear function of the predictors. For logistic
+regression, the mean takes the form <span class="math display">\[
+E(Y|X_1, \dots, X_p)=Pr(Y=1|X_1, \dots,
+X_p)=\frac{e^{\beta_{0}+\beta_{1}x_1+\dots+\beta_{p}x_p}}{1+e^{\beta_{0}+\beta_{1}x_1+\dots+\beta_{p}x_p}}
+\]</span></li>
+</ul>
+<p>while for Poisson regression it take the form <span class="math display">\[
+E(Y|X_1, \dots, X_p)=\lambda(X_1, \dots,
+X_p)=e^{\beta_{0}+\beta_{1}x_1+\dots+\beta_{p}x_p}
+\]</span> Equations above can be expressed using a <strong>link
+function</strong>, <span class="math inline">\(\eta\)</span>, which
+applies a transformation to <span class="math inline">\(E(Y|X_1, \dots,
+X_p)\)</span> so that the transformed mean is a linear function of the
+predictors. that is <span class="math display">\[
+\eta(E(Y|X_1, \dots, X_p))=\beta_{0}+\beta_{1}x_1+\dots+\beta_{p}x_p
+\]</span></p>
+<p>The link function for linear, logistic, and Poisson regression
+are</p>
+<ul>
+<li><span class="math inline">\(\eta(\mu)=\mu\)</span></li>
+<li><span class="math inline">\(\eta(\mu)=log(\frac{\mu}{1-\mu})\)</span></li>
+<li><span class="math inline">\(\eta(\mu)=log(\mu)\)</span></li>
+</ul>
+<p>The Gaussian, Bernoulli, and Poisson distributions are all members of
+a wider class of distributions, known as the <strong>exponential
+family</strong>. Other well-known members of this family include
+<strong>exponential distribution</strong>, the <strong>Gamma
+distribution</strong>, and the <strong>negative binomial
+distribution</strong>. In general, we can perform a regression by
+modeling the response Y as coming from a particular member of the
+exponential family, and then transforming the mean of the response so
+that the transformed mean is a linear function of the predictors via the
+link function. Any regression approach that allows this very general
+recipe is known as a generalized linear model
+(<strong>GLM</strong>).</p>
 </div>
 </div>
 </div>
