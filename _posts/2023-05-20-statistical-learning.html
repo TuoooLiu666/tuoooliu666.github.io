@@ -11,7 +11,7 @@
 
 <meta name="author" content="LT" />
 
-<meta name="date" content="2023-06-02" />
+<meta name="date" content="2023-06-16" />
 
 <title>2023-05-20-statistical-learning</title>
 
@@ -253,6 +253,28 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+
+div.csl-bib-body { }
+div.csl-entry {
+clear: both;
+}
+.hanging div.csl-entry {
+margin-left:2em;
+text-indent:-2em;
+}
+div.csl-left-margin {
+min-width:2em;
+float:left;
+}
+div.csl-right-inline {
+margin-left:2em;
+padding-left:1em;
+}
+div.csl-indent {
+margin-left: 2em;
+}
+</style>
 
 
 
@@ -352,7 +374,7 @@ display: none;
 
 <h1 class="title toc-ignore">2023-05-20-statistical-learning</h1>
 <h4 class="author">LT</h4>
-<h4 class="date">2023-06-02</h4>
+<h4 class="date">2023-06-16</h4>
 
 </div>
 
@@ -363,32 +385,71 @@ display: none;
 <li><a href="#overview" id="toc-overview">Overview</a></li>
 <li><a href="#history" id="toc-history">History</a></li>
 <li><a href="#organization" id="toc-organization">organization</a></li>
-<li><a href="#chap-2" id="toc-chap-2">chap 2</a>
+<li><a href="#chap-2.-statistical-learning" id="toc-chap-2.-statistical-learning">chap 2. statistical learning</a>
 <ul>
 <li><a href="#whats-statistical-learning" id="toc-whats-statistical-learning">What’s statistical
 learning?</a></li>
 <li><a href="#assessing-model-accuracy" id="toc-assessing-model-accuracy">Assessing model accuracy</a></li>
 </ul></li>
-<li><a href="#chap-3" id="toc-chap-3">chap 3</a>
+<li><a href="#chap-3.-linear-regression" id="toc-chap-3.-linear-regression">chap 3. Linear regression</a>
 <ul>
 <li><a href="#estimatig-the-coefficients" id="toc-estimatig-the-coefficients">estimatig the coefficients</a></li>
 <li><a href="#assess-the-accuracy-of-coefficient-estiamtes" id="toc-assess-the-accuracy-of-coefficient-estiamtes">assess the
 accuracy of coefficient estiamtes</a></li>
-<li><a href="#assess-tte-accuracy-of-the-model" id="toc-assess-tte-accuracy-of-the-model">assess tte accuracy of the
+<li><a href="#assess-the-accuracy-of-the-model" id="toc-assess-the-accuracy-of-the-model">assess the accuracy of the
 model</a></li>
 <li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression">multiple linear regression</a></li>
-<li><a href="#other-cosiderations-in-the-regression-model" id="toc-other-cosiderations-in-the-regression-model">other cosiderations
-in the regression model</a></li>
+<li><a href="#other-considerations-in-the-regression-model" id="toc-other-considerations-in-the-regression-model">other
+considerations in the regression model</a></li>
 </ul></li>
-<li><a href="#chap-4" id="toc-chap-4">chap 4</a>
+<li><a href="#chap-4.-classification" id="toc-chap-4.-classification">chap 4. Classification</a>
 <ul>
 <li><a href="#why-not-linear-regression" id="toc-why-not-linear-regression">Why not linear regression?</a></li>
-<li><a href="#logitstic-regression" id="toc-logitstic-regression">logitstic regression</a></li>
+<li><a href="#logistic-regression" id="toc-logistic-regression">logistic
+regression</a></li>
 <li><a href="#generative-models-for-classification" id="toc-generative-models-for-classification">generative models for
 classification</a></li>
 <li><a href="#comparison-of-classification-methods" id="toc-comparison-of-classification-methods">comparison of
 classification methods</a></li>
 <li><a href="#generalized-linear-models" id="toc-generalized-linear-models">generalized linear models</a></li>
+</ul></li>
+<li><a href="#chap-5.-resampling" id="toc-chap-5.-resampling">chap 5.
+Resampling</a>
+<ul>
+<li><a href="#cross-validation" id="toc-cross-validation">cross-validation</a></li>
+<li><a href="#bootstrap" id="toc-bootstrap">bootstrap</a></li>
+</ul></li>
+<li><a href="#chap-6.-linear-model-selection-and-regularization" id="toc-chap-6.-linear-model-selection-and-regularization">chap 6.
+linear model selection and regularization</a>
+<ul>
+<li><a href="#subset-selection" id="toc-subset-selection">subset
+selection</a></li>
+<li><a href="#shrinkage-methods" id="toc-shrinkage-methods">shrinkage
+methods</a></li>
+<li><a href="#dimension-reduction-methods" id="toc-dimension-reduction-methods">dimension reduction
+methods</a></li>
+<li><a href="#high-dimension-considerations" id="toc-high-dimension-considerations">high-dimension
+considerations</a></li>
+</ul></li>
+<li><a href="#chap-7.-move-beyond-linearity" id="toc-chap-7.-move-beyond-linearity">chap 7. move beyond linearity</a>
+<ul>
+<li><a href="#polynomial-regression" id="toc-polynomial-regression">polynomial regression</a></li>
+<li><a href="#step-functions" id="toc-step-functions">step
+functions</a></li>
+<li><a href="#basis-functions" id="toc-basis-functions">basis
+functions</a></li>
+<li><a href="#regression-splines" id="toc-regression-splines">regression
+splines</a></li>
+<li><a href="#smoothing-splines" id="toc-smoothing-splines">smoothing
+splines</a></li>
+<li><a href="#local-regression" id="toc-local-regression">local
+regression</a></li>
+<li><a href="#generalized-additive-models" id="toc-generalized-additive-models">generalized additive
+models</a></li>
+</ul></li>
+<li><a href="#chap-8.-tree-based-methods" id="toc-chap-8.-tree-based-methods">chap 8. tree-based methods</a>
+<ul>
+<li><a href="#basics-of-decision-tree" id="toc-basics-of-decision-tree">basics of decision tree</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -399,8 +460,9 @@ classification methods</a></li>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
 <ul>
-<li><strong>statistical learning</strong> refers to a vast set of tools
-for understanding data. These tools can be classified as:
+<li><strong>statistical learning</strong> <span class="citation">(Gareth
+James 2021)</span> refers to a vast set of tools for understanding data.
+These tools can be classified as:
 <ul>
 <li>supervised: building a statistical model for predicting, or
 estimating, an <em>output</em> based on one or more inputs.</li>
@@ -451,8 +513,8 @@ K-means clustering, hierarchical clustering</li>
 <li>chap 13: multiple hypothesis testing</li>
 </ul>
 </div>
-<div id="chap-2" class="section level2">
-<h2>chap 2</h2>
+<div id="chap-2.-statistical-learning" class="section level2">
+<h2>chap 2. statistical learning</h2>
 <p>our goal is to develop an accurate model that can be used to predict
 sales on the basis of the three media budgets. More generally, suppose
 that we observe a quantitative response <span class="math inline">\(Y\)</span> and <span class="math inline">\(p\)</span> different predictors, <span class="math inline">\(X_1, X_2, \dots, X_p\)</span>. We assume that
@@ -510,14 +572,14 @@ complicated?</li>
 <div id="how-do-we-estimate-f" class="section level4">
 <h4>How do we estimate f?</h4>
 <ul>
-<li>parametric methods: involve a two-step model-based approach
+<li><p>parametric methods: involve a two-step model-based approach</p>
 <ul>
 <li>first, we make an assumption about the functional form, or shape of
 <span class="math inline">\(f\)</span>. for example, we assume <span class="math inline">\(f\)</span> is linear:</li>
 </ul>
-<span class="math display">\[
+<p><span class="math display">\[
 f(X)=\beta_0+\beta_1X_1+\dots+\beta_pX_p
-\]</span></li>
+\]</span></p></li>
 </ul>
 <p>instead of estimating the black-box function <span class="math inline">\(f(X)\)</span>, we only need to estimate <span class="math inline">\(p+1\)</span> coefficients <span class="math inline">\(\beta_0, \beta_1, \dots, \beta_p\)</span>. *
 second, we need a procedure to train our model using training data, that
@@ -564,9 +626,9 @@ contrast, flexible approaches, such as splines and boosting methods can
 lead to such complicated estimates of f that it is difficult to
 understand how any individual predictors is associated with the
 response.</p>
-<div class="figure">
-<img src="%22flexibilit-interpretability.png%22" alt />
-<p class="caption">trade-off.</p>
+<div class="float">
+<img src="%22flexibilit-interpretability.png%22" alt="trade-off." />
+<div class="figcaption">trade-off.</div>
 </div>
 </div>
 <div id="supervised-vs.-unsupervised" class="section level4">
@@ -631,7 +693,7 @@ MSE=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{f}(x_1))^2
 we are said to be overfitting the data. That is, our statistical
 learning procedure is working too hard to find patterns in the training
 data and may be picking up some patterns that are just caused by random
-chance rather than by true properties of the unknown function of f. </p>
+chance rather than by true properties of the unknown function of f.</p>
 </div>
 <div id="bias-variance-trade-off" class="section level4">
 <h4>bias-variance trade-off</h4>
@@ -712,8 +774,8 @@ surprisingly close to the optimal Bayes classifier.</p>
 </div>
 </div>
 </div>
-<div id="chap-3" class="section level2">
-<h2>chap 3</h2>
+<div id="chap-3.-linear-regression" class="section level2">
+<h2>chap 3. Linear regression</h2>
 <div id="estimatig-the-coefficients" class="section level3">
 <h3>estimatig the coefficients</h3>
 <p>Let <span class="math inline">\(\hat{y_i}=\hat{\beta_0}+\hat{\beta_1}x_i\)</span>
@@ -751,8 +813,8 @@ RSE=\sqrt{RSS/(n-2)}=\sqrt{\frac{1}{n-2}\sum_{i=1}^{n}(y_i-\hat{y_i})^2}
 <li>Standard error can be used to perform hypothesis tests.</li>
 </ul>
 </div>
-<div id="assess-tte-accuracy-of-the-model" class="section level3">
-<h3>assess tte accuracy of the model</h3>
+<div id="assess-the-accuracy-of-the-model" class="section level3">
+<h3>assess the accuracy of the model</h3>
 <p>The quality of a linear regression fit is typically assessed using
 two related quantities * residual standard error * <span class="math inline">\(R^2\)</span></p>
 <p>The RSE is considered an absolute measure of the lack of fit of the
@@ -814,8 +876,8 @@ predict, and how accurate is our prediction?
 </ul>
 </div>
 </div>
-<div id="other-cosiderations-in-the-regression-model" class="section level3">
-<h3>other cosiderations in the regression model</h3>
+<div id="other-considerations-in-the-regression-model" class="section level3">
+<h3>other considerations in the regression model</h3>
 <div id="qualitative-predictors" class="section level4">
 <h4>qualitative predictors</h4>
 <p>So far, we have assumed that all variables in our linear regression
@@ -842,8 +904,8 @@ variance inflation factor(VIF) * outliers: unusual <span class="math inline">\(y
 </div>
 </div>
 </div>
-<div id="chap-4" class="section level2">
-<h2>chap 4</h2>
+<div id="chap-4.-classification" class="section level2">
+<h2>chap 4. Classification</h2>
 <p>There are many classification techniques or classifier: <em>logistic
 regression, linear discriminant analysis, quadratic discriminant
 analysis, naive Bayes, and K-nearest neighbors</em>.<br />
@@ -865,7 +927,7 @@ Y= \begin{cases}
 \end{cases}
 \]</span></p>
 <p>Least squares could be used to fit a linear regression model to
-predict Y on the basis of a set of predictors. However, this encondig
+predict Y on the basis of a set of predictors. However, this enconding
 implies an ordering on the outcomes, rendering drug overdose in between
 stroke and epileptic seizure and insisting that the difference between
 stroke and drug overdose is the same as the difference between drug
@@ -884,8 +946,8 @@ regression method:<br />
 more than two classes * a regression method will not provide meaningful
 estimate of Pr(Y|X), even with just two classes.</p>
 </div>
-<div id="logitstic-regression" class="section level3">
-<h3>logitstic regression</h3>
+<div id="logistic-regression" class="section level3">
+<h3>logistic regression</h3>
 <p>logistic regression models the probability of Y given X, which can be
 written as</p>
 <p><span class="math display">\[
@@ -895,7 +957,7 @@ given value of X, a prediction can be made for Y.</p>
 <div id="the-logistic-model" class="section level4">
 <h4>The logistic model</h4>
 <p>How should we model the relationship between <span class="math inline">\(p(X)=Pr(Y=1|X)\)</span> and X? we consider using a
-linear regression model to represent these probabiities: <span class="math display">\[
+linear regression model to represent these probabilities: <span class="math display">\[
 p(X)=\beta_0+\beta_1X
 \]</span></p>
 <p>The problem with this approach is that with for X close to 0, we
@@ -919,9 +981,14 @@ log(\frac{p(X)}{1-p(X)})=\beta_1+\beta_1X
 \]</span> The left-hand side is called the <strong>log odds</strong> or
 <strong>logit</strong>. We see that the logistic regression model has a
 logit that is linear in X. What we can observe from the relationship
-between p(X) and X are: * the relationship is not linear * the change in
-p(X) caused by one unit change in X depends on the actual value of X *
-p(X) and X is positively associated if <span class="math inline">\(\beta_1\)</span> is positive; and vice versa.</p>
+between p(X) and X are:</p>
+<ul>
+<li><p>the relationship is not linear</p></li>
+<li><p>the change in p(X) caused by one unit change in X depends on the
+actual value of X</p></li>
+<li><p>p(X) and X is positively associated if <span class="math inline">\(\beta_1\)</span> is positive; and vice
+versa.</p></li>
+</ul>
 </div>
 <div id="estimating-the-regression-coefficients-1" class="section level4">
 <h4>estimating the regression coefficients</h4>
@@ -938,13 +1005,12 @@ classified as group 0. Formulating it in mathematical equation in a
 <strong>likelihood function</strong>: <span class="math display">\[
 \ell(\beta_0, \beta_1)=\prod_{i:y_i=1}
 p(x_i)\prod_{i&#39;:y_{i&#39;}=1}(1-p(x_{i&#39;}))
-\]</span> The estimates <span class="math inline">\(\hat{bet_0}\)</span>
-and <span class="math inline">\(\hat{\beta_1}\)</span> are chosen to
-maximize this likelihood function. maximum likelihood is a very general
-approach that is used to fit many of the non-linear models. In the
-linear regression setting, the least squares approach is a special case
-of maximum likelihood. One can use qualitative predictors with the
-logistic regression model using the dummy variable approach.</p>
+\]</span> The estimates <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta_1}\)</span> are chosen to maximize this
+likelihood function. maximum likelihood is a very general approach that
+is used to fit many of the non-linear models. In the linear regression
+setting, the least squares approach is a special case of maximum
+likelihood. One can use qualitative predictors with the logistic
+regression model using the dummy variable approach.</p>
 </div>
 <div id="multiple-logistic-regression" class="section level4">
 <h4>multiple logistic regression</h4>
@@ -1045,14 +1111,13 @@ predicted</li>
 identified</li>
 </ul>
 <p>The Bayes classifier works by assigning an observation to the class
-for which the posterior probability <span class="math inline">\(p_k(X)\)</span> is greatest. In the two-class
-casem this amounts to assigning an observation to class 1 if the
-posterior probability of class 1 is greater than 0.5. However, if we are
-concerned about the incorrectly predicting the class 1 status for
-individuals who belong to class 1, then we can consider lowering the
-threshold. Choice on the best threshold must be based on domain
-knowledge, such as detailed information about the costs associated with
-class 1.</p>
+for which the posterior probability <span class="math inline">\(p_k(X)\)</span> is greatest. In the two-class case
+this amounts to assigning an observation to class 1 if the posterior
+probability of class 1 is greater than 0.5. However, if we are concerned
+about the incorrectly predicting the class 1 status for individuals who
+belong to class 1, then we can consider lowering the threshold. Choice
+on the best threshold must be based on domain knowledge, such as
+detailed information about the costs associated with class 1.</p>
 <p><strong>ROC</strong> curve is a popular graphic for simultaneously
 displaying two types of errors for all possible thresholds. ROC is an
 acronym for receiver operating characteristics.The overall performance
@@ -1307,6 +1372,1243 @@ that the transformed mean is a linear function of the predictors via the
 link function. Any regression approach that allows this very general
 recipe is known as a generalized linear model
 (<strong>GLM</strong>).</p>
+</div>
+</div>
+</div>
+<div id="chap-5.-resampling" class="section level2">
+<h2>chap 5. Resampling</h2>
+<p>Re-sampling methods are an indispensable tool in modern statistics.
+They involve repeatedly drawing samples from a training set and
+refitting a model on each sample to obtain additional information about
+the fitted model.</p>
+<p>For example, - to estimate the variability of a linear regression
+fit, we repeatedly draw different samples from the training data set,
+fit a linear regression to each new sample, and then examine the extend
+to which the resulting fits differ. - such information would not be
+available from fitting the model only once using the original training
+sample</p>
+<p>Two of most used re-sampling methods are</p>
+<ul>
+<li>cross-validation: used to estimate the test error associated with a
+given statistical learning method in order to evaluate its performance,
+or to select the appropriate level of flexibility.</li>
+<li>bootstrap: used to measure accuracy of a parameter estimate or a
+given statistical learning method.</li>
+</ul>
+<p>The process of evaluating a model’s performance is known as
+<strong>model assessment</strong>, whereas the process of choosing the
+proper level of flexibility for a model is known as <strong>model
+selection</strong>.</p>
+<div id="cross-validation" class="section level3">
+<h3>cross-validation</h3>
+<ul>
+<li>test error rate: the average error that results from using a
+statistical learning method to predict the response on a new
+observation.</li>
+</ul>
+<p>The test error rate can be easily calculated if a designated test set
+is available. However, this is not usually the case. In contrast the
+training error rate can be obtained by applying the statistical learning
+method to the observations used in its training.</p>
+<ul>
+<li>training error rate: quite different from the test error rate, and
+can dramatically underestimate the test error rate.</li>
+</ul>
+<p>In the absence of ver large test set, a number of techniques can be
+used to estimate this quantity using available training data.
+<strong>Some</strong> make adjustments to the training error rate to
+estimate the test error rate; <strong>others</strong> achieve so by
+holding out a subset of the training observations from the fitting
+process, and then applying the statistical learning method to those held
+out observations.</p>
+<div id="validation-set-approach" class="section level4">
+<h4>validation set approach</h4>
+<p>The validation set approach randomly divides the available set into
+two parts, a training set and a validation set or hold-out set. The
+statistical model is fit on the training set, and the fitted model is
+used to predict the responses for the observations in the validation
+set. The resulting validation set error rate-mean squared error in the
+case of quantitative response-provides an estimate of the test error
+rate.</p>
+<ul>
+<li>the validation estimate of the test error rate can be highly
+variable, depending on precisely which observations are included in the
+training set and which observations are included in the validation
+set.<br />
+</li>
+<li>only observations included in the training set are used to fit the
+model. That is, only part of the original traning observations are used
+to fit the model. Statistical learning methods tend to perform worse
+when trained on fewer observations, which suggests that the validation
+set error rate may <strong>overestimate</strong> the test error rate for
+the model fit on the entire data set.</li>
+</ul>
+</div>
+<div id="cross-validation-1" class="section level4">
+<h4>cross-validation</h4>
+<p>Cross-validation is a refinement of the validation set approach that
+addresses these two issues.</p>
+<div id="leave-one-out-cross-validation" class="section level5">
+<h5>leave-one-out cross-validation</h5>
+<p>leave-one-out cross-validation (LOOCV) is closely related to the
+validation set approach, but it attempts to address that method’s
+drawbacks. Like validation set approach, LOOCV involves splitting the
+set of observations into two parts. Instead of splitting the data set
+into two comparable subsets, LOOCV uses a single observation for
+validation, and the rest observations for training. That is, the
+statistical learning method is fit on the <span class="math inline">\(n-1\)</span> training observations, and a
+prediction <span class="math inline">\(\hat{y_i}\)</span> is made for
+the one held-out observation using its value <span class="math inline">\(x_i\)</span>.</p>
+<p>However, validation on a single observation is highly variable, so we
+repeat the procedure by <span class="math inline">\(n\)</span> times,
+and calculating <span class="math inline">\(n\)</span> MSE. The LOOCV
+estimate for the test MSE is the average of these <span class="math inline">\(n\)</span> test error estimates: <span class="math display">\[
+\hat{MSE}=CV_{(n)}=\frac{1}{n}\sum_{i=1}^{n}MSE_i
+\]</span> LOOCV has major advantages over the validation set
+approach<br />
+* far less bias: using as many as <span class="math inline">\(n-1\)</span> observations, LOOCV has variability
+as compared to fitting on almost half of the observations * validation
+set approach yields different results due to randomness in the
+training/validation set split, while performing LOOCV multiple will
+always yield the same result since there is no randomness in the
+training/validation set splits.</p>
+</div>
+<div id="k-fold-cross-validation" class="section level5">
+<h5>k-fold cross-validation</h5>
+<p>K-fold cross-validation involves randomly dividing all observations
+into k groups, of approximately equal size. The first group/fold is used
+as the validation set, and the rest <span class="math inline">\(k-1\)</span> groups are used to train the
+statistical learning model. Then MSE is calculated for the held-out
+first set. Repeating this procedure <span class="math inline">\(k\)</span> times until all groups are used as
+validation set for once. This process produces <span class="math inline">\(k\)</span> estimates of test error, <span class="math inline">\(MSE_1, MSE_2,\dots, MSE_k\)</span>. we have <span class="math display">\[
+CV_{(k)}=\frac{1}{k}\sum_{i=1}^{k}MES_i
+\]</span></p>
+<p>It is not hard to see LOOCV is a special case of k-fold
+cross-validation (CV) in which <span class="math inline">\(k\)</span> is
+set to equal <span class="math inline">\(n\)</span>. typically, we
+perform <span class="math inline">\(k=5\)</span> or <span class="math inline">\(k=10\)</span> CV. the advantage of doing this
+rather than <span class="math inline">\(k=n\)</span> is computational
+ease. LOOCV required fitting the statistical learning method n times,
+which could be computational expensive especially for algorithms with
+computational intensive procedures, and with extremely large number of
+observations. IN contrast, performing 10-fold CV requires fitting the
+learning procedure only ten times, which may be much more
+feasible.<br />
+* moreover, although there is some variability in the CV estimates due
+to how observations are divided into ten folds, this variability is
+typically much lower than the variability in the test error estimates
+from the validation set approach.</p>
+<p>There are two scenarios in statistical learning process:<br />
+* to determine how well a given statistical learning procedure can be
+expected on independent data * here, the actual estimate of the test MSE
+is of interest * where the minimum point of the estimated test MSE
+occurs? * here, the location of the minimum point in the estimated test
+MSE curve is important, but the actual value of the estimated test MSE
+is not.</p>
+</div>
+<div id="bias-variance-trade-off-for-k-fold-cross-validation" class="section level5">
+<h5>bias-variance trade-off for k-fold cross-validation</h5>
+<p>In addition to advantage on computation, k-fold CV has another less
+obvious but potentially more important advantage over LOOCV. That is,
+k-fold CV often gives more accurate estimates of the test error rate
+than does LOOCV. This has to do with a <strong>bias-variance
+trade-off</strong>.</p>
+<p>Bias:<br />
+* the validation set approach tends to <strong>overestimate</strong> the
+test error rate since the training set used to fit the statistical
+learning model contains only <strong>half</strong> of the observations.
+* LOOCV, in contrast, will give approximately unbiased estimates of test
+error, since each training set contains <span class="math inline">\(n-1\)</span> observations, which is almost as many
+as the number of the entire data set; * Performing k-fold CV (k&lt;n)
+will lead to intermediate bias since each training set contains
+approximately <span class="math inline">\((k-1)k/n\)</span>
+observations-fewer than in the LOOCV approach.</p>
+<p>Therefore, from the perspective of <strong>bias</strong> reduction,
+LOOCV is to be preferred to k-fold CV. However, bias is not the only
+source of concern in an estimating procedure; we must consider the
+procedure’s variance. From variance perspective, LOOCV has higher
+variance than k-fold CV (k&lt;n). Why?</p>
+<p>Variance:<br />
+* the training sets in a LOOCV procedure are almost identical to each
+other and thus are correlated.<br />
+* In contrast, k-fold CV has less similar training sets and smaller
+overlap between training sets.<br />
+* In statistics, the mean of highly correlated quantities has higher
+variance than does the mean of quantities that are not highly
+correlated. This can be explained by the fact that when variables are
+highly correlated, they tend to move together in a similar direction.
+the individual deviations from the mean tend to align and reinforce each
+other. This results in a larger overall spread of the values around the
+mean, and therefore a higher variance. On the other hand, if the
+quantities are not highly correlated, their movements are more
+independent of each other. The deviations from their means are likely to
+cancel each other out to some extent when you take the mean of the
+quantities.</p>
+<p>To summarize, there is a bias-variance trade-off associated with the
+choice of k in the k-fold cross-validation. k=5 or k=10 has shown
+empirically to suffer neither from excessively high bias nor from very
+high variance.</p>
+</div>
+<div id="cross-validation-on-classification-problems" class="section level5">
+<h5>cross-validation on classification problems</h5>
+<p>cross-validation is a very general technique that can be applied to
+not only regression problems, but also classification problems. In
+classification settings, instead of using MSE, we use the number of
+mis-classified observations. LOOCV error rate for example takes the
+form: <span class="math display">\[
+CV_{(n)}=\frac{1}{n}\sum_{i=1}^{n}Err_i
+\]</span> where <span class="math inline">\(Err_i=I(y_i \ne
+\hat{y}_i)\)</span>. K-fold CV error rate and validation error rate are
+defined analogously.</p>
+</div>
+</div>
+</div>
+<div id="bootstrap" class="section level3">
+<h3>bootstrap</h3>
+<p>bootstrap is extremely powerful statistical tool that can be used to
+quantify the <strong>uncertainty</strong> associated with a given
+<strong>estimator</strong> or statistical learning method.<br />
+* bootstrap can be used to estimate the <strong>standard errors</strong>
+of the <strong>coefficients</strong> from a linear regression fit. *
+bootstrap is powerful as it applied to a wide range of statistical
+learning methods for which a measure of variability is otherwise
+difficult to obtain and is not automatically output by statistical
+software.</p>
+<p>[<a href="example:\" class="uri">example:\\</a>](<a href="example:)%7B.uri%7D" class="uri">example:\</a> suppose we wish to
+invest into two financial assets that yield returns of X and Y,
+respectively, where X and Y are random quantities. We will invest a
+fraction <span class="math inline">\(\alpha\)</span> of our money in X,
+and will invest the remaining <span class="math inline">\(1-\alpha\)</span> in Y. Since there is variability
+associated with the returns on these two assets, we wish to choose <span class="math inline">\(\alpha\)</span> to minimize the total risk, or
+variance, of our investment. That is, we want to minimize <span class="math inline">\(Var(\alpha X+(1-\alpha)Y)\)</span> .It can be
+shown that the value that minimize the risk is given by <span class="math display">\[
+\alpha=\frac{\alpha^2_Y-\alpha_{XY}}{\alpha^2_X+\alpha^2_Y-2\alpha_{XY}}
+\]</span> where <span class="math inline">\(\alpha^2_X=Var(X),
+\alpha^2_Y=Var(Y), \alpha_{XY}=Cov(X,Y)\)</span>.</p>
+<p>in reality, the quantities <span class="math inline">\(\alpha^2_X,
+\alpha^2_Y, \alpha_{XY}\)</span> are unknown. We can compute estimates
+for these quantities, <span class="math inline">\(\hat{\alpha^2}_X,\hat{\alpha^2}_Y,
+\hat{\alpha}_{XY}\)</span>, using a data set that contains measurements
+for X and Y. we can then estimate the value <span class="math inline">\(\alpha\)</span> using <span class="math display">\[
+\hat{\alpha}=\frac{\hat{\alpha^2}_Y-\hat{\alpha}_{XY}}{\hat{\alpha^2}_X+\hat{\alpha^2}_Y-2\hat{\alpha}_{XY}}
+\]</span></p>
+<p>we simulate 100 pairs of returns for the investments X and Y, and
+then use these returns to estimate <span class="math inline">\(\alpha^2_X, \alpha^2_Y, \alpha_{XY}\)</span>.,
+which we then substitute into the estimator equation to obtain estimates
+for <span class="math inline">\(\alpha\)</span>.</p>
+<p>It’s natural to wish to quantify the accuracy of our estimate of
+<span class="math inline">\(\alpha\)</span>. To estimate the standard
+deviation of <span class="math inline">\(\hat{\alpha}\)</span>, we
+repeat the process of simulation 100 paired observations of X and Y, and
+estimating <span class="math inline">\(\alpha\)</span>, 1000 times. we
+then obtain 1000 estimates for <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\hat{\alpha_1}, \hat{\alpha_2}, \dots,
+\hat{\alpha_{1000}}\)</span>: we then calculate the mean and standard
+deviation of the estimates <span class="math display">\[
+\begin{aligned}
+\bar{\alpha}=\frac{1}{1000}\sum_{i=1}^{1000}\hat{\alpha_i} \\
+\rm
+SE_{\hat{\alpha}}=\sqrt{\frac{1}{1000-1}\sum_{i=1}^{1000}(\hat{\alpha}_i-\bar{\alpha})^2}
+\end{aligned}
+\]</span></p>
+<p>this gives us a very good idea of the accuracy of <span class="math inline">\(\hat{\alpha}\)</span> by SE. we would expect <span class="math inline">\(\hat{\alpha}\)</span> to differ from <span class="math inline">\(\hat{\alpha}\)</span> by approximately SE, on
+average.</p>
+<p>In practice, however, the procedure estimating <span class="math inline">\(\rm SE(\hat{\alpha})\)</span> above cannot be
+applied, because we cannot generate new samples from the original
+population. this is where bootstrap comes into play. bootstrap allows us
+to use a computer to emulate the process of obtaining new sample sets,
+so that we can estimate the variability of <span class="math inline">\(\hat{\alpha}\)</span> without generating
+additional samples. Here, instead of drawing independent samples/data
+sets repeatedly from the population, we obtain distinct data sets
+repeatedly sampling observations from the original data set.</p>
+<p>bootstrap can be used to estimated <span class="math inline">\(\rm
+SE\)</span>s of the regression coefficients, so how does it compare to
+the estimates obtained using <code>summary()</code> function or the
+standard formula (RSS)? In fact, bootstrap provides a more accurate
+estimate of the standard errors of the regression coefficients since it
+does not rely on assumptions of correct model specification or
+independence of observations.</p>
+</div>
+</div>
+<div id="chap-6.-linear-model-selection-and-regularization" class="section level2">
+<h2>chap 6. linear model selection and regularization</h2>
+<p>linear model has distinct advantages in terms of inference, and on
+real-world problems, is often surprisingly competitive as compared to
+non-linear methods.</p>
+<p>In practice, assumptions for linear model are often violated. here we
+learn ways in which the simple linear model can be improved, by
+replacing least squared fitting with alternative fitting procedures.</p>
+<p>Why do we want to use another fitting procedure instead of least
+squares?<br />
+alternative fitting procedures can yield better:<br />
+* prediction accuracy * model interpretability</p>
+<ul>
+<li><p>prediction accuracy: given that the true relationship is
+approximately linear, the least squares estimate will have low bias.
+When <span class="math inline">\(n \gg p\)</span>, then least squares
+estimates also have low variance. However, if the number of observations
+is not far more bigger than the number of predictors, then the least
+squares estimates can have a lot of variability. When <span class="math inline">\(n \le p\)</span>, then there is no longer a unique
+least squares estimate, and the method cannot be used at all.</p></li>
+<li><p>model interpretability: irrelevant variables lead to unnecessary
+complexity in resulting model, removing these variables-by setting the
+corresponding coefficient estimates to 0-we obtain a model that is more
+easily interpretable.</p></li>
+</ul>
+<p>there are many alternatives to using least squares to fit <span class="math display">\[
+Y = \beta_0+\beta_1X_1+\dots+\beta_pX_p+\epsilon
+\]</span></p>
+<ul>
+<li><p><code>subset selection</code>: this approach involves identifying
+a subset of predictors that are believed to be related to the response.
+we then fit the model using least squares on the reduced set of
+predictors</p></li>
+<li><p><code>shrinkage</code>: this approach involves fitting a model
+using all predictors. However, the estimated coefficients are shrunken
+towards 0 relative to the least squares estimates. this shrinkage (aka
+<code>regularization</code>) has the effect of reducing variance.
+depending on what type of shrinkage is performed, some of the
+coefficients may be estimated to be exactly 0. therefore, shrinkage
+methods can also perform <code>variable selection</code>.</p></li>
+<li><p>dimension reduction: this approach involves projecting p
+predictors into an M-dimension subspace, where <span class="math inline">\(M \le p\)</span>. this can be achieved by
+computing M different linear combinations, or projections, of the p
+variables. then these M projections are used as predictors to fit the
+linear regression model by least squares.</p></li>
+</ul>
+<div id="subset-selection" class="section level3">
+<h3>subset selection</h3>
+<p>best subset + stepwise model selection procedures</p>
+<div id="best-subset-selection" class="section level4">
+<h4>best subset selection</h4>
+<p>to perform best subset selection, we fit a separate least squares
+regression for each possible combination of the predictors. that is, we
+fit p models that contain one predictor, <span class="math inline">\(\binom{n}{k}=p(p-1)/2\)</span> models that contain
+exactly 2 predictors, and so forth. we then look at all of the resulting
+models to identify the best predictors.</p>
+<p>algorithms is described below:</p>
+<ul>
+<li>let <span class="math inline">\(M_o\)</span> denote the null model,
+with no predictors. this model simply predicts the sample mean for each
+observation.</li>
+<li>for <span class="math inline">\(k \in 1,2,\dots,p\)</span>:
+<ul>
+<li>fit all <span class="math inline">\(\binom{p}{k}\)</span> models
+that contain exactly k predictors</li>
+<li>pick the best among the <span class="math inline">\(\binom{p}{k}\)</span> models,a nd call it <span class="math inline">\(M_k\)</span>. best is defined as having the
+smallest residual sum of squares (RSS), or equivalently largest <span class="math inline">\(R^2\)</span>-<strong>training error</strong>.</li>
+</ul></li>
+<li>select a single best model from among <span class="math inline">\(M_0, \dots, M_p\)</span> using
+<code>cross-validated</code> <strong>test error</strong>, <span class="math inline">\(C_p(AIC), BIC,\)</span> or adjusted <span class="math inline">\(R^2\)</span>.</li>
+</ul>
+<p>in the case of logistic regression, instead of ordering models by RSS
+in step 2, we use <strong>deviance</strong>, a measure that plays the
+role of RSS for a broader class of models. The deviance is negative 2
+times the maximized log-likelihood; the smaller the deviance, the better
+the fit.</p>
+<p>disadvantage of best subset selection:<br />
+* computational limitation: number of possible models (<span class="math inline">\(2^p\)</span>) grows rapidly as p increase. if
+<span class="math inline">\(p=10\)</span>, there are approximately 1000
+possible models to be considered; if <span class="math inline">\(p=20\)</span>, then there are over one million
+possibilities.</p>
+<p>solution to computational challenge: step-wise selection. for
+computational reasons, best subset selection cannot be applied with very
+large p.</p>
+<div id="forward-stepwise-selection" class="section level5">
+<h5>forward stepwise selection</h5>
+<p>forward stepwise selection is an alternative to best subset selection
+as it considers a much smaller set of models. forward stepwise selection
+starts with no predictors, and then adds predictors to the model, one at
+a time, until all of the predictors are in the model. In particular, at
+each step the variable that gives the greatest additional improvement to
+the fit is added to the model.</p>
+<p>best subset selection fits <span class="math inline">\(2^p\)</span>
+models, while forward stepwise selection fits only <span class="math inline">\(1+p(1+p)/2\)</span> models. when <span class="math inline">\(p=20\)</span>, best subset selection requires
+fitting 1,048,576 models, whereas forward stepwise selection requires
+fitting only 211 models, which is a substantial difference!</p>
+<ul>
+<li>disadvantage of forward stepwise selection: it is not guaranteed to
+find the best set of predictors</li>
+</ul>
+</div>
+<div id="backward-stepwise-selection" class="section level5">
+<h5>backward stepwise selection</h5>
+<p>backward stepwise selection begins with the full least squares model
+containing all predictors, and then iteratively removes the lest useful
+predictor, one at a time.</p>
+</div>
+<div id="hybrid-approaches" class="section level5">
+<h5>hybrid approaches</h5>
+<p>forward + backward stepwise selection: after adding each new
+variable, the method may also remove any variables that no longer
+provide an improvement to the model fit. such approach attempts to
+closely mimic best subset selection while maintaining the computational
+advantages of forward and backward stepwise selection.</p>
+</div>
+</div>
+<div id="choosing-the-optimal-model" class="section level4">
+<h4>choosing the optimal model</h4>
+<p>to use above methods to select the best model, we need a way to
+determine which of these models is best.</p>
+<p>note from chapter 2, training error is a poor estimate of test error.
+therefore training RSS and <span class="math inline">\(R^2\)</span> are
+not suitable for selecting the best model among a collection of models
+with different numbers of predictors since they are related to training
+error.</p>
+<p>to select the best model with respect to test error, we need to
+estimate test error. there are two common approaches:</p>
+<ul>
+<li>indirectly estimate test error by adjusting to the training error to
+account for the bias due to over-fitting.
+<ul>
+<li><span class="math inline">\(C_p\)</span></li>
+<li>AIC</li>
+<li>BIC</li>
+<li>adjusted <span class="math inline">\(R^2\)</span></li>
+</ul></li>
+<li>directly estimate the test error, using either a validation set
+approach or a cross-validation approach.
+<ul>
+<li>problem with using validation set approach and cross-validation
+approach is that by changing the validation set or using another k-fold
+split, the precise best model will change.</li>
+<li>solution: select the model using the <code>one-standard-error</code>
+rule. we first calculate the standard error of the estimated test MSE
+(RSS/n) for each model size, and then select the smallest model for
+which the estimated test error is within one standard error of the
+lowest point on the curve.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="shrinkage-methods" class="section level3">
+<h3>shrinkage methods</h3>
+<p>subset selection methods involve selecting a subset of predictors and
+then using least squares to fit a linear model that contains a subset of
+predictors. An alternative to it is fitting a model
+<code>containing</code> all p predictors using a technique that
+constrain or <code>regularizes</code> the coefficient estimates, or
+equivalently, that <code>shrinks</code> the coefficient estimates
+towards 0.</p>
+<p>The two best-known techniques for shrinking the regression
+coefficients towards 0 are <strong>ridge regression</strong> and
+<strong>lasso</strong>.</p>
+<div id="ridge-regression" class="section level4">
+<h4>ridge regression</h4>
+<p>recall that the least squares fitting procedure estimates <span class="math inline">\(\beta_0, \beta_1, \dots, \beta_p\)</span> to
+minimize <span class="math display">\[
+\rm RSS= \sum_{i=1}^{n}(y_i-\beta_0-\sum_{j=1}^{p}\beta_jx_{ij})^2
+\]</span></p>
+<p>ridge regression is similar to least squares, except that the
+coefficients are estimated to minimize a slightly different quantity
+<span class="math display">\[
+\sum_{i=1}^{n}(y_i-\beta_0-\sum_{j=1}^{p}\beta_jx_{ij})^2+\lambda\sum_{j=1}^{p}\beta^2_j=\rm
+RSS + \lambda\sum_{j=1}^{p}\beta^2_j
+\]</span> where <span class="math inline">\(\lambda \ge 0\)</span> is a
+tuning parameter, to be determined separately. this equation trades off
+two different criteria:<br />
+- as with least squares, ridge regression seeks to minimize RSS - the
+second term, called <strong>shrinkage penalty</strong>, is small when
+<span class="math inline">\(\beta_1, \dots, \beta_p\)</span> are close
+to 0. the tuning parameter <span class="math inline">\(\lambda\)</span>
+serves to control the relative impact of these two terms on the
+regression coefficient estimates.</p>
+<p>as <span class="math inline">\(\lambda \rightarrow \infty\)</span>,
+the impact of the shrinkage penalty grows; when <span class="math inline">\(\lambda =0\)</span>, ridge regression produces
+least squares estimates. For each <span class="math inline">\(\lambda\)</span>, ridge regression produces a
+different set of coefficient estimates. so selecting a good value for
+<span class="math inline">\(\lambda\)</span> is critical.</p>
+<p>when ridge regression has coefficient estimates shrinkun to 0, this
+correspond to the null model.</p>
+<p>term: <span class="math inline">\(||\hat{\beta}_\lambda^R||_2/||\hat{\beta}||_2 \in
+[0,1]\)</span>. here the notation <span class="math inline">\(\hat{\beta}\)</span> denotes the vector of least
+squares coefficient estimates; <span class="math inline">\(||\hat{\beta}||_2\)</span> denotes the <span class="math inline">\(\ell_2\)</span> norm of a vector, and is defined
+as <span class="math inline">\(||\beta||_2=\sqrt{\sum_{j=1}^{p}\beta_j^2}\)</span>,
+which measures the distance of <span class="math inline">\(\beta\)</span> from <span class="math inline">\((0,0,\dots, 0)_{p-1}\)</span>.</p>
+<p>as <span class="math inline">\(\lambda\)</span> increases, the <span class="math inline">\(\ell_2\)</span> norm of <span class="math inline">\(\hat{\beta}_\lambda^R\)</span> will always
+decrease, and so will <span class="math inline">\(||\hat{\beta}_\lambda^R||_2/||\hat{\beta}||_2\)</span>.
+when <span class="math inline">\(\lambda=0\)</span> when ridge
+regression penalty term equals RSS, the quantity equals 1; when <span class="math inline">\(\lambda \rightarrow \infty\)</span> and therefore
+the ridge regression coefficient estimate is a vector of 0s and <span class="math inline">\(\ell_2\)</span> norm equal to 0, the quantity
+equal to 0. A very small value of this quantity indicates that the ridge
+regression coefficient estimates have been shrunken towards 0.</p>
+<p><strong>attention</strong>: ridge regression is sensitive to the
+scaling of predictors. In fact, the value of <span class="math inline">\(X_j\beta_{j,\lambda}^R\)</span> will depend not
+only on the value of <span class="math inline">\(\lambda\)</span>, but
+also on the scaling of the <span class="math inline">\(j\)</span>th
+predictor. therefore, it’s best to apply ridge regression after
+standardizing the predictors so that all standardized predictors all
+have a standard deviation of 1.</p>
+<p>why does ridge regression improve over least squares?</p>
+<ul>
+<li>ridge regression’s advantage over least squares is rooted in the
+bias-variance trade-off.
+<ul>
+<li>as <span class="math inline">\(\lambda\)</span> increases, the
+flexibility of the ridge regression fit decreases, leading to decreased
+variance but increased bias.</li>
+<li>in general, when the relationship between the response and
+predictors is close to linear, the least squares estimates will have low
+bias but may have high variance, which means s small change in the
+training data can cause a large change in the least squares coefficient
+estimates. Particularly, when <span class="math inline">\(p \rightarrow
+n\)</span>, the least squares estimates will be extremely variable; if
+<span class="math inline">\(p &gt; n\)</span>, then the least squares
+estimates do not even have a unique solution, whereas ridge regression
+can still perform well by trading off a small increase in bias for large
+decrease in variance.</li>
+<li>therefore, ridge regression works best when the least squares
+estimates have high variance.</li>
+<li>ridge regression had computational advantages over best subset
+selection, which requires search for <span class="math inline">\(2^p\)</span> models. in contrast, for a given
+<span class="math inline">\(\lambda\)</span>, ridge regression fits only
+one model and it can be done very quickly.</li>
+</ul></li>
+</ul>
+<p>disadvantages of ridge regression:</p>
+<ul>
+<li>unlike best subset, forward stepwise and backward stepwise selection
+which generally select models that contain a subset of predictors, ridge
+regression will include all predictors in the final model
+<ul>
+<li>the <span class="math inline">\(\lambda\sum_{j=1}^{p}\beta_j^2\)</span> will
+shrink all coefficient towards 0, but it will not set any of them
+exactly to 0 (unless <span class="math inline">\(\lambda =
+\infty\)</span>).</li>
+<li>it may not be a problem for prediction accuracy, but it causes
+problems to interpretation especially when p is large.</li>
+</ul></li>
+</ul>
+</div>
+<div id="lasso" class="section level4">
+<h4>lasso</h4>
+<p>lasso is a recent alternative to ridge regression that gets rid of
+noise variables: <span class="math display">\[
+\sum_{i=1}^{n}(y_i-\beta_0-\sum_{j=1}^{p}\beta_jx_{ij})^2+\lambda\sum_{j=1}^{p}|\beta_j|=\rm
+RSS + \lambda\sum_{j=1}^{p}|\beta_j|
+\]</span> comparing lasso to ridge regression, lasso has a similar
+formulation. the only difference is that we replace <span class="math inline">\(\beta_j^2\)</span> in the ridge regression penalty
+with <span class="math inline">\(|\beta_j|\)</span> in the lasso. in
+statistical parlance, lasso uses <span class="math inline">\(\ell_1\)</span> penalty instead of <span class="math inline">\(\ell_2\)</span> penalty. the <span class="math inline">\(\ell_1\)</span> norm of a coefficient vector <span class="math inline">\(\beta\)</span> is defined by <span class="math inline">\(||\beta||=\sum_{j=1}^{p}|\beta_j|\)</span>.</p>
+<p>like ridge regression, lasso shrinks the coefficient estimates
+towards 0. however, the <span class="math inline">\(\ell_1\)</span>
+penalty will force some of the coefficient estimates to be exactly 0
+when the tuning parameter <span class="math inline">\(\lambda\)</span>
+is sufficiently large. Hence, much like best subset selection, the lasso
+performs <strong>variable selection</strong>. consequently, models
+generated from lasso are generally easier to interpret than those
+produced by ridge regression.</p>
+<p>we say lasso yields <strong>sparse</strong> models-that is, models
+that contain only a subset of predictors.</p>
+<ul>
+<li>when <span class="math inline">\(\lambda=0\)</span>, lass0 simply
+gives the least squares estimates</li>
+<li>when <span class="math inline">\(\lambda \rightarrow
+\infty\)</span>, lasso give the <em>null</em> model where every
+coefficient estimates are 0</li>
+<li>in between two extremes, lasso is quite different from ridge
+regression, depending on the value of <span class="math inline">\(\lambda\)</span>, lasso can produce a model
+involving any number of variables.</li>
+</ul>
+<p>re-formularize ridge regression and lasso <span class="math display">\[
+\rm
+\]</span></p>
+<p>we can think of above equation as follows: when we perform lasso we
+are trying to find the set of coefficient estimates that lead to the
+smallest RSS, subject to the constraint that there is a budget of <span class="math inline">\(s\)</span> for how large <span class="math inline">\(\sum_{j=1}^{p}|\beta_j|\)</span> can be.</p>
+<ul>
+<li>when <span class="math inline">\(s\)</span> is extremely large, then
+this budget is not very restrictive, and the coefficient estimates can
+be large. in fact, if s is large enough that the least squares falls
+within the budget, then it will simply yield the least squares
+solution</li>
+<li>if s is small, then the penalty must be small to avoid violating the
+budget.</li>
+</ul>
+<div id="lasso-vs.-ridge-regression" class="section level5">
+<h5>lasso vs. ridge regression</h5>
+<ul>
+<li>it is clear that lasso leads to simpler and more interpretable
+models than ridge regression.</li>
+<li>as <span class="math inline">\(\lambda\)</span> increases, there is
+a drop in variance in return of an increase in bias.</li>
+<li>but which one produces more accurate models or better prediction
+accuracy?
+<ul>
+<li>overall, neither ridge regression nor lasso will universally
+dominate the other.</li>
+<li>lasso will perform better in a setting where a relatively small
+number of predictors have substantial coefficients, and the remaining
+predictors have coefficients that are very small or 0.</li>
+<li>ridge regression will perform better when the response is a function
+of many predictors, all with coefficients of roughly equal size.</li>
+</ul></li>
+</ul>
+</div>
+<div id="selecting-the-tuning-parameter" class="section level5">
+<h5>selecting the tuning parameter</h5>
+<p>implementing ridge regression and lasso requires a method for
+selecting a value for the tuning parameter <span class="math inline">\(\lambda\)</span>, or equivalently, the value of
+the constraint <strong>s</strong>.</p>
+<p>cross-validation provides a simple way to tackle this problem. we
+choose a grid of <span class="math inline">\(\lambda\)</span> values,
+and compute the cross-validation error for each value of <span class="math inline">\(\lambda\)</span>. we then select the tuning
+parameter value doe which the cross-validation error is smallest.
+finally, the model is re-fit using all observations and the selected
+value of the tuning parameter.</p>
+</div>
+</div>
+</div>
+<div id="dimension-reduction-methods" class="section level3">
+<h3>dimension reduction methods</h3>
+<p>subset selection and shrinkage method have controlled variance by
+using a subset of the original variables and shrinking their
+coefficients towards 0. all of these methods are defined using the
+original predictors. next we explore a class of approaches that
+transform the predictors and then fit a least squares model using the
+transformed variables.</p>
+<p>let <span class="math inline">\(Z_1, Z_2, \dots, Z_M\)</span> denote
+<span class="math inline">\(M &lt; P\)</span> linear combinations of our
+original p predictors. that is <span class="math display">\[
+Z_m=\sum_{j=1}^{p}\phi_{jm}X_j
+\]</span> for some constraint <span class="math inline">\(\phi_{1m},
+\phi_{2m}, \dots, \phi_{pm}, m=1,\dots,\rm M\)</span>. we can then fit
+the linear regression model <span class="math display">\[
+y_i=\theta_0+\sum_{m=1}^{M}\theta_mz_{im}+\epsilon_i, i=1,\dots,n
+\]</span> using least squares.</p>
+<p>we can derive <span class="math display">\[
+\beta_j=\sum_{m=1}^{M}\theta_m\phi_{jm}
+\]</span> here <span class="math inline">\(\phi_{jm}\)</span> are the
+principal component loadings, which defined the direction.</p>
+<p>in situations where p is large relative to n, selecting a value of
+<span class="math inline">\(M \ll p\)</span> can significantly reduce
+the variance of the fitted coefficients; if <span class="math inline">\(M=p\)</span>, then no dimension reduction
+occurs.</p>
+<p>all dimension reduction methods work in two steps:</p>
+<ul>
+<li>first, the transformed predictors are obtained.</li>
+<li>second, the model is fit using these M transformed predictors.</li>
+</ul>
+<p>however, we can choose different ways to transform the original
+predictors.</p>
+<div id="principal-components-regression" class="section level4">
+<h4>principal components regression</h4>
+<p>The first principal component <span class="math inline">\(Z_1\)</span> direction of the data is that along
+which the observations vary the most. that is, if we project the
+observations onto this line, then then resulting projected observations
+would have the largest possible variance.</p>
+<p>the second principal component <span class="math inline">\(Z_2\)</span> is a linear combination of the
+variable that is uncorrelated with <span class="math inline">\(Z_1\)</span>, and has largest variance subject to
+this constraint. it turns out that zero correlation condition of two
+directions is equivalent to the condition that the direction must be
+perpendicular, or orthogonal, to the first principal component
+direction.</p>
+<p>advantages of PCR:</p>
+<ul>
+<li>PCR tends to do well in cases when the first few principal
+components are sufficient to capture most of the variation in the
+predictor as well as the relationship with the response.
+<ul>
+<li>when many principal components are required to adequately model the
+response, PCR performs worse.</li>
+<li>overall, <strong>PCR</strong> offers a significant improvement over
+<strong>least squares</strong></li>
+<li><strong>PCR</strong> and <strong>ridge regression</strong> slightly
+outperform <strong>lasso</strong>.</li>
+<li>PCR is not performing variable selection, since each principal
+component used in PCR is a linear combination of all the
+predictors.</li>
+<li>PCR and ridge regression are closely related.</li>
+</ul></li>
+</ul>
+<p>disadvantage</p>
+<ul>
+<li>PCR suffers from a drawback: there is no guarantee that the
+directions that best explain the predictors will also be the best
+directions to use for predicting the response.</li>
+</ul>
+</div>
+<div id="partial-least-squares" class="section level4">
+<h4>partial least squares</h4>
+<p>PCR involves identifying linear combinations, or directions, that
+best capture the variance. these directions are identified in an
+<strong>unsupervised</strong> way, since the response Y is not used to
+help determine the principal component directions.</p>
+<p>partial least squares(PLS) is an supervised alternative to PCR.
+likewise, PLS is a dimension reduction method, whcih first identifies a
+new set of features <span class="math inline">\(Z_1, \dots, Z_M\)</span>
+that are linear combinations of the original features, and then fits a
+linear model via least squares using these M new features. But unlike
+PCR, PLS identifies these new features in a supervised way with the
+response involved so tha the M new features are not only approximate the
+original features well, but also are related to the response. Overall,
+PLS attempts to find directions that help explain both the response and
+the predictors.</p>
+<p>implementation of PLS:</p>
+<ul>
+<li><p>after standardizing all predictors, PLS computes the first
+direction <span class="math inline">\(Z_1\)</span> by setting each <span class="math inline">\(\phi_{j1}\)</span> equal to the coefficient
+fromthe simple linear regression of Y onto <span class="math inline">\(X_j\)</span>. Hence, in computing <span class="math inline">\(Z_1=\sum_{j=1}^{p}\phi_{j1}X_J\)</span>, PLS
+places the highest weight on the variables that are most strongly
+related to the response.</p></li>
+<li><p>to identify the second PLS direction,</p>
+<ul>
+<li>we first adjust each of the variable for <span class="math inline">\(Z_1\)</span>, by regressing each variable on <span class="math inline">\(Z_1\)</span> and taking residuals. these residuals
+can be interpreted as the remaining information that has not been
+explained by the first PLS direction.</li>
+<li>we then compute <span class="math inline">\(Z_2\)</span> using this
+orthogonalized data in exactly the same fashion as <span class="math inline">\(Z_1\)</span> was computed based on the original
+data.</li>
+<li>this iterative approach can be repeated M times to identify multiple
+PLS components</li>
+<li>finally, we use least squares to fit a linear model to predict Y
+using all PLS components.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="high-dimension-considerations" class="section level3">
+<h3>high-dimension considerations</h3>
+<p>terminology: data sets containing more features than observations are
+often referred to as <strong>high-dimensional</strong>. classical
+approaches such as least squares linear regression are not appropriate
+in this setting.</p>
+<div id="what-goes-wrong-in-high-dimensions" class="section level4">
+<h4>what goes wrong in high dimensions?</h4>
+<p>for classical statistical methods, least squares for example, that
+are not intended for high-dimensional setting, when the number of
+features is as large as, or larger than, the number of observations
+<span class="math inline">\(p&gt;n, \rm or, p \approx n\)</span>, least
+squares cannot be performed. the reason is that:</p>
+<ul>
+<li>regardless of whether or not there truly is a relationship between
+the features and the response, least squares will yield a set of
+coefficient estimates that result in a perfect fit to the data, such
+that the residuals are 0.
+<ul>
+<li>this is problematic because this perfect fit will almost certainly
+lead to over-fitting.</li>
+<li>that is although it’s possible to perfectly fit the training data in
+high-dimensional setting, the resulting linear model will perform
+extremely poor on an independent test set, and therefore does not
+constitute a useful model.</li>
+<li>thus a simple least squares regression line is too flexible and
+hence overfits the data.</li>
+<li><span class="math inline">\(R^2, C_p\)</span>, AIC, BIC are all not
+applicable in high-dimensional setting</li>
+</ul></li>
+</ul>
+</div>
+<div id="regression-in-high-dimensions" class="section level4">
+<h4>regression in high-dimensions</h4>
+<p>many of the methods introduced so far, such as forward stepwise
+selection, ridge regression, lasso, and principal components regression,
+are particularly useful for performing regression in the
+high-dimensional setting.</p>
+<p>essentially, these methods avoid overfitting bu using a less flexible
+fitting approach than least squares.</p>
+<ul>
+<li><p>regularization or shrinkage plays a key role in high-dimensional
+problems.</p></li>
+<li><p>appropriate tuning parameter selectionis crucial for good
+predictive performance.</p></li>
+<li><p>test error tends to increase as the dimensionality of the problem
+increases, unless the additional features are truly associated with the
+response.</p>
+<p><strong>curse of dimensionality</strong>: one would expect a better
+performance from a model fitted with more features; however, that is not
+the case.<br />
+</p></li>
+<li><p>adding additional signal features that are truly associated with
+the response will improve the fitted model, with reduced test set
+error.</p></li>
+<li><p>adding noise that are not truly associated with the response will
+lead to a deterioration in the fitted model, and consequently an
+increase test set error. this is because noise features increase the
+dimensionality, exacerbating the risk of over-fitting.</p></li>
+</ul>
+</div>
+<div id="interpreting-results-in-high-dimensions" class="section level4">
+<h4>interpreting results in high dimensions</h4>
+<p>in high-dimensional settings, the multi-collinearity problem is
+extreme: any variables in the model can be written as a linear
+combination of all of the other variables.</p>
+<p>essentially, this means that we can never know exactly which variable
+(if any) truly are predictive of the outcome. at most, we can hope to
+assign large regression coefficients to variables that are correlated
+with the variables that truly are predictive of the outcome.</p>
+<p>for example, suppose that we are trying to predict blood pressure on
+the basis of half a million SNPs, and that forward stepwise selection
+suggests that 17 of those SNPs lead to a good predictive model on the
+training data. it would be incorrect to conclude that these 17 SNPs
+predict pressure more effectively than the other SNPs not included in
+the model. there are likely to be many sets of 17 SNPs that would
+predict blood pressure just as well as the selected model. if we were to
+obtain another independent data set and perform the same statistical
+procedure, we would lilely to obtain a model containing a different, and
+perhaps even no n-overlapping, set of SNPs. However, this does not
+detract from the value of the first model obtained. the model may be
+very effective in predicting blood pressure on an independent set of
+patients, and might be clinically useful for physicians.</p>
+<ul>
+<li>we must be careful not to overstate the results obtained, and to
+make it clear that what we have identified is simply <strong>one of many
+possible models</strong> for predicting blood pressure, and that it must
+be further validated on independent data sets.</li>
+<li>it is also important to be particularly careful in reporting errors
+and measures of model fir in high-dimensional setting. we have seen that
+when <span class="math inline">\(p&gt;n\)</span>, it is easy to obtain a
+useless model that has 0 residuals. therefore one should
+<strong>never</strong> use sum of squared errors, p-values, <span class="math inline">\(R^2\)</span> statistics, or other traditional
+measures of model fit on the training data as evidence of a good model
+fit in the high-dimensional setting.
+<ul>
+<li>it is easy to obtain an <span class="math inline">\(R^2=1\)</span>
+when <span class="math inline">\(p&gt;n\)</span>.</li>
+<li>it is important to instead report results on an independent test
+set, or cross-validation errors. for instance, the MSE or <span class="math inline">\(R^2\)</span> on an independent test set is a valid
+measure of model fit, but MSE on the training set certainly is not.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="chap-7.-move-beyond-linearity" class="section level2">
+<h2>chap 7. move beyond linearity</h2>
+<p>linear models are relatively simple to describe and implement, and
+have advantages over other methods in terms of interpretation and
+inference.</p>
+<p>however, standard linear regression can have significant limitations
+in terms of predictive power:</p>
+<ul>
+<li>linearity assumption is almost always an approximation, and
+sometimes a poor one</li>
+</ul>
+<p>we can improve upon least squares using ridge regression, lasso,
+principal components regression, and other techniques. in this setting,
+improvement is obtained by reducing the complexity of the linear model,
+and hence the variance of the estimates. But we are still using a linear
+model.</p>
+<p>we can relax the linearity assumption while still attempting to
+maintain as much interpretability as possible, using such as
+<strong>polynomial regression</strong> and <strong>step
+functions</strong>, as well as more sophisticated approaches such as
+<strong>splines</strong>, <strong>local regression</strong>, and
+<strong>generalized additive models</strong>.</p>
+<ul>
+<li><p><strong>polynomial regression</strong> extends linear model by
+adding extra predictors, obtained by raising each of the original
+predictors to a power. for example, a <code>cubic</code> regression
+involves three variables, <span class="math inline">\(X, X^2,
+X^3\)</span> as predictors.</p></li>
+<li><p><strong>step functions</strong> cut the range of a variable into
+K distinct regions in order to produce a qualitative variable. this has
+the effect of fitting a piece-wise constant function.</p></li>
+<li><p><strong>regression splines</strong> are more flexible the
+polynomial and step functions, and are an extension of the two. they
+involve dividing the range of X into K distinct regions. within each
+region, a polynomial function is fit to the data. however, these
+polynomials are constrained so that they join smoothly at the region
+boundaries, or knots.</p></li>
+<li><p><strong>smoothing splines</strong> are similar to
+<strong>regression splines</strong>, but arise in a slightly different
+situation. something splines result from minimizing a residual sum of
+squares subject to a smoothness penalty.</p></li>
+<li><p><strong>local regression</strong> is similar to
+<strong>splines</strong>, but differs in an important way: the regions
+are allowed to overlap, and do so in a very smooth way.</p></li>
+<li><p><strong>generalized additive models</strong> allow us to extend
+the models above to deal with multiple predictors.</p></li>
+</ul>
+<div id="polynomial-regression" class="section level3">
+<h3>polynomial regression</h3>
+<p>using polynomial functions of the features as predictors in a linear
+model imposes a global structure on the non-linear function of X.</p>
+</div>
+<div id="step-functions" class="section level3">
+<h3>step functions</h3>
+<p>we can instead use step functions in order to avoid imposing such a
+global structure, by breaking the range of X into bins, and fitting a
+different constant in each bin. this equals to converting a continuous
+variable into an ordered categorical variable.</p>
+</div>
+<div id="basis-functions" class="section level3">
+<h3>basis functions</h3>
+<p>polynomial and piecewise-constant regression models are special cases
+of a basis function approach. the idea is to apply a family of functions
+or transformations to a variable X: <span class="math inline">\(b_{1}(X), b_2(X),\dots, b_K(X)\)</span>. instead
+of fitting a linear model in X, we fit the model <span class="math display">\[
+y_i=\beta_0+\beta_1b_1(x_i)+\beta_2b_2(x_i)+\dots+\beta_Kb_k(x_i)+\epsilon
+\]</span></p>
+<p>note that the basis function are fixed and known ahead of time.</p>
+<ul>
+<li>for polynomial regression, the basis function are <span class="math inline">\(b_j(x_i)=x_i^j\)</span></li>
+<li>for piecewise constant functions, they are <span class="math inline">\(b_j(x_i)=I(c_j\le x_i \le c_{j+1)})\)</span></li>
+</ul>
+<p>we think if the linear model as a standard linear model with
+predictors <span class="math inline">\(b_1(x_i), b_2(x_i), \dots,
+b_K(x_i)\)</span>. hence, we can use least squares to estimate the
+unknown regression coefficients. that means, all of the inference tools
+for linear models, such as standard error for the coefficient estimates
+and F-statistics for the model’s overall significance, are available in
+this setting.</p>
+<p>other alternatives for basis function include:</p>
+<ul>
+<li>use wavelets or Fourier series to construct basis functions</li>
+<li>commonly used: regression splines to construct basis functions</li>
+</ul>
+</div>
+<div id="regression-splines" class="section level3">
+<h3>regression splines</h3>
+<p>extension of polynomial regression and piecewise constant regression
+approaches</p>
+<div id="piecewise-polynomials" class="section level4">
+<h4>piecewise polynomials</h4>
+<p>instead of fitting a high-order polynomial over the entire range of
+X, piecewise polynomial regression fits separate low-degree polynomials
+over different regions of X. for example, a piecewise cubic polynomial
+works by fitting a cubic regression model <span class="math display">\[
+y_i=\beta_0+\beta_1x_1+\beta_2x_i^2+\beta_3x_i^3+\epsilon_i
+\]</span> where the coefficients differ in different parts of the range
+of X. the points where the coefficient change are called
+<strong>knots</strong>.</p>
+<p>for instance, a piecewise cubic with no knots is just a standard
+cubic polynomial, with <span class="math inline">\(d=3\)</span>; a
+piecewise cubic polynomial with a single knot at point c takes the form:
+<span class="math display">\[
+y_i=\begin{cases}
+y_i=\beta_{01}+\beta_{11}x_1+\beta_{21}x_i^2+\beta_{31}x_i^3+\epsilon_i,
+x_i&lt;c \\
+y_i=\beta_0+\beta_1x_1+\beta_2x_i^2+\beta_3x_i^3+\epsilon_i, x_i \ge c
+\end{cases}
+\]</span> put it in another way, we will fit two different polynomial
+functions to the data, one on the subset of the observations with <span class="math inline">\(x_i&lt;c\)</span>, and one on the subset of <span class="math inline">\(x_i \ge c\)</span>. note that two functions have
+different regression coefficients, and can be obtained using least
+squares. using more knots leads to more flexible piecewise polynomial.
+in general, for K knots, we will have <span class="math inline">\(K+1\)</span> different polynomial functions.</p>
+<p>problem: when plotting out two polynomial functions, we notice that
+the function is discontinuous.</p>
+<p>solution: add a constraint</p>
+</div>
+<div id="constraints-and-splines" class="section level4">
+<h4>constraints and splines</h4>
+<p>to remedy this problem, we can fit a piecewise polynomial function
+under the constraint that the fitted curve must be continuous. but still
+it looks unnatural. we could add another constraint: we not only want
+the polynomial function to be continuous at the knots, but also very
+smooth. that is, we want the first and second derivatives of the
+polynomials are continuous at the knots. this gives us a <strong>cubic
+spline</strong>. in general, a cubic spline with K knots uses a total of
+<span class="math inline">\(4+K\)</span> degree of freedom.</p>
+<p>the general definition of a degree-d spline is that it is a piecewise
+degree-d polynomial, with continuity in derivatives up to degree <span class="math inline">\(d-1\)</span> at each know.</p>
+</div>
+<div id="spline-basis-representation" class="section level4">
+<h4>spline basis representation</h4>
+<p>how can we fit a piecewise degree-d polynomial under the constraint
+that it be continuous?</p>
+<p>we can use the basis function model to represent a regression spline.
+A cubic spline with K knots can be modeled as <span class="math display">\[
+y_i=\beta_0+\beta_1b_1(x_1)+\beta_2b_2(x_i)+\dots+\beta_{K+3}b_{K+3}(x_i)+\epsilon_i
+\]</span> for an appropriate choice of basis functions <span class="math inline">\(b_1, b_2, \dots, b_{K+3}\)</span>. the
+coefficients then can be fit using least squares.</p>
+<p>to represent cubic splines, the most direct way is to start off with
+a basis for a cubic polynomial-namely, <span class="math inline">\(x,
+x^2, x^3\)</span>-and then add one truncated power basis function per
+knot. a truncated power basis function is defined as <span class="math display">\[
+h(x,\xi)=(x-\xi)^3_+=\begin{cases}(x-\xi)^3, x&gt;\xi\\
+0, \rm otherwise
+\end{cases}
+\]</span> where <span class="math inline">\(\xi\)</span> is the knot.
+adding a term of the form <span class="math inline">\(\beta_4h(x,\xi)\)</span> to the cubic regression
+model will lead to a discontinuity in only the third derivative at <span class="math inline">\(\xi\)</span>; the function will remain continuous,
+with the first and second derivatives, at each of the knots.</p>
+<p>in other words, to fit a cubic spline to a data set with K knots, we
+perform least squares regression with an intercept and <span class="math inline">\(3+K\)</span> predictors, of the form <span class="math inline">\(X, X^2, X^3, h(X, \xi_1), h(X, \xi_2), \dots, h(X,
+\xi_K))\)</span>. this amounts to estimating a total of <span class="math inline">\(K+4\)</span> regression coefficients; and fitting
+a cubic spline wit K knots uses <span class="math inline">\(K+4\)</span>
+degrees of freedom.</p>
+</div>
+<div id="choosing-the-number-and-locations-of-the-knots" class="section level4">
+<h4>choosing the number and locations of the knots</h4>
+<ul>
+<li>when we fit a spline, where should we place the knots?</li>
+</ul>
+<p>the splines is most flexible in regions that contain a lot of knots,
+because in those regions the polynomial coefficients can change rapidly.
+hence, we could place more knots in places where we feel the function
+might vary most rapidly, and place fewer knots where it seems more
+stable. but in practice, it is common to place knots in a uniform
+fashion. one way to do this is to specify the desired degrees of
+freedom, and then have the software automatically place the
+corresponding number of knots at uniform quantile of the data.</p>
+<ul>
+<li>how many knots should we use, or equivalently how many degree of
+freedom should our spline contain?</li>
+</ul>
+<p>one option is to try out different numbers of knots and see which
+produces the best looking curve. another more objective approach is to
+use cross-validation. we hold out a proportion of the data, use a spline
+with a certain number of knots to the remaining data, and then use the
+spline to make predictions for the held-out data. we repeat this process
+multiple times until each observation has been left out once., and then
+compute the overall cross-validated residual sum of squares (RSS). this
+procedure can be repeated for different numbers of knots K, then the
+value of K giving the smallest RSS is chosen.</p>
+</div>
+<div id="comparing-spline-to-polynomial-regression" class="section level4">
+<h4>comparing spline to polynomial regression</h4>
+<ul>
+<li>polynomial regression produces undesired results at the boundaries,
+while natural spline still provides a reasonable fit to the data.</li>
+<li>regression splines often give superior results compared with
+polynomial regression.
+<ul>
+<li>this is because instead of using high-order, e.g., <span class="math inline">\(X^{15}\)</span> to produce flexible fits, splines
+introduces flexibility by increasing the number of knots but keeping the
+degree fixed.</li>
+</ul></li>
+<li>generally, spline produces more stable estimates.</li>
+</ul>
+<p>in sum, to fit regression splines, we</p>
+<ul>
+<li>specify a set of knots</li>
+<li>produce a sequence of basis functions</li>
+<li>estimate spline coefficients using least squares</li>
+</ul>
+</div>
+</div>
+<div id="smoothing-splines" class="section level3">
+<h3>smoothing splines</h3>
+<p>in fitting a smooth curve to a set of data, what we really want is to
+find some function, <span class="math inline">\(g(x)\)</span>, that fits
+the observed data well, meaning we want <span class="math inline">\(RSS=\sum_{i=1}^{n}(y_i-g(x_i))^2\)</span> to be
+small.</p>
+<p>however, there is a problem with this approach: we can always achieve
+0 RSS simply by choosing g(X) such that it interpolates the values of
+<span class="math inline">\(y_i\)</span>. Such as g(x) will woefully
+overfit the data since it is too flexible. what we want is a function
+g(x) that makes RSS small but that is also smooth.</p>
+<p>how might we ensure that g(x) is smooth? A natural approach is to
+find the function g(x) that <strong>minimizes</strong> <span class="math display">\[
+\sum_{i=1}^{n}(y_i-g(x_i))^2+\lambda \int g&#39;&#39;(t)^2dt
+\]</span> where <span class="math inline">\(\lambda\)</span> is a
+non-negative tuning parameter. the function <span class="math inline">\(g(x)\)</span> that minimizes the above objective
+function is known as a <strong>smoothing spline</strong>.</p>
+<p>the objective function takes the form of ““Loss+Penalty” that applies
+to ridge regression and lasso as well.</p>
+<ul>
+<li>loss function: <span class="math inline">\(\sum_{i=1}^{n}(y_i-g(x_i))^2\)</span> encourages
+<span class="math inline">\(g(x)\)</span> to fit the data well</li>
+<li>penalty term: encourages <span class="math inline">\(g(x)\)</span>
+to be smooth; the larger the value of <span class="math inline">\(\lambda\)</span>, the smoother <span class="math inline">\(g(x)\)</span> will be.</li>
+</ul>
+<p>when <span class="math inline">\(\lambda=0\)</span>, the penalty term
+has no effect so the function g(x) will be very jumpy/variable; when
+<span class="math inline">\(\lambda \rightarrow \infty\)</span>, g will
+be perfectly smooth-it will be just a straight line that pass as closely
+as possible to the training data points. in this case, g will be the
+linear least squares line since the loss function amounts to minimizing
+the RSS. so <span class="math inline">\(\lambda\)</span> controls the
+bias-variance trade-off of the smoothing spline.</p>
+<p>g(x) that minimizes the smooth spline have some special properties:
+it is a piecewise cubic polynomial with knots at the unique values of
+<span class="math inline">\(x_1, x_2, \dots, x_n\)</span>, and
+continuous first and second derivatives at each knot; furthermore, it is
+linear in the region outside of the extreme knots.</p>
+<div id="choosing-the-smoothing-parameeter" class="section level4">
+<h4>choosing the smoothing parameeter</h4>
+<p>a smoothing spline is simply a natural cubic spline with knots at
+every unique value of <span class="math inline">\(x_i\)</span>.</p>
+<p>in fitting a smoothing spline, we aim at finding the value of <span class="math inline">\(\lambda\)</span> that makes the cross-validation
+RSS as small as possible.</p>
+</div>
+</div>
+<div id="local-regression" class="section level3">
+<h3>local regression</h3>
+<p>local regression is a different approach for fitting flexible
+non-linear functions, which involves computing the fit at a target point
+<span class="math inline">\(x_0\)</span> using the nearby training
+observations.</p>
+<p>algorithm:</p>
+<ul>
+<li><p>gather the fraction <span class="math inline">\(s=k/n\)</span> of
+training points whose $x_i$ are closest to <span class="math inline">\(x_0\)</span></p></li>
+<li><p>assign a weight <span class="math inline">\(K_{i0}=K(x_i,
+x_0)\)</span> to each point in this neighborhood, so that the point
+furthest from <span class="math inline">\(x_0\)</span> has weight 0, and
+the closest has the highest weight. all but these k nearest neighbors
+get weight 0.</p></li>
+<li><p>fit a weighted least squares regression of the <span class="math inline">\(y_i\)</span> on the <span class="math inline">\(x_i\)</span> using the aforementioned weights, by
+finding <span class="math inline">\(\hat{\beta}_0,
+\hat{\beta}_1\)</span> that minimize</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n}K_{i0}(y_i-\beta_0-\beta_1x_1)^2
+\]</span></p></li>
+<li><p>the fitted value at <span class="math inline">\(x_0\)</span> is
+given by <span class="math inline">\(\hat{f}(x_0)=\hat{\beta}0+\hat{\beta}1x_0\)</span></p></li>
+</ul>
+<p>in order to perform local regression, there are a number of choices
+to be made, such as how to define the weighting function K, and whether
+to fit a linear, constant, or quadratic regression in step 3. Above all
+choices, the most important choice is the <code>spans</code>, which is
+the proportion of points used to compute the local regression at <span class="math inline">\(x_0\)</span>, as defined in step 1. the span plays
+a role like that of the tuning parameter <span class="math inline">\(\lambda\)</span> in smoothing splines: it controls
+the flexibility of the non-linear fit.</p>
+</div>
+<div id="generalized-additive-models" class="section level3">
+<h3>generalized additive models</h3>
+<p>in section 7.1-7.6, we present a number of approaches for predicting
+a response Y on the basis of a single predictor X, which can be seen as
+extensions of simple linear regression.</p>
+<p>next comes predicting Y on the basis of several predictors, <span class="math inline">\(X_1, \dots, X_p\)</span>. which amounts to an
+extension of multiple linear regression.</p>
+<p>generalized additive models (GAMs) provide a general framework for
+extending a standard linear model by allowing non-linear functions of
+each of the variables, while maintaining <code>additivity</code>.like
+linear models, GAMs can be applied with both quantitative and
+qualitative responses.</p>
+<div id="gams-for-regression-problems" class="section level4">
+<h4>GAMs for regression problems</h4>
+<p>a natural way to extend the multiple linear regression model</p>
+<p><span class="math display">\[
+y_i=\beta_0+\beta_1x_{i1}+\dots+\beta_px_{ip}+\epsilon_i
+\]</span></p>
+<p>to allow for non-linear relationshin between predictor and the
+response is to replace each linear coefficient <span class="math inline">\(\beta_j x_{ij}\)</span> with a non-linear function
+<span class="math inline">\(f_j(x_{ij})\)</span>:<span class="math display">\[
+y_i=\beta_0+f_1(x_{i1})+\dots+f_p(x_{ip})+\epsilon_i
+\]</span></p>
+<p>it is called an additive model because we calculate a separate <span class="math inline">\(f_j\)</span> for each <span class="math inline">\(X_j\)</span>, and then add together all of their
+contributions</p>
+<p>pros and cons of GAMs</p>
+<ul>
+<li><p>GAMs allow us to fit a non-linear <span class="math inline">\(f_j\)</span> to each predictor, so that we can
+automatically model non-linear relationships, meaning we don’t have to
+manually try out transformations on variables.</p></li>
+<li><p>non-linear fit can potentially make more accurate predictions for
+Y.</p></li>
+<li><p>able to examine the effect of each predictor while holding all
+others fixed.</p></li>
+<li><p>smoothness of the function <span class="math inline">\(f_j\)</span> can be summarized via <span class="math inline">\(df\)</span>.</p></li>
+<li><p>no interactions are allowed, that is, important interactions can
+be missed. solution is to manually add interaction terms.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="chap-8.-tree-based-methods" class="section level2">
+<h2>chap 8. tree-based methods</h2>
+<p>tree-based methods for regression and classification: these involving
+stratifying or segmenting the predictor space into a number of simple
+regions. in order to make a prediction for a given observation, we often
+use the mean or the mode response for the training observation when
+deciding belonging. since the set of splitting rules used to segment the
+predictor space can be summarized in a tree, we call these types of
+approaches <strong>decision tree</strong> methods.</p>
+<ul>
+<li>tree-based methods are simple and useful for interpretation</li>
+<li>tree-based methods are, however, not competitive with the best
+supervised learning methods, e.g., ridge regression, lasso, pls (chap
+6), splines and GAMs (chap 7), regarding prediction accuracy.</li>
+</ul>
+<p>to overcome the disadvantage in prediction accuracy,
+<strong>bagging</strong>, <strong>random forests</strong>,
+<strong>boosting</strong>, and <strong>Bayesian additive regression
+trees</strong> are to be introduced. these methods involve generating
+multiples trees which are to be combined to yield a single consensus
+prediction, which normally results in dramatic improvements in
+prediction accuracy, at the expense of loss in interpretation.</p>
+<div id="basics-of-decision-tree" class="section level3">
+<h3>basics of decision tree</h3>
+<ul>
+<li>applicability: decision tree methods can be applied to both
+regression and classification problems</li>
+</ul>
+<div id="regression-trees" class="section level4">
+<h4>regression trees</h4>
+<p>Example</p>
+<ul>
+<li>rules: Year &lt; 4.5, Hits &lt; 117.5.</li>
+<li>leaves: sample sub-spaces that are divided by the rules are called
+terminal nodes or leaves of the tree.</li>
+</ul>
+<p>regression trees have an advantage over other types of regression
+models such as standard least squares regression, ridge regression,
+lasso: it’s easier to interpret with a graphical representation.</p>
+<ul>
+<li><p>prediction via stratification of the feature space</p>
+<ul>
+<li>we divide the predictor space into J distinct and non-overlapping
+regions, <span class="math inline">\(R_1, R_2, \dots, R_J\)</span>.</li>
+<li>we assign the same prediction value (mean value of the training
+response in region <span class="math inline">\(R_j\)</span>) to every
+observation that falls in the same region <span class="math inline">\(R_j\)</span>.</li>
+</ul></li>
+<li><p>objective function: the goal of regression trees is to find a set
+of regions <span class="math inline">\(R_1, \dots, R_J\)</span> that
+minimize <span class="math display">\[
+\rm RSS = \sum_{j=1}^{J}\sum_{i \in R_j}(y_i-\hat{y}_{R_j})^2
+\]</span> where <span class="math inline">\(\hat{y}_{R_j}\)</span> is
+the mean response for the training observations in <span class="math inline">\(j\)</span>th region.</p></li>
+<li><p>recursive binary splitting: a <strong>top-down</strong>,
+<strong>greedy</strong> approach</p>
+<ul>
+<li>top-down: it begins at the top of the tree (with all observations),
+and then successively splits the predictor space</li>
+<li>greedy: at each step of the tree-building process, the best split is
+determined locally at that particular step, rather than globally and
+looking ahead for future steps</li>
+</ul></li>
+<li><p>procedure</p>
+<ul>
+<li>first select the predictor <span class="math inline">\(X_j\)</span>
+and the cutpoint to split the predictor space into regions {<span class="math inline">\(X|X_j&lt;s\)</span>} and {<span class="math inline">\(X|X_j \ge s\)</span>} that lead to the greatest
+reduction in RSS.</li>
+<li>next repeat the process, and look for the best predictor and
+cutpoint to split the data further so as to minimize the RSS within each
+of the resulting regions.</li>
+<li>after identifying regions, we predict the response for a given test
+observation by assigning the mean of the training observations within
+the region where the test observation belongs.</li>
+</ul></li>
+<li><p>tree pruning</p></li>
+</ul>
+<p>procedure above may overfit the data and produces poor test set
+performance due to high complexity of the resulting tree. in contrast, a
+smaller tree with fewer splits might lead to lower variance and better
+interpretation at the price of slightly increased bias.</p>
+<ul>
+<li>one alternative is to build the tree only so long as the decrease in
+RSS due to each split exceeds some threshold.</li>
+<li>a better approach would be building a large tree, and then prune it
+back to obtain a sub-tree.</li>
+</ul>
+<p>how do we decide the best way tp prune the tree? intuitively, we
+could select a subtree that leads to the lowest test error rate using
+cross-validation or validation set approach. But estimating
+cross-validation error for every possible sub-tree is too much since we
+can have an extremely large number of sub-trees.</p>
+<ul>
+<li><p>cost complexity pruning, aka weakest link pruning, provides a
+walk-around.</p></li>
+<li><p>algorithm</p>
+<ul>
+<li>use recursive binary splitting to grow a large tree on training
+data.</li>
+<li>apply cost complexity pruning to obtain a sequence of best
+sub-trees, as a function of <span class="math inline">\(\alpha\)</span>.</li>
+<li>use k-fold cross-validation to choose <span class="math inline">\(\alpha\)</span> that minimize the average
+error.</li>
+<li>return the sub-tree from step 2 that correspond to the chosen value
+fo <span class="math inline">\(\alpha\)</span>.</li>
+</ul></li>
+</ul>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-islr2" class="csl-entry">
+Gareth James, Trevor Hastie, Daniela Witten. 2021. <em>An Introduction
+to Statistical Learning : With Applications in r</em>. USA: Springer.
+</div>
+</div>
 </div>
 </div>
 </div>
