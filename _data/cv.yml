@@ -106,10 +106,12 @@
     - title: Metabolomics.
       items: 
         - Data preprocessing & normalization to remove unwanted variation
-        - Metabolomics signals for early bladder cancer detection
-    - title: Exposomics
+        - Feature selection: Metabolomics signals for early bladder cancer detection
+    - title: Proteomics
       items:
-        - Exposome-wide Association Study
+        - Proteome-wide Association Study
+        - Plasma protei signals associated with plasma PFAS   
+        - Protein signal(s) for Covid vaccination
         - Data integration with Metabolomics, and other OMICs to reveal evidence for disease prevention
     - title: Epigenetic age and metabolomics
       items:
