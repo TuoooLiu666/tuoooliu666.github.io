@@ -11,7 +11,7 @@
 
 <meta name="author" content="LT" />
 
-<meta name="date" content="2023-06-16" />
+<meta name="date" content="2023-06-26" />
 
 <title>2023-05-20-statistical-learning</title>
 
@@ -374,7 +374,7 @@ display: none;
 
 <h1 class="title toc-ignore">2023-05-20-statistical-learning</h1>
 <h4 class="author">LT</h4>
-<h4 class="date">2023-06-16</h4>
+<h4 class="date">2023-06-26</h4>
 
 </div>
 
@@ -450,6 +450,38 @@ models</a></li>
 <li><a href="#chap-8.-tree-based-methods" id="toc-chap-8.-tree-based-methods">chap 8. tree-based methods</a>
 <ul>
 <li><a href="#basics-of-decision-tree" id="toc-basics-of-decision-tree">basics of decision tree</a></li>
+<li><a href="#solution-to-build-robust-decision-trees" id="toc-solution-to-build-robust-decision-trees">solution to build
+robust decision trees</a></li>
+</ul></li>
+<li><a href="#chap-9.-support-vector-machines" id="toc-chap-9.-support-vector-machines">chap 9. support vector
+machines</a>
+<ul>
+<li><a href="#maximal-margin-clasifier" id="toc-maximal-margin-clasifier">maximal margin clasifier</a></li>
+<li><a href="#support-vector-classifier" id="toc-support-vector-classifier">support vector classifier</a></li>
+<li><a href="#support-vector-machines" id="toc-support-vector-machines">support vector machines</a></li>
+<li><a href="#svms-with-more-than-2-clases" id="toc-svms-with-more-than-2-clases">SVMs with more than 2
+clases</a></li>
+</ul></li>
+<li><a href="#chap-12.-unsupervised-learning" id="toc-chap-12.-unsupervised-learning">chap 12. unsupervised
+learning</a>
+<ul>
+<li><a href="#pca" id="toc-pca">PCA</a></li>
+<li><a href="#principal-components-with-missing-values" id="toc-principal-components-with-missing-values">principal components
+with missing values</a></li>
+<li><a href="#clustering-methods" id="toc-clustering-methods">clustering
+methods</a></li>
+</ul></li>
+<li><a href="#chap-13.-multiple-testing" id="toc-chap-13.-multiple-testing">chap 13. multiple testing</a>
+<ul>
+<li><a href="#hypthesis-testing" id="toc-hypthesis-testing">hypthesis
+testing</a></li>
+<li><a href="#challenge-of-multiple-testing" id="toc-challenge-of-multiple-testing">challenge of multiple
+testing</a></li>
+<li><a href="#family-wise-error-rate" id="toc-family-wise-error-rate">family-wise error rate</a></li>
+<li><a href="#false-discovery-rate" id="toc-false-discovery-rate">false
+discovery rate</a></li>
+<li><a href="#a-re-sampling-approach-to-p-valuesand-false-discovery-rates" id="toc-a-re-sampling-approach-to-p-valuesand-false-discovery-rates">a
+re-sampling approach to p-valuesand false discovery rates</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2499,22 +2531,23 @@ be missed. solution is to manually add interaction terms.</p></li>
 <div id="chap-8.-tree-based-methods" class="section level2">
 <h2>chap 8. tree-based methods</h2>
 <p>tree-based methods for regression and classification: these involving
-stratifying or segmenting the predictor space into a number of simple
-regions. in order to make a prediction for a given observation, we often
-use the mean or the mode response for the training observation when
-deciding belonging. since the set of splitting rules used to segment the
-predictor space can be summarized in a tree, we call these types of
-approaches <strong>decision tree</strong> methods.</p>
+stratifying or segmenting the feature space into a number of simple
+regions. to make a prediction for a given observation, we often use the
+<code>mean</code> or the <code>mode</code> response of the training
+observations within the region. since the set of splitting rules used to
+segment the predictor space can be summarized in a tree, we call these
+types of approaches <strong>decision tree</strong> methods.</p>
 <ul>
 <li>tree-based methods are simple and useful for interpretation</li>
 <li>tree-based methods are, however, not competitive with the best
 supervised learning methods, e.g., ridge regression, lasso, pls (chap
-6), splines and GAMs (chap 7), regarding prediction accuracy.</li>
+6), splines and GAMs (chap 7), regarding
+<code>prediction accuracy</code>.</li>
 </ul>
 <p>to overcome the disadvantage in prediction accuracy,
 <strong>bagging</strong>, <strong>random forests</strong>,
 <strong>boosting</strong>, and <strong>Bayesian additive regression
-trees</strong> are to be introduced. these methods involve generating
+trees</strong> provide solutions. these methods involve generating
 multiples trees which are to be combined to yield a single consensus
 prediction, which normally results in dramatic improvements in
 prediction accuracy, at the expense of loss in interpretation.</p>
@@ -2538,9 +2571,9 @@ lasso: it’s easier to interpret with a graphical representation.</p>
 <ul>
 <li><p>prediction via stratification of the feature space</p>
 <ul>
-<li>we divide the predictor space into J distinct and non-overlapping
+<li>we divide the feature space into J distinct and non-overlapping
 regions, <span class="math inline">\(R_1, R_2, \dots, R_J\)</span>.</li>
-<li>we assign the same prediction value (mean value of the training
+<li>we assign the same prediction value (mean/mode value of the training
 response in region <span class="math inline">\(R_j\)</span>) to every
 observation that falls in the same region <span class="math inline">\(R_j\)</span>.</li>
 </ul></li>
@@ -2603,11 +2636,796 @@ error.</li>
 fo <span class="math inline">\(\alpha\)</span>.</li>
 </ul></li>
 </ul>
+</div>
+<div id="classification-trees" class="section level4">
+<h4>classification trees</h4>
+<p>similar to regression trees except that it is intended for
+qualitative responses. prediction for an observation is achieved by
+assigning the most common class in the region to the observation that
+falls in the same region.</p>
+<ul>
+<li>objective function
+<ul>
+<li>classification error rate: not sufficiently sensitive for
+tree-growing.</li>
+<li><code>Gini index</code>: a measure of node purity as it takes on a
+small value when <span class="math inline">\(\hat{p}_{mk}\)</span>s are
+0 or 1.</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\rm G= \sum_{k=1}^{K}\hat{p}_{mk}(1-\hat{p}_{mk})
+\]</span> - <code>Entropy</code>: another measure of purity since it
+approximates 0 when nodes are pure.</p>
+<p><span class="math display">\[
+\rm D=-\sum_{k=1}^{K}\hat{p}_{mk}log\hat{p}_{mk}
+\]</span></p>
+<p>Geni index and entropy are preferred when we prune the tree; but if
+prediction accuracy is the goal, then classification error rate is
+preferred.</p>
+</div>
+<div id="trees-vs.-linear-models" class="section level4">
+<h4>trees vs. linear models</h4>
+<p>linear regression assumes a model of the form <span class="math display">\[
+f(X)=\beta_0+\sum_{j=1}^{p}X_j\beta_j
+\]</span> whilst regression trees assume a model of the form <span class="math display">\[
+f(X)=\sum_{m=1}^{M}c_m*1_{X \in R_m}
+\]</span> where <span class="math inline">\(R_1, \dots,R_M\)</span>
+represent a partition of feature space. no method dominate the
+other.</p>
+<ul>
+<li><p>trees are very easy to explain than linear regression</p></li>
+<li><p>trees are believed to more closely mimic human decision-making
+than classical regression and classification methods</p></li>
+<li><p>trees has graphic representations</p></li>
+<li><p>no need to create dummy variables for trees</p></li>
+<li><p>trees generally have no matching predictive accuracy as non-tree
+based regression and classification approaches</p></li>
+<li><p>trees can be sensitive to small changes, or have high variance,
+meaning if we split the training set into two subsets at random and fit
+a decision tree to both subsets, the results could be quite different. A
+low-variance procedure, such as linear regression if the ratio of n to p
+os moderately large, will produce similar results when fitting on
+distinct data repeatedly.</p></li>
+</ul>
+</div>
+</div>
+<div id="solution-to-build-robust-decision-trees" class="section level3">
+<h3>solution to build robust decision trees</h3>
+<ul>
+<li><code>ensemble method</code>: an approach that combines many weak
+learners to build a single powerful predictor. ensemble methods include:
+<ul>
+<li>bagging: used to reduce variance of a statistical learning
+method.</li>
+</ul></li>
+</ul>
+<p>methodology behind: recall that given a set of n independent
+observations, each with variance <span class="math inline">\(\sigma^2\)</span>, the variance of the mean of the
+observations is given by <span class="math inline">\(\sigma^2/n\)</span>, meaning averaging a set of
+observations reduces variance.</p>
+<p>therefore, a natural way to reduce the variance and increase test set
+accuracy is to draw many training sets from the population, build a
+separate prediction model with each training set, and averaing the
+resulting predictions. <span class="math display">\[
+\hat{f}_{avg}(x)=\frac{1}{B}\sum_{b=1}^{B}\hat{f}^b(x)
+\]</span></p>
+<p>in practice, however, we are unable to draw multiple training sets
+from the population. But we could bootstrap, by taking repeated samples
+from the training set, and then fit train our method on the bootstrapped
+training sets to get predictions, and finally average all the
+predictions. This is called <strong>bagging</strong>, which is
+particularly useful for decision trees, and could improve predictions
+for many regression methods as well.</p>
+<p>to apply bagging to regression trees, we construct B regression trees
+with B bootstrapped training sets, and average the resulting
+predictions.</p>
+<p><strong>out-of-bag error estimation</strong> depending on sample
+proportion, what’s left and not used for training trees are called
+out-of-bag (OOB) samples.we can predict the response for the ith
+observation using each of the trees in which that observation is OOB.
+this will yield B/3 predictions for the ith observation. we can then
+average these predicted responses (if regression is the goal) or can
+take in a majority vote (if classification is the goal) to make a single
+OOB prediction foe the ith observation. all OOB prediction can be
+obained this way for each of the n observations, from which the overall
+OOB MSE or classification error can be obtained. the resulting OOB error
+is a valid estimate of the test error for bagged model, since the
+response for each observation is predicted using only the trees that
+were not fit using that observation.</p>
+<p><strong>variable importance measure</strong></p>
+<p>although bagging improves accuracy, it makes interpretation hard for
+the resulting model. when we bagging a large number of trees, it’s no
+longer possible to represent the resulting statistical learning
+procedure in a single tree, and it is no longer clear which variables
+are the most important to the procedure. thus, bagging improves
+prediction accuracy at the price of interpretability.</p>
+<p>one way to represent an overall summary of the importance of each
+predictor is using RSS (for bagging regression trees) or Geni index *for
+bagging classification trees) . recording the decreases in RSS or Geni
+index for splitting a predictor and taking the average over all B trees
+give the variable importance for predictors.</p>
+<ul>
+<li>random forests:</li>
+</ul>
+<p>random forests improves on bagged trees by way of de-correlating the
+trees.</p>
+<p>what’s wrong with bagged trees? suppose there is one strong
+predictor, along with other moderately strong predictors, then the
+collection of bagged trees will look similar to each other, having the
+strong predictor in the top split. <strong>Averaging highly correlated
+quantities do not lead to as large of a reduction in variance as
+averaging many uncorrelated quantities</strong>. meaning bagging will
+not lead to a substantial reduction in variance as expected as compared
+with a single tree.</p>
+<p>random forests overcome this issue by forcing each split to consider
+only a subset (<span class="math inline">\(m &lt; p\)</span>) of the
+predictors. therefore, on average <span class="math inline">\((p-m)/p\)</span> of the splits will not even
+consider the strong predictor, so other predictors will have more
+chance.</p>
+<ul>
+<li>boosting</li>
+</ul>
+<p>bagging works by combining multiple decision trees trained on
+distinct bootstrapped training sets drawn from the original training
+set. boosting works in a similar fashion, except that the trees are
+grown sequentially: each tree is grown using information from previous
+trees.</p>
+<p>that is, unlike fitting a single large tree to the data that amounts
+to fitting the data hard and potentially overfitting, boosting learns
+slowly: given the current model, boosting fits a decision tree to the
+residuals from the model, rather than the outcome Y.</p>
+<p>boosting has three tuning parameters: - the number of trees B -
+shrinkage parameter <span class="math inline">\(\lambda\)</span> - the
+number of <span class="math inline">\(d\)</span> of splits in each
+tree.</p>
+<ul>
+<li>Bayesian additive regression trees (BART)</li>
+</ul>
+<p>BART is another ensemble method that uses decision trees as its
+building blocks.</p>
+<p><strong>separate trees</strong> recall that bagging and random
+forests male predictions from an average of regression tree, each of
+which is built using a random sample of data and/or predictors. each
+tree is built separately.</p>
+<p><strong>sequential trees</strong> in contrast, boosting uses a
+weighted sum of trees, each of which is constructed by fitting a tree to
+the residual of the current fit. thus, each new tree attempts to capture
+signal that is not captured by the current set of trees.</p>
+<p>BART is something both: each tree is constructed randomly as in
+bagging and random forests, and each tree tries to capture signal not
+yet accounted for by the current model, as in boosting. what
+differentiate BART is the way it generates new trees. detailed algorithm
+of BART is omitted.</p>
+</div>
+</div>
+<div id="chap-9.-support-vector-machines" class="section level2">
+<h2>chap 9. support vector machines</h2>
+<ul>
+<li>maximal margin classifier: a simple, intuitive classifier which
+requires a linear boundary among classes.</li>
+<li>support vector classifier: an extension</li>
+<li>support vector machine: a further extension</li>
+</ul>
+<div id="maximal-margin-clasifier" class="section level3">
+<h3>maximal margin clasifier</h3>
+<ul>
+<li>hyperplane: in a p-dimensional space, a hyperplane is a
+p-1-dimensional flat affine subspace.</li>
+</ul>
+<p>in two dimensioans, a hyperplane is a flat one-dimensional
+subspace-that is-a line. in three dimensions, a hyperplane is a flat
+two-dimensional subspace-that is-a plane.</p>
+<p>mathematical definition of a hyperplane is given as <span class="math display">\[
+\beta_0+\beta_1X_1+\beta_2X_2+\dots+\beta_pX_P=0
+\]</span></p>
+<p>if a point <span class="math inline">\(X=()X_1, X_2,
+\dots,X_p)\)</span> statisfies above equation, then X lies on the
+hyperplane. we can think of hyperplane as dividing p-dimensional space
+into two halves. for example, if <span class="math display">\[
+\beta_0+\beta_1X_1+\beta_2X_2+\dots+\beta_pX_P&gt;0
+\]</span> then X lies to one side of the hyperplane. if <span class="math display">\[
+\beta_0+\beta_1X_1+\beta_2X_2+\dots+\beta_pX_P&lt;0
+\]</span> then X lies to the other side of the hyperplane.</p>
+<ul>
+<li>classification using a separating hyperplane</li>
+</ul>
+<p>suppose we have a <span class="math inline">\(n \times p\)</span>
+matrix <span class="math inline">\(\matrix{X}\)</span> with n training
+observations in the <span class="math inline">\(p\)</span>-dimensional
+space: <span class="math display">\[
+x_1=\begin{pmatrix}x_{11}\\\vdots\\
+x_{1p}\\\end{pmatrix},\dots,x_n=\begin{pmatrix}x_{n1}\\\vdots\\
+x_{np}\end{pmatrix}
+\]</span> and that these observations fall into two classes. we also
+have a test observation, a vector of p features <span class="math inline">\(x^*=(x^*_1, \dots, x^*_p)^T\)</span>. our goal is
+t develop a classifier on the basis of the training observations that
+will correctly classify the test observation. possible approaches
+are:</p>
+<ul>
+<li>linear discriminant analysis</li>
+<li>logistic regression</li>
+<li>classification trees
+<ul>
+<li>bagging</li>
+<li>random forests</li>
+<li>boosting</li>
+</ul></li>
+</ul>
+<p>here we use a new method called hyperplane classifier: if a
+separating hyperplane exists, we can use it to construct a very natural
+classifier: a test observation is assigned a class depending on which
+side of the hyperplane it is located. that is, we classify <span class="math inline">\(x^*\)</span> based on the sign of <span class="math inline">\(f^(x^*)=\beta_0+\beta_1x^*_1+\beta_2x^*_2+\dots+\beta_px^*_P\)</span>.</p>
+<p>not surprisingly, a classifier based on a separating hyperplane leads
+to a <strong>linear decision boundary</strong>.</p>
+<ul>
+<li>maximal margin classifier</li>
+</ul>
+<p>generally, if the data can be perfectly separated using a hyperplane,
+then there will be infinitely many hyperplanes that can do so. we
+therefore need a reasonable way to decide which hyperplane to use. a
+natural choice is the <strong>maximal margin hyperplane</strong>, which
+is the separating hyperplane that is farthest from the training
+observations. - margin: the minimal distances of the observations to the
+hyperplane</p>
+<p>the <code>maximal margin hyperplane</code> is the separating
+hyperplane that has the largest margin.</p>
+<ul>
+<li><p>construction of the maximal margin classifier</p></li>
+<li><p>the non-separable case</p></li>
+</ul>
+<p>maximal margin classifier is a natural way to perform classification,
+if a separating hyperplane exists. However, there are cases where no
+separating hyperplane exists. that is observations are not separable by
+a hyperplane.</p>
+</div>
+<div id="support-vector-classifier" class="section level3">
+<h3>support vector classifier</h3>
+<p>in fact, even if a separating hyperplane exists, it might not be
+desirable in many instances due to sensitivity to individual
+observations, and short distance to observations. we may instead be
+willing to consider a classifier based on a hyperplane that does not
+perfectly separate the classes, but possesses:</p>
+<ul>
+<li>greater robustness to individual observations</li>
+<li>better classification of most of the training observations: it could
+be worthwhile to mis-classify a few training observations in order to do
+a better job in classifying the rest of observations.</li>
+</ul>
+<p><strong>support vector classifier</strong>, also known as a
+<strong>soft margin classifier</strong>, provides an solution.</p>
+<p>support vector classifier classifies a test observation depending on
+which side of a hyperplane it lies’ the hyperplane is chosen to
+correctly separate most of the training observations.</p>
+<ul>
+<li>observations that lie on the margin or violate the margin will
+affect the hyperplane, and the classifier obtained.</li>
+<li>observations that lie on the correct side of the margin does not
+affect the support vector classifier
+<ul>
+<li>changing the position of the observations would not affect the
+classifier, provided that their positions remain on the correct side of
+the margin.</li>
+<li>observations that lie directly on the margin, or the wrong side of
+the margin for their classes, are known as <strong>support
+vectors</strong>.</li>
+<li>support vector classifier is robust to the behavior of observations
+that are far away from the hyperplane.</li>
+</ul></li>
+</ul>
+</div>
+<div id="support-vector-machines" class="section level3">
+<h3>support vector machines</h3>
+<p>linear classifier to non-linear classifier: the suppor vector
+classifier is a natural approach for classification in the two-class
+setting with a linear boundary.</p>
+<ul>
+<li>non-linear decision boundary</li>
+</ul>
+<p>in practice, non-linear boundaries are more often seen. to fit a
+non-linear classifier, a natural way is to fit a support vector
+classifier using enlarged feature space using quadratic, cubic, and even
+higher-order polynomial functions of the features.</p>
+<p>Instead of fitting a support vector classifier using p features <span class="math inline">\(X_1, X_2, \dots, X_p\)</span>, we could fit a
+support vector classifier using 2p features <span class="math inline">\(X_1, X_1^2, X_2, X_2^2, \dots, X_p,
+X_p^2\)</span>. the solution are generally non-linear. however, there
+are many ways to enlarge the feature space, other than quadratic, which
+could lead to unmanageable computations.</p>
+<ul>
+<li>support vector machine</li>
+</ul>
+<p>support vector machine (SVM) allows enlargement of feature space used
+by support vector classifier in a computation-efficient way.</p>
+<p>SVM extends the support vector classifier in a specific way, using
+<strong>kernels</strong>. kernel approach is simply an efficient
+computational approach to enact enlargement of the feature space. A
+kernel is a function that quantifies the similarity of two
+observations.</p>
+</div>
+<div id="svms-with-more-than-2-clases" class="section level3">
+<h3>SVMs with more than 2 clases</h3>
+<p>there are many proposed ways to extend SVMs to k-class cases, and the
+most popular are the <em>one-versus-one</em> and <em>one-versus-all</em>
+approaches.</p>
+<ul>
+<li>one-versus-one / all-pairs</li>
+</ul>
+<p>it constructs <span class="math inline">\(\binom{K}{2}\)</span> SVMs,
+each of which compares a pair of classes. we classify a test observation
+using each of the <span class="math inline">\(\binom{K}{2}\)</span>
+classifiers, and total the number of times that it is assigned to each
+of the K classes. the final classification is performed by assigning the
+test observation to the class to which it is most frequently assigned in
+these <span class="math inline">\(\binom{K}{2}\)</span> pairwise
+classifications.</p>
+<ul>
+<li>one-versus-all we fit K SVMs, each time comparing one of the K
+classes to the remaining K-1 classes. we assign the test observation to
+the class for which <span class="math inline">\(\beta_{0k}+\beta_{1k}x_1^*+\beta_{2k}x_2^*+\dots+\beta_{pk}x_p^*\)</span>
+is largest. this amounts to a high level confidence that the test
+observation belongs to the kth class rather than to any of the other
+classes.</li>
+</ul>
+</div>
+</div>
+<div id="chap-12.-unsupervised-learning" class="section level2">
+<h2>chap 12. unsupervised learning</h2>
+<p>in cases where we are not interested in prediction, is there an
+informative way to visualize the data? Can we discover subgroups among
+the variables or among the observations?</p>
+<p>unsupervised learning refers to a diverse set of techniques for
+answering questions such as these.</p>
+<ul>
+<li>principal components analysis: a tool for data visualization or data
+pre-processing before supervised techniques</li>
+<li>clustering: for discovering subgroups in data</li>
+</ul>
+<p>unsupervised learning is often performed as part of an exploratory
+data analysis.</p>
+<div id="pca" class="section level3">
+<h3>PCA</h3>
+<p>principal component analysis (PCA) refers to the process by which
+principal components are computed, and the subsequent use of these
+components in understanding the data.</p>
+<p>the first principal component is defined as the normalized linear
+combination of the features and is given by <span class="math display">\[
+Z_1=\phi_{11}X_1+\phi_{21}X_2+\dots+\phi_{p1}X_p
+\]</span> where <span class="math inline">\(\sum_{j=1}^{p}\phi^2_{j1}=1\)</span>. we refer to
+the elements <span class="math inline">\(\phi_1, \phi_2,\dots,
+\phi_p\)</span> as the loadings of the first principal component.
+together, the loadings constitute the loading vector. the loading vector
+<span class="math inline">\(\phi_1\)</span> defined the direction in the
+feature space along which the data vary the most. if we project the data
+onto this direction, the projected values are the principal component
+scores <span class="math inline">\(z_{11}, \dots, z_{n1}\)</span>.</p>
+<ul>
+<li>proportion of variance explained (PVE)</li>
+</ul>
+</div>
+<div id="principal-components-with-missing-values" class="section level3">
+<h3>principal components with missing values</h3>
+<p>missing value imputation and principal components computation could
+be completed simultaneously.</p>
+</div>
+<div id="clustering-methods" class="section level3">
+<h3>clustering methods</h3>
+<p>clustering refers to a broad set of technique for finding subgroups,
+or clusters, in a data set. to identify concrete clusters, we have to
+define similarity or difference.</p>
+<p>both clustering and PCA seem to simplify the data via a small number
+of summaries, but the mechanisms are differen:</p>
+<ul>
+<li>PCA seeks to find a low-dimensional representation of the
+observations that explain a good fraction fo the variance</li>
+<li>clustering looks to find homogeneous subgroups among the
+observations.</li>
+</ul>
+<p>for example, an application in marketing, the goal of clustering is
+to perform market segmentation by identifying subgroups of people who
+might be more receptive to a particular form of advertising, or more
+likely to purchase a particular product.</p>
+<p>some of the best known clustering approaches include:</p>
+<ul>
+<li><strong>K-means clustering</strong>: partition the observations into
+a pre-specified number of clusters.</li>
+<li><strong>hierarchical clustering</strong>: without pre-defined number
+of clusters, with tree-like representation called
+<strong>dendrogram</strong>.</li>
+</ul>
+<div id="k-means-clustering" class="section level4">
+<h4>k-means clustering</h4>
+<p>objective function: a good clustering is one for which the
+within-cluster variation is as small as possible.</p>
+<p><span class="math display">\[
+\begin{align*}
+\text{minimize} \quad &amp; \{\sum_{k=1}^{K}W(C_k)\} \\
+\end{align*}
+\]</span></p>
+<p>to solve this problem, we have to define the within-cluster
+variation, <span class="math inline">\(W(C_k)\)</span>. the most common
+choice involves squared Euclidean distance:</p>
+<p><span class="math display">\[
+W(C_k)=\frac{1}{|C_k|}\sum_{i,i&#39;\in
+C_k}\sum_{j=1}^{p}(x_{ij-x_{i&#39;j}})^2
+\]</span></p>
+<p>where <span class="math inline">\(|C_k|\)</span> denotes the number
+of observations in the kth cluster, that is, the within-cluster
+variation for the kth cluster is the sum of all of the pairwise squared
+Euclidean distance between the obervatiosn in the kth cluster, divided
+by the total number of observations in the kth cluster. the optimization
+problem that defined K-means clustering is given by</p>
+<p><span class="math display">\[
+\min_{X_1, \dots,X_K} \{  \sum_{k=1}^{K}\frac{1}{|C_k|}\sum_{i,i&#39;\in
+C_k}\sum_{j=1}^{p}(x_{ij}-x_{i&#39;j})^2 \}
+\]</span></p>
+</div>
+<div id="hierarchical-clustering" class="section level4">
+<h4>hierarchical clustering</h4>
+<p>one of potential disadvantages of K-means clustering is that it
+requires pre-specification of the number of clusters K. alternatively,
+hierarchical clustering does not have such requirement.</p>
+<ul>
+<li><p>bottom-up/agglomerative clustering: starting from the leaves and
+combining clusters up to the trunk</p></li>
+<li><p>interpretation of hierarchical clustering</p>
+<ul>
+<li>the height of the fusion on the y-axis indicates how different the
+two observations are. observations that fuse at the bottom of the tree
+are quite similar to each other, whereas observations that fuse at the
+top of the tree will be quite different.</li>
+<li>misinterpretation: on the basis of the relative location on the
+y-axis, it is tempting but incorrect to conclude two observations are
+similar.</li>
+</ul></li>
+<li><p>assumption: the term hierarchical refers to the fact that
+clusters obtained by cutting the dendrogram at a given height are
+necessarily nested within the clusters obtained by cutting the
+dendrogram at any greater height.</p></li>
+</ul>
+<p>This is not necessarily true!</p>
+<ul>
+<li>algorithm of hierarchical clustering
+<ul>
+<li>dissimilarity: measurement of dissimilarity between each pair of
+observations are defined, such as <strong>Euclidean
+distance</strong>.</li>
+<li>starting at the bottom where each observation is treated as a
+cluster, and two clusters that are most similar are then fused resulting
+in n-1 clusters.</li>
+<li>next two two clusters that are most similar to each other are fused
+again, resulting in n-1 clusters.</li>
+<li>proceed until each observation belongs to one single cluster.</li>
+</ul></li>
+<li>linkage: we need to determine dissimilarity between two
+clusters/groups
+<ul>
+<li>complete</li>
+<li>average</li>
+<li>single</li>
+<li>centroid</li>
+</ul></li>
+<li>choice of dissimilarity measure
+<ul>
+<li>Euclidean distance</li>
+<li>correlation-based distance</li>
+</ul></li>
+</ul>
+</div>
+<div id="practical-issues-in-clustering" class="section level4">
+<h4>practical issues in clustering</h4>
+<ul>
+<li>small decisions with big consequences
+<ul>
+<li>should the features be standardized?</li>
+<li>what distance measure should be used? what type of linkage should be
+used? where should we cut the dendrogram to obtain clusters?</li>
+<li>how many clusters should we look for in the data for K-mean
+clustering?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="chap-13.-multiple-testing" class="section level2">
+<h2>chap 13. multiple testing</h2>
+<p>now we switch our focus from estimation and prediction to hypothesis
+testing, which is key to conducting inference.</p>
+<p>classical statistics focuses on testing a single null hypothesis
+against the alternative hypothesis. in contemporary settings, we may
+wish to testing a great many null hypothesis in the face of huge amount
+of data. for instance, we might want to test <span class="math inline">\(m\)</span> null hypotheses, <span class="math inline">\(H_{01}, \dots, H_{0m}\)</span>, where <span class="math inline">\(H_{0i}\)</span>: the mean value of the <span class="math inline">\(j^{th}\)</span>biomarker among mice in the control
+group equals that of the <span class="math inline">\(j^{th}\)</span>
+biomarker among mice in the treatment group.</p>
+<ul>
+<li>contemporary ways to conduct multiple testing in a big-data
+setting</li>
+<li>challenges associated with multiple testing and solutions</li>
+<li>more contemporary solutions: false discovery rate, estination of
+null distribution using re-sampling</li>
+</ul>
+<div id="hypthesis-testing" class="section level3">
+<h3>hypthesis testing</h3>
+<p>hypothesis testing is a rigorous statistical framework for answering
+simple yes vs. no questions.</p>
+<ul>
+<li>define the null and alternative hypothesis
+<ul>
+<li>typically, the alternative hypothesis posits that the null
+hypothesis does not hold</li>
+<li>the treatment of <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span> is asymmetric.</li>
+</ul></li>
+</ul>
+<p><span class="math inline">\(H_0\)</span> is treated as the default
+state, and we focus on using data to reject it. If we reject <span class="math inline">\(H_0\)</span>, then it provides evidence in favor
+of <span class="math inline">\(H_a\)</span>, and thus a
+<strong>discovery</strong>. if we fail to reject <span class="math inline">\(H_0\)</span>, then the findings are vague: we
+would not know whether we failed to reject <span class="math inline">\(H_0\)</span> because our sample size was too small
+or <span class="math inline">\(H_0\)</span> really holds.</p>
+<ul>
+<li>conduct a test statistic that summarizes the strength of evidence
+against the null hypothesis
+<ul>
+<li>test statistic is denoted as <span class="math inline">\(T\)</span>,
+which summarizes the extent to which our data are consistent with <span class="math inline">\(H_0\)</span>.</li>
+<li>the way in which we construct <span class="math inline">\(T\)</span>
+depends on the nature of the null hypothesis, e.g., two/multiple group
+means/variances</li>
+</ul></li>
+<li>compute a p-value that quantifies the probability of having obtained
+a comparable or more extreme value of the test statistic under the null
+hypothesis
+<ul>
+<li>large (absolute) T value of a two-sample t-statistics provides
+evidence against <span class="math inline">\(H_0\)</span>.</li>
+<li>how large is large?</li>
+<li>how much evidence against <span class="math inline">\(H_0\)</span>
+is provided by a given value of the test statistic?</li>
+<li>p-value answers this question: the p-value is defined as the
+probability of observing a test statistic equal to or more extreme than
+the observed statistic, under the assumption that <span class="math inline">\(H_0\)</span> is in fact true.</li>
+<li>a small value of T indicates that we would not see such a T value
+very often, thus against the <span class="math inline">\(H_0\)</span>.</li>
+</ul></li>
+<li>draw conclusion
+<ul>
+<li>it is not correct to state that the p-value of the probability that
+<span class="math inline">\(H_0\)</span> holds, i.e., that the null
+hypothesis is true.</li>
+<li>the one and only interpretation of the p-value is as <strong>the
+fraction of the time that we would expect to see such an extreme value
+of the test statistics if we repeated the experiment many times,
+provided <span class="math inline">\(H_0\)</span> holds</strong>.</li>
+<li>what did we accomplish by converting the test statistic into a
+p-value? to answer this question, we would need to know what value of
+the test statistic should be expected, under <span class="math inline">\(H_0\)</span>.</li>
+<li>a small p-value indicates that such a large value of the test
+statistic is unlikely to occur under <span class="math inline">\(H_0\)</span>, and thereby provides evidence
+against <span class="math inline">\(H_0\)</span>, and makes discovery.
+but how small is small enough to reject <span class="math inline">\(H_0\)</span>? it is typical to reject <span class="math inline">\(H_0\)</span> if the p-value is below 0.05: meaning
+if <span class="math inline">\(H_0\)</span> holds, we would expect to
+see such a small p-value no more than 5% of the time.</li>
+<li>if we get a large p-value, we state that we failed to reject <span class="math inline">\(H_0\)</span>.</li>
+</ul></li>
+</ul>
+<div id="type-i-and-type-ii-errors" class="section level4">
+<h4>type I and type II errors</h4>
+<ul>
+<li>type I error: the probability of making a type I error given that
+<span class="math inline">\(H_0\)</span> holds, i.e., the probability of
+incorrectly rejecting <span class="math inline">\(H_0\)</span>.</li>
+<li>type II error: we do not reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> is in fact falls</li>
+<li>power: 1-type II error, i.e., the probability of not making a type
+II error, given <span class="math inline">\(H_a\)</span> holds or the
+probability of correctly rejecting <span class="math inline">\(H_0\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="challenge-of-multiple-testing" class="section level3">
+<h3>challenge of multiple testing</h3>
+<p>rejecting <span class="math inline">\(H_0\)</span> if the p-value is
+below (say) 0.01 provides us with a simple way to control the type I
+error for <span class="math inline">\(H_0\)</span> at level 0.01: if
+<span class="math inline">\(H_0\)</span> is true, then there is no more
+than 1% probability that we will reject it.</p>
+<p>now suppose we wish to test m null hypotheses and if we reject all
+null hypotheses for which the p-value falls below 0.01, then how many
+type I error should we expect to make?</p>
+<p>the main challenge of multiple testing: when testing a huge number of
+null hypotheses, we are bound to get some very small p-values by chance.
+if we draw a conclusion on whether to reject each null hypothesis
+without accounting for the fact that we have performed a great number of
+tests, then we may end up rejecting a large number of true null
+hypotheses-that is, making a large number if type I errors.</p>
+<p>how severe is the problem&gt; suppose we reject a single null
+hypothesis if the p-value is less than <span class="math inline">\(\alpha=0.01\)</span>, then there is a 1% chance of
+making a false rejection if <span class="math inline">\(H_0\)</span> is
+true. now if we test against m null hypotheses, all of which are true,
+we expect to falsely reject approximately <span class="math inline">\(0.01 \times m\)</span> null hypotheses. if <span class="math inline">\(m=10,000\)</span>, then we expect to falsely
+reject 100 null true hypotheses by chance.</p>
+<p>stated in another way, the crux/point of the issue is:</p>
+<p>rejecting a null hypothesis if the p-value is below <span class="math inline">\(alpha\)</span> controls the probability of falsely
+rejecting that null hypothesis is true at level <span class="math inline">\(\alpha\)</span>. if we do this for m null
+hypotheses, however, the chance of falsely rejecting at least one of the
+m null hypotheses is quite higher.</p>
+</div>
+<div id="family-wise-error-rate" class="section level3">
+<h3>family-wise error rate</h3>
+<p>the type I error rate is the probability of rejecting <span class="math inline">\(H_0\)</span> if <span class="math inline">\(H_0\)</span> is true. the family-wise error rate
+(FWER) geenralizes this notion to the setting of m null hypotheses, and
+is defined as the probability of making at least one Type I error.</p>
+<table>
+<thead>
+<tr class="header">
+<th>———-</th>
+<th>H_0 is True</th>
+<th>H_0 is False</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Reject H_0</td>
+<td>V c</td>
+<td>S</td>
+<td>R</td>
+</tr>
+<tr class="even">
+<td>Do Not Reject H_0</td>
+<td>U</td>
+<td>W</td>
+<td>m=R</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>m_0</td>
+<td>m-m_0</td>
+<td>m</td>
+</tr>
+</tbody>
+</table>
+<p>here, <strong>V</strong> represents the number of type I errors (aka
+false positive or false discovery), S denotes the number of true
+positives, U the number of true negatives, and <strong>W</strong> the
+number of Type II errors (aka false negatives). the family-wise error
+rate is given by</p>
+<p><span class="math display">\[
+\rm FWER = Pr(V \ge 1)
+\]</span></p>
+<p>a strategy of rejecting any null hupothesis for which the p-value of
+below <span class="math inline">\(\alpha\)</span> leads to a FWER of</p>
+<p><span class="math display">\[
+\begin{aligned}
+\rm FWER(\alpha) = 1-PR(V=0) \\
+&amp; \rm 1-Pr(\text{do not falsely reject any null hypotheses}) \\
+&amp; \rm 1-Pr(\bigcap_{j=1}^{m} \{ \text{do not falsely reject} H_{0j}
+\})
+\end{aligned}
+\]</span></p>
+<p>if we assume the m tests are independent and all m null hypotheses
+are true, then <span class="math display">\[
+\rm FWER(\alpha)=1-\prod_{j=1}^{m}(1-\alpha)=1-(1-\alpha)^m
+\]</span></p>
+<p>hence, if we test one null hypothesis, then <span class="math inline">\(\rm FWER(\alpha)=1-(1-\alpha)=\alpha\)</span>, so
+the Type I error rate and the FWER are equal. if we perform <span class="math inline">\(m=100\)</span> independent tests, the <span class="math inline">\(\rm FWER(\alpha)=1-(1-\alpha)^{100}\)</span>, say
+<span class="math inline">\(\alpha=0.015\)</span>, then <span class="math inline">\(\rm FWER(0.05)=1-(1-0.05)^{100}=0.994\)</span>.
+stated another way, we are bound approximately to make at least one Type
+I error!</p>
+<div id="control-of-family-wise-error-rate" class="section level4">
+<h4>control of family-wise error rate</h4>
+<ul>
+<li>Bonferroni method let <span class="math inline">\(A_j\)</span>
+denote the event that we make a Type I error for the jth null
+hypothesis, for <span class="math inline">\(j=1,\dots, m\)</span>, then
+<span class="math display">\[
+\begin{aligned}
+\rm FWER(\alpha)=Pr(\text{falsely reject at least one null hypothesis})
+\\
+&amp; = \rm Pr(\bigcup_{j=1}^{m}A_j) \le \sum_{j=1}^{m}Pr(A_j)
+\end{aligned}
+\]</span></li>
+</ul>
+<p>the inequality is a result from the fact that for any two events A
+and B, <span class="math inline">\(\rm Pr(A \bigcup B) \le
+Pr(A)+Pr(B)\)</span>, regardless of whether A and B are independent.</p>
+<p>Bonferroni method sets the threshold for rejecting each hypothesis
+test to <span class="math inline">\(\alpha/m\)</span>, so that for each
+null hypothesis <span class="math inline">\(\rm Pr(A_j)\le
+\alpha/m\)</span>. together, <span class="math display">\[
+\rm FWER(\alpha) \le m \times \alpha/m=\alpha
+\]</span> so this procedure controls the FWER at level <span class="math inline">\(\alpha\)</span>. For example, to control the
+family-wise error rate at level 0.1 while testing <span class="math inline">\(m=100\)</span>, null hypotheses, the Bonferroni
+method requires us to control the Type I error for each null hypothesis
+at level <span class="math inline">\(0.1/100=0.001\)</span>, and
+rejecting all null hypotheses for which p-value is below 0.001. -
+advantages: easy to understand, easy to implement, and successfully
+controls for Type I error. - cost: being conservative so we reject few
+null hypotheses, and thus will make quite a few <strong>Type II
+errors</strong>.</p>
+<ul>
+<li>Holm’s step-down procedure/Holm-Bonferroni method</li>
+</ul>
+<p>Holm’s method is less conservative than Bonferroni’s method while
+controlling for Type I error.</p>
+<ul>
+<li>special cases: achieving higher power while controlling for Type I
+error
+<ul>
+<li>Tukey’s method: when performing <span class="math inline">\(m=G(G-1)/2\)</span> <strong>pairwise
+comparisons</strong> of G means, it allows us to control the FWER at
+level <span class="math inline">\(\alpha\)</span> while rejecting all
+null hypotheses for which the p-value falls below <span class="math inline">\(\alpha_T\)</span>, for some <span class="math inline">\(\alpha_T&gt;\alpha/m\)</span>.</li>
+<li>Scheffe’s method: <span class="math inline">\(H_0:
+\frac{1}{3}(\mu_1+\mu_2+\mu_3)=\frac{1}{2}(\mu_4+\mu_5)\)</span>.</li>
+</ul></li>
+</ul>
+</div>
+<div id="trade-off-between-fwer-and-power" class="section level4">
+<h4>trade-off between FWER and Power</h4>
+<p>power is defined as the number of false null hypotheses that we
+reject divided by the total number of false null hypotheses <span class="math inline">\(S/(m-m_0)\)</span>. controlling the FWER at level
+<span class="math inline">\(\alpha\)</span> guarantees that we are very
+unlikely to reject any true null hypotheses, or to have any false
+positives.</p>
+<p>in practise, when m is large, we may be willing to tolerate a few
+false postiveis, in the interest of making more discoveries, i.e., more
+rejections of the null hypothesis.</p>
+</div>
+</div>
+<div id="false-discovery-rate" class="section level3">
+<h3>false discovery rate</h3>
+<p>when m is large, simply preventing any false positives is too
+stringent. we instead might want to make sure that the ratio of false
+positives (V) to total positives <span class="math inline">\((V+S)=R\)</span> is sufficiently low, so that most
+of the rejected null hypotheses are not false positives.</p>
+<p>the ratio V/R is known as the false discovery proportion (FDP).
+however, in practice, it is impossible to control the FDP since we have
+no way to know which hypothesis is true and which is false. therefore,
+we instead control the false discovery rate (FDR), given by <span class="math display">\[
+\rm FDR=E(FDP)=E(V/R)
+\]</span> for instance, a genomic researcher might sequence the genomes
+of individuals with and without some particular medical condition, and
+then for each of 20,000 genes, test whether sequence variants in that
+gene are associated with the medical condition of interest. this amounts
+to performing <span class="math inline">\(m=20,000\)</span> hypothesis
+tests.</p>
+<p>the nature of this analysis is exploratory, so we are willing to
+tolerate some number of false positives in the set of genes that we will
+investigate further; thus, the FWER is not an appropriate choice.
+However, some correction for multiple testing is required: it would not
+be a good idea for us to simply investigate all genes with p-values less
+than 0.05, since we would expect 1000 genes to habe such small p-values
+simply by chance, even if no genes are associated with the disease
+(since <span class="math inline">\(0.05\times 20,000=1000\)</span>).
+controlling the FDR for exploratory analysis at 20% guarantees that on
+average no more than 20% of the genes that we will further investigate
+are false positives.</p>
+<ul>
+<li>Benjamini-Hochberg procedure</li>
+</ul>
+<p>as long as the m p-values are independent or only mildly dependent,
+then the Benjamini-Hochberg procedure guarantees that <span class="math display">\[
+\rm FDR \le q
+\]</span></p>
+<p>stated another way, this procedure ensures that, on average, no more
+than a fraction q of the rejected null hypotheses are false
+positives.</p>
+<p>compared with FWER, FDR control is much milder and mroe powerful, in
+the sense that it allows us to reject many more null hypotheses, with a
+cost of substantially more false positives.</p>
+</div>
+<div id="a-re-sampling-approach-to-p-valuesand-false-discovery-rates" class="section level3">
+<h3>a re-sampling approach to p-valuesand false discovery rates</h3>
+<p>classical apporach of hypothesis testing requires some known
+distribution under <span class="math inline">\(H_0\)</span>, such as a
+normal distribution, a T-distribution, a <span class="math inline">\(\chi^2\)</span>-distribution, or an
+F-distribution. this is referred to as theoretical null
+distribution.</p>
+<p>in cases where no theoretical null distributions are available, such
+as sample sample size.</p>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-islr2" class="csl-entry">
 Gareth James, Trevor Hastie, Daniela Witten. 2021. <em>An Introduction
 to Statistical Learning : With Applications in r</em>. USA: Springer.
-</div>
 </div>
 </div>
 </div>
