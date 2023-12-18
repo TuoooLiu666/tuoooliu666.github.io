@@ -22,17 +22,21 @@
           - Major -> Environmental Hlth Sci
           - Minor -> Biostatistics
           - GPA -> 4.00/4.00
-        - title: EHS Syllabus
+        - title: Major Syllabus
           contents:
             - Applied & Advanced Exposure Science
             - Epidemiology
             - Toxicology
-        - title: Biostats Syllabus
+        - title: Statistics & Biostatistics Syllabus
           contents:
-            - Applied Biostatistics
-            - General Linear and Mixed Effects Models
+            - Theory of Probability
             - Advanced Statistical Regression Analysis
             - Experimental Design and Analysis
+            - Applied Biostatistics
+            - General Linear and Mixed Effects Models
+        - title: Machine Learning Syllabus
+          contents:    
+            - Statistical Machine Learning
 
     - title: MS
       institution: University of Michigan, Ann Arbor, USA
@@ -51,7 +55,7 @@
       year: 2022/8-Now
       description:
         - Metabolomics and epigenetics data analyses & management
-        - FFCCS data analysis
+        - FireFighter Cancer Cohrt Study proteomics data analysis
         - title: FEMA study
           contents:
             - (To be updated).
@@ -76,7 +80,7 @@
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/TuoooLiu666/Arizona-Pesticide-Usage-Map">Arizona Pesticide Use Shiny Application (to be published)</a>
+    - title: <a href="https://tuoliu.shinyapps.io/Arizona-Pesticide-Usage-Map/">Arizona Pesticide Use Shiny Application </a>
       year: 2022/8
       description: A web-based Shiny application built with R to explore pesticide use in the State of Arizona, 1992-2016.
     - title: <a href="https://github.com/TuoooLiu666/expense-tracker">Expense Tracker</a>
