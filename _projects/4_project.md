@@ -9,6 +9,13 @@ category: data science
 
 This repository commits to Data Science projects. 
 
+- <a href="https://tuoliu.shinyapps.io/Arizona-Pesticide-Usage-Map/">Arizona-Pesticide-Usage-Map</a>:
+  - A web-based Shiny application built with R to explore pesticide use in the State of Arizona, 1992-2016.
+  - Learnt basics and layout of *Shiny* app
+  - Built a *Shiny* web application coupled by Flexboard package
+  - Visualized pesticide usage with an interactive map  & line chart using *Leaflet* & *Plotly*
+
+
 - <a href="https://github.com/TuoooLiu666/expense-tracker">Expense Tracker</a>:
   - Learnt basics and layout of *Streamlit* app
   - Built a *Python* web application built using Streamlit
