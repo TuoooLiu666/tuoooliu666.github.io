@@ -16,7 +16,7 @@ This repository commits to Data Science projects.
   - Visualized pesticide usage with an interactive map  & line chart using *Leaflet* & *Plotly*
 
 
-- <a href="https://github.com/TuoooLiu666/expense-tracker">Expense Tracker</a>:
+- <a href="https://lts-monthly-expense-tracker.streamlit.app/">Expense Tracker</a>:
   - Learnt basics and layout of *Streamlit* app
   - Built a *Python* web application built using Streamlit
   - Connected to and stored customer data in *NoSQL* database from deta
