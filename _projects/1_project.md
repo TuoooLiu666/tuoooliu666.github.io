@@ -18,12 +18,12 @@ My active research projects are listed below:
 - Urinary Metabolomics in Tucson Firefighters: differential metabolome by Hispanic ethnicity:
   - aims: Characterizing differential metabolome by Hispanic ethnicity, before and post fire exposure
   - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
-  - research question: Is there a difference in the metabolic profiling between Hispanic and Non-Hispanic firefighters? Is the difference strengthened by fire exposure?
+  - research question: Is there a difference in the metabolic profiling between Hispanic and Non-Hispanic firefighters? Is the difference exacerbated by fire exposure?
 
-- Urinary Metabolomics in Wildland-urban interface Firefighters (LA): Pre-, and Post-fire exposure:
-  - aims: TBD
+- Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters: Pre-, and Post-fire exposure:
+  - aims: Characterizing & compare metabolic profiles before and post fire exposure among male WUI firefighters 
   - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
-  - research question: TBD
+  - research question: Does fire exposure alter the metabolic profiles in firefighters?
 
 
 <!--- The code is simple.

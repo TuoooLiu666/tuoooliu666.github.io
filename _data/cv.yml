@@ -5,8 +5,8 @@
       value: Tuo Liu
     - name: Nick Name
       value: LT
-    - name: Date of Birth
-      value: 19th January 1994
+    # - name: Date of Birth
+    #   value: 19th January 1994
     - name: Languages
       value: English, Chinese
 
@@ -19,9 +19,10 @@
       description:
         - title: major & minor
           contents:
-          - Major -> Environmental Hlth Sci
-          - Minor -> Biostatistics
-          - GPA -> 4.00/4.00
+          - Major:Environmental Hlth Sci
+          - Minor:Biostatistics
+          - Certificate:Statistics & Data Science
+          - GPA:4.00/4.00
         - title: Major Syllabus
           contents:
             - Applied & Advanced Exposure Science
@@ -29,14 +30,15 @@
             - Toxicology
         - title: Statistics & Biostatistics Syllabus
           contents:
-            - Theory of Probability
-            - Advanced Statistical Regression Analysis
-            - Experimental Design and Analysis
-            - Applied Biostatistics
-            - General Linear and Mixed Effects Models
+            - MATH 564:Theory of Probability
+            - MATH 566:Theory of Statistics
+            - MATH 571A:dvanced Statistical Regression Analysis
+            - MATH 571B:Experimental Design and Analysis
+            - BIOS 576:Applied Biostatistics
+            - BIOS 684:General Linear and Mixed Effects Models
         - title: Machine Learning Syllabus
           contents:    
-            - Statistical Machine Learning
+            - MATH 574M:Statistical Machine Learning
 
     - title: MS
       institution: University of Michigan, Ann Arbor, USA
@@ -54,18 +56,15 @@
       institution: Department of Community, Environment, and Policy, University of Arizona
       year: 2022/8-Now
       description:
-        - Metabolomics and epigenetics data analyses & management
-        - FireFighter Cancer Cohrt Study proteomics data analysis
-        - title: FEMA study
-          contents:
-            - (To be updated).
+        - FFCCS metabolomics data analyses & management
+        - AZ HEROES proteomics data analysis
     - title: Research Assistant
       institution: Department of Community, Environment, and Policy, University of Arizona
       year: 2021/8-2022/7
       description:
         - Tucson fire fighter metabolomics data analysis
         - Arizona pesticide use and birth outcome study data analysis
-        - Tucson fire fighters epigenetic age and metabolomics analysis 
+        - Multi-omics epigenetic age and metabolomics analysis 
 
     - title: Research Assistant
       institution: SCIES, Guangzhou, China
@@ -109,18 +108,17 @@
   contents:
     - title: Metabolomics.
       items: 
+        - Metabolome-wide association analysis
         - Data preprocessing & normalization to remove unwanted variation
-        - Feature selection: Metabolomics signals for early bladder cancer detection
+        - Statistical machine learning and feature selection in metabolomics:signals for high- vs. low-risk prostate cancer
     - title: Proteomics
       items:
-        - Proteome-wide Association Study
-        - Plasma protei signals associated with plasma PFAS   
-        - Protein signal(s) for Covid vaccination
-        - Data integration with Metabolomics, and other OMICs to reveal evidence for disease prevention
+        - Proteome-wide association analysis
+        - Serum proteinomic signals associated with Long-Covid    
     - title: Epigenetic age and metabolomics
       items:
         - Epigenetic clocks and biological age
-        - Integration with metabolome healthy aging
+        - Healthy aging
         
 
 - title: Other Interests

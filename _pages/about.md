@@ -22,7 +22,7 @@ social: true  # includes social icons at the bottom of the page
 My name is Tuo Liu (feel free to call me **LT**). I am a Ph.D. student at the University of Arizona. I major in Environmental Health Sciences, and minor in Biostatistics. My research interests include: 
 - Metabolomics
 - Proteomics
-- Multilevel/Longitudinal Modeling
+- Multilevel/Longitudinal Data Analysis
 - Machine Learning
 - Categorical Data Analysis
 - Application of Data Science tools in Public Health research

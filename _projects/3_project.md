@@ -5,7 +5,7 @@ description: A folder for data visualization using Shiny and Streamlit
 img: assets/img/3.jpg
 # redirect: https://unsplash.com
 importance: 2
-category: work
+category: data science
 ---
 
 This repository commits to Data Visualization using lab obtained/open source data. 
