@@ -28,13 +28,15 @@
             - Applied & Advanced Exposure Science
             - Epidemiology
             - Toxicology
+            - Environmental Metabolomics
         - title: Statistics & Biostatistics Syllabus
           contents:
             - MATH 564:Theory of Probability
             - MATH 566:Theory of Statistics
-            - MATH 571A:dvanced Statistical Regression Analysis
+            - MATH 571A:Advanced Statistical Regression Analysis
             - MATH 571B:Experimental Design and Analysis
             - BIOS 576:Applied Biostatistics
+            - BIOS 647:Categorical Data Analysis
             - BIOS 684:General Linear and Mixed Effects Models
         - title: Machine Learning Syllabus
           contents:    
@@ -98,10 +100,6 @@
     - year: 2021
       items: 
         - PhD scholarship ($10,000)
-    - year: 2013-2015
-      items: 
-        - Outstanding Student Leader ($500)
-        - Academic Performance Scholarship ($500)
 
 - title: Research Interests
   type: nested_list
@@ -114,11 +112,7 @@
     - title: Proteomics
       items:
         - Proteome-wide association analysis
-        - Serum proteinomic signals associated with Long-Covid    
-    - title: Epigenetic age and metabolomics
-      items:
-        - Epigenetic clocks and biological age
-        - Healthy aging
+        - Serum proteinomic signals differentiating Long-COVID from normal COVID patients
         
 
 - title: Other Interests
