@@ -7,11 +7,11 @@ importance: 1
 category: work
 ---
 
-My active research projects are listed below: 
+Completed research projects are listed below: 
 
 - Urinary Metabolomics in Tucson Firefighters: Pre-, and Post-fire exposure:
   - aims: Characterizing & compare metabolic profiles before and post fire exposure
-  - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
+  - data source: Federal Emergency Management Agency(<a href="https://www.fema.gov/">FEMA</a>)
   - research question: Does fire exposure alter the metabolic profiles in firefighters?
 
 
@@ -20,11 +20,19 @@ My active research projects are listed below:
   - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
   - research question: Is there a difference in the metabolic profiling between Hispanic and Non-Hispanic firefighters? Is the difference exacerbated by fire exposure?
 
+Active research projects are listed below: 
+
 - Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters: Pre-, and Post-fire exposure:
   - aims: Characterizing & compare metabolic profiles before and post fire exposure among male WUI firefighters 
   - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
-  - research question: Does fire exposure alter the metabolic profiles in firefighters?
+  - research question: 
+    - Does fire exposure alter the metabolic profiles in WUI firefighters?
+    - explore potential health risks associated with the metabolic changes. 
 
+- Urinary Metabolomics in prostate cancer patients: PCa risk groups:
+  - aims: Characterizing and comparing metabolic profiles between patients with high-grade and low-grade prostate cancer.
+  - data source: Cancer Center, University of  Arizona
+  
 
 <!--- The code is simple.
 Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).

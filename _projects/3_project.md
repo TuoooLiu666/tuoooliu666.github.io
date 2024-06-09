@@ -15,7 +15,10 @@ This repository commits to Data Visualization using lab obtained/open source dat
   - Built an web application using *Shiny* and *Flexboard*
   - Visualized the pesticide usage in the State of Arizona (1992-2016) with an interactive map and line chart using *mapview & Plotly*
 
-
-
+- <a href="https://lts-monthly-expense-tracker.streamlit.app/">Expense Tracker</a>:
+  - Learnt basics and layout of *Streamlit* app
+  - Built a *Python* web application built using Streamlit
+  - Connected to and stored customer data in *NoSQL* database from deta
+  - Visualized personal expense with an interactive Sankey chart using *Plotly*
 
 
