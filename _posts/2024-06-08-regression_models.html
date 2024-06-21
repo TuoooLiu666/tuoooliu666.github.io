@@ -11,9 +11,9 @@
 
 <meta name="author" content="Tuo Liu" />
 
-<meta name="date" content="2024-06-18" />
+<meta name="date" content="2024-06-21" />
 
-<title>linear regression models</title>
+<title>Regression Models</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1479,9 +1479,9 @@ border-radius: 0px;
 
 
 
-<h1 class="title toc-ignore">linear regression models</h1>
+<h1 class="title toc-ignore">Regression Models</h1>
 <h4 class="author">Tuo Liu</h4>
-<h4 class="date">2024-06-18</h4>
+<h4 class="date">2024-06-21</h4>
 
 </div>
 
@@ -1490,7 +1490,7 @@ border-radius: 0px;
 <h1 class="tabset">statistical models</h1>
 <div id="notation-and-foundation" class="section level2">
 <h2>notation and foundation</h2>
-<p>Al models are wrong, but some are useful: models are not an exact
+<p>All models are wrong, but some are useful: models are not an exact
 representation of reality; models are useful approximations for
 representing the necessary detail for the purpose at hand.</p>
 </div>
@@ -1687,7 +1687,7 @@ then sum them:</p>
 <p><span class="math display">\[
 S(\beta_0,
 \beta_1)=\sum_{i}^{n}w_ie_i^2=\sum_{i}^{n}w_i(y_i-\mu_i)^2=\sum_{i}^{n}w_i(y_i-\beta_0-\beta_1x_i)^2
-\]</span> The non-negative weights wi may be used to weight observations
+\]</span> The non-negative weights <span class="math inline">\(w_i\)</span> may be used to weight observations
 according to their precision; S summarizes how far the fitted line
 deviates from the observations.</p>
 <p>intuitively, the least-squares estimators of <span class="math inline">\(\beta_j\)</span> can be found by minimizing S.</p>
@@ -1698,7 +1698,7 @@ deviates from the observations.</p>
 given by <span class="math inline">\(\hat{\mu}_i=\hat{\beta_0}+\hat{\beta_1}x_i\)</span>
 for <span class="math inline">\(i=1,\dots,n\)</span>.</p>
 <p>the minimized value of S, evaluated at the least-squares estimates,
-is called <strong>residual sum-of-sqaures (RDD)</strong>:</p>
+is called <strong>residual sum-of-squares (RSS)</strong>:</p>
 <p><span class="math display">\[
 \text{RSS}=\sum_{i}^{n}w_i(y_i-\beta_0-\beta_1x_i)^2 \bigg
 |_{\hat{\beta_0},
