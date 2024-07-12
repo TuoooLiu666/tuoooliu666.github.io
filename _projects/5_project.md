@@ -9,6 +9,20 @@ category: data science
 
 This repository commits to Machine Learning projects. 
 
+- Machine Learning Algorithms from scratch
+  - Linear Regression
+  - Logistic Regression
+  - KNN
+  - Decision Tree
+  - Random Forest
+  - SVM
+  - Naive Bayes
+  - K-Means
+  - PCA
+  - Neural Networks
+  - Gradient Descent
+
+
 
 
 
