@@ -3,7 +3,8 @@ layout: post
 title: Machine Learning Algorithm
 date: 2024-07-12 11:12:00-0400
 description: ML algorithm
-categories: data science
+categories: MachineLearning
+tags: MachineLearning
 ---
 
 - statistical perspective: $Y=f(X)+\epsilon$ 
