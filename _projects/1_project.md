@@ -7,8 +7,6 @@ importance: 1
 category: work
 ---
 
-Completed research projects are listed below: 
-
 - Urinary Metabolomics in Tucson Firefighters: Pre-, and Post-fire exposure:
   - aims: Characterizing & compare metabolic profiles before and post fire exposure
   - data source: Federal Emergency Management Agency(<a href="https://www.fema.gov/">FEMA</a>)
@@ -19,6 +17,7 @@ Completed research projects are listed below:
   - aims: Characterizing differential metabolome by Hispanic ethnicity, before and post fire exposure
   - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
   - research question: Is there a difference in the metabolic profiling between Hispanic and Non-Hispanic firefighters? Is the difference exacerbated by fire exposure?
+  - status: manuscript submitted & under journal review
 
 - Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters: Pre-, and Post-fire exposure:
   - aims: Characterizing & compare metabolic profiles before and post fire exposure among male WUI firefighters 
@@ -26,13 +25,14 @@ Completed research projects are listed below:
   - research question: 
     - Does fire exposure alter the metabolic profiles in WUI firefighters?
     - explore potential health risks associated with the metabolic changes. 
+  - status: manuscript under internal review
 
 Active research projects are listed below: 
 
 - Urinary Metabolomics in prostate cancer patients: PCa risk groups:
   - aims: Characterizing and comparing metabolic profiles between patients with high-grade and low-grade prostate cancer.
   - data source: Cancer Center, University of  Arizona
-  
+  -status: manuscript in preparation
 
 
 <!--- The code is simple.
