@@ -11,6 +11,7 @@ category: work
   - aims: Characterizing & compare metabolic profiles before and post fire exposure
   - data source: Federal Emergency Management Agency(<a href="https://www.fema.gov/">FEMA</a>)
   - research question: Does fire exposure alter the metabolic profiles in firefighters?
+  - status: published
 
 
 - Urinary Metabolomics in Tucson Firefighters: differential metabolome by Hispanic ethnicity:
