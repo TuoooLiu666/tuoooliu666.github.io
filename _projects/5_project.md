@@ -13,11 +13,10 @@ This repository commits to Machine Learning projects.
   - Linear Regression
   - Gradient Descent
   - Logistic Regression
-  - Naive Bayes
   - KNN
+  - SVM
   - Decision Tree
   - Random Forest
-  - SVM
   - K-Means
   - PCA
   - Neural Networks
