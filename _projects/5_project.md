@@ -22,7 +22,8 @@ This repository commits to Machine Learning projects.
   - PCA
   - Neural Networks
   
-
+- Machine Learning in practice
+  - Long COVID vs. Normal COVID by proteomics
 
 
 
