@@ -7,7 +7,7 @@ categories: MachineLearning
 tags: MachineLearning
 ---
 
-- statistical perspective: $Y=f(X)+\epsilon$ 
+- statistical perspective: $$Y=f(X)+\epsilon$$ 
   - model=algorithm(data)
 - computer science perspective:
   - output = program(input)
@@ -21,6 +21,7 @@ tags: MachineLearning
 
 - linear models
   - linear regression
+  - generalized linear models
   - logistic regression (LR)
   - linear discriminant analysis (LDA)
 - tree-based methods
@@ -107,9 +108,7 @@ f^{*}(x)=
 0 \quad if \quad C(1,0)P(Y=1|X=x) < C(0,1)P(Y=0|X=x)
 \end{cases}
 \end{equation}
-
 ### Linear classification methods
-
 two popular linear classifiers
 
 - Linear Discriminant Analysis (LDA)
@@ -178,9 +177,7 @@ $$
 - classification tree
   - decision tree
   - random forest
-- boosting  
-
-
+- boosting
 ### Nonlinear classifier
 
 - KNN
@@ -188,11 +185,18 @@ $$
 - trees, random forests
 - ...
 
-#### Nearest Neighbor (NN) classifiers
+#### K-Nearest Neighbor (KNN) classifiers
 
-
-
-
+- pros
+  - geenrally low bias
+  - no stringent assumptions about data
+  - robust against outliers
+  - works well for large n small d
+- cons
+  - potentially high variance
+  - work bad for large d small n
+  - accuracy severely degraded by noisy or irrelevant features, or the feature scales are not consistent with their importance
+    - Much research effort on selecting or scaling features to improve classification, such as optimize feature scaling.
 
 
 #### kernal SVM
