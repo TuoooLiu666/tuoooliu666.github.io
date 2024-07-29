@@ -21,8 +21,9 @@ tags: MachineLearning
 
 - linear models
   - linear regression
-  - generalized linear models
+  - generalized linear models (GLMs)
   - logistic regression (LR)
+  - Naive Bayes classifers (NB)
   - linear discriminant analysis (LDA)
 - tree-based methods
   - decision trees
@@ -186,6 +187,11 @@ $$
 - ...
 
 #### K-Nearest Neighbor (KNN) classifiers
+the degree of freedom is n/k
+- k controls the model complexity
+  - smaller k: lower bias and higher variance
+  - larger k: higher bias and lower varance (reduce effect of noise)
+- the best choice of k depends upon the data
 
 - pros
   - geenrally low bias

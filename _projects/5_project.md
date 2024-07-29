@@ -9,10 +9,11 @@ category: data science
 
 This repository commits to Machine Learning projects. 
 
-- Machine Learning Algorithms from scratch
-  - Linear Regression
+- <a href="https://github.com/TuoooLiu666/ml_algorithms_from_scratch">Machine Learning Algorithms from scratch</a>
   - Gradient Descent
+  - Linear Regression
   - Logistic Regression
+  - Naive Bayes
   - KNN
   - SVM
   - Decision Tree
