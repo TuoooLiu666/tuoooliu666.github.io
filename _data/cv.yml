@@ -41,6 +41,7 @@
         - title: Machine Learning Syllabus
           contents:    
             - MATH 574M:Statistical Machine Learning
+            - Coursera:Neural Networks and Deep Learning
 
     - title: MS
       institution: University of Michigan, Ann Arbor, USA
@@ -106,14 +107,14 @@
   contents:
     - title: Metabolomics.
       items: 
-        - Urinary Metabolomics in Tucson Firefighters: Pre-, and Post-fire exposure
-        - Urinary Metabolomics in Tucson Firefighters: differential metabolome by Hispanic ethnicity
-        - Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters: A Comparison with Structural Firefighters
-        - Urinary Metabolomics in prostate cancer patients by Prostate Cancer risks
+        - Urinary Metabolomics in Structural Firefighters:Pre-, and Post-fire exposure
+        - Urinary Metabolomics in Structural Firefighters:Differential Metabolic Profiles by Hispanic Ethnicity
+        - Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters:A Comparison with Structural Firefighters
+        - Evaluating Differential Metabolic Profiles in Prostate Cancer Patients by Prostate Cancer Risk
     - title: Proteomics
       items:
         - Proteomic Profiling to Investigate Biomarkers and Biological Functions Associated with Long COVID in Frontline Workers
-        - Serum Proteomics in Omicron SARS-CoV-2 breakthrough: a nested case-control study within a prospective cohort of frontline workers from eight locations in the United States (US).
+        - Serum Proteomics in Omicron SARS-CoV-2 breakthrough:a nested case-control study within a prospective cohort of frontline workers from eight locations in the United States (US).
         
 
 - title: Other Interests
