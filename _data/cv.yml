@@ -84,7 +84,7 @@
     - title: <a href="https://tuoliu.shinyapps.io/Arizona-Pesticide-Usage-Map/">Arizona Pesticide Use Shiny Application </a>
       year: 2022/8
       description: A web-based Shiny application built with R to explore pesticide use in the State of Arizona, 1992-2016.
-    - title: <a href="https://github.com/TuoooLiu666/expense-tracker">Expense Tracker</a>
+    - title: <a href="https://lts-monthly-expense-tracker.streamlit.app/">Expense Tracker</a>
       year: 2021/12
       description: A web-based application built with Streamlit, Python for tracking personal expenses.
     - title: <a href="https://www.linkedin.com/pulse/exploring-neighborhoods-chinese-restaurants-toronto-tuo-liu/?trackingId=NZZXm6lG8Xmu2BDXB%2BuhBA%3D%3D">Where to open a Chinese restaurant in Toronto?</a>
@@ -101,18 +101,19 @@
       items: 
         - PhD scholarship ($10,000)
 
-- title: Research Interests
+- title: Research Summary
   type: nested_list
   contents:
     - title: Metabolomics.
       items: 
-        - Metabolome-wide association analysis
-        - Data preprocessing & normalization to remove unwanted variation
-        - Statistical machine learning and feature selection in metabolomics:signals for high- vs. low-risk prostate cancer
+        - Urinary Metabolomics in Tucson Firefighters: Pre-, and Post-fire exposure
+        - Urinary Metabolomics in Tucson Firefighters: differential metabolome by Hispanic ethnicity
+        - Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters: A Comparison with Structural Firefighters
+        - Urinary Metabolomics in prostate cancer patients by Prostate Cancer risks
     - title: Proteomics
       items:
-        - Proteome-wide association analysis
-        - Serum proteinomic signals differentiating Long-COVID from normal COVID patients
+        - Proteomic Profiling to Investigate Biomarkers and Biological Functions Associated with Long COVID in Frontline Workers
+        - Serum Proteomics in Omicron SARS-CoV-2 breakthrough: a nested case-control study within a prospective cohort of frontline workers from eight locations in the United States (US).
         
 
 - title: Other Interests
