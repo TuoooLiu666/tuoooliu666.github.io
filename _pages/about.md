@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>Located in Tucson, Arizona</p>
+    <p>Tucson, Arizona</p>
 
 
 news: true  # includes a list of news items
@@ -19,12 +19,13 @@ social: true  # includes social icons at the bottom of the page
 
 ## Greetings!
 
-My name is Tuo Liu (feel free to call me **LT**). I am a Ph.D. student at the University of Arizona. I major in Environmental Health Sciences, and minor in Biostatistics. My research interests include: 
-- Metabolomics
-- Proteomics
-- Application of statistical tools, e.g., Multilevel/longitudinal Data Analysis, Machine Learning, omics, in Public Health research
+Hello I'm **LT** (Tuo Liu). I'm a Ph.D. student at the University of Arizona, pursuing a degree in Environmental Health Sciences with a minor in Biostatistics. My research explores the intersection of:
 
-I serve as a Research Associate in the Burgess Lab and the Furlong Lab and focus on the application of metabolomics & proteomics on firefighters’ occupational health improvement.
+- Public health: Frontline and Essential Workers, Firefighters, Occupational Health, and Environmental Health
+- Omics technologies: Metabolomics & Proteomics
+- Statistical techniques: Multilevel/Longitudinal Data Analysis, Machine Learning
+
+I work as a Research Associate in both the Burgess Lab and the Furlong Lab, where I specialize in applying metabolomics and proteomics to enhance the occupational health of firefighters.
 
 <!--- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
