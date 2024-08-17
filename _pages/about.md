@@ -23,7 +23,7 @@ Hello I'm **LT** (Tuo Liu). I'm a Ph.D. student at the University of Arizona, pu
 
 - Omics technologies: Metabolomics & Proteomics
 - Statistical techniques: Multilevel/Longitudinal Data Analysis, Machine Learning
-- Public health: Examining the impact of environmental/occupational exposures on susceptible groups including Frontline and Essential Workers, i.e., firefighters, healthcare workers
+- Public health: Evaluating the impact of environmental/occupational exposures on susceptible groups including Frontline and Essential Workers, i.e., firefighters, healthcare workers
 
 I work as a Research Associate in both the Burgess Lab and the Furlong Lab, where I specialize in applying metabolomics and proteomics to understand the health risks from environmental/occupational exposures and enhance the health of vulnerable populations.
 
