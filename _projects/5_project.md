@@ -23,6 +23,7 @@ This repository commits to Machine Learning projects.
   - Neural Networks
   
 - Machine Learning in practice
+  - End-to-End Machine Learning Project Implementation
   - Long COVID vs. Normal COVID by proteomics
 
 
