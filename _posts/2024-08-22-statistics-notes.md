@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Machine Learning Algorithm
+title: Statistics Notes
 date: 2024-07-12 11:12:00-0400
 description: Statistics notes
 categories: Statistics
