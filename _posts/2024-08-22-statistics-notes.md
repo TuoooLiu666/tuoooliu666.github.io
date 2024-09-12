@@ -58,5 +58,36 @@ tags: Statistics DataScience
   - the group of individuals that are exposed to the experimental variable
 - control group
 
-  
 
+### Sampling
+
+- calculate sample size
+        - significance level
+        - statistcial power
+        - expected effect size
+  
+### Hypothesis testing
+
+- one-group
+  - z-test
+  - t-test
+- two-group
+  - z-test
+  - t-test
+  - Welch's t-test
+- three-group
+  - one-way ANOVA
+  - two-way ANOVA
+  - ANCOVA
+    - to determine if there is a statistically significant difference between three or more independent groups after accounting for one or more covariates.
+    - The covariate(s) and the factor variable(s) are independent
+    - The covariate(s) are continuous
+    - Homogeneity of variance
+    - Independence of observations
+    - No extreme outliers
+    - Normal distribution of the dependent variable in each group
+  - MANOVA: multivariate analysis of variance
+    - identical to ANOVA except it uses two or more response variables
+    - one-way
+    - two-way
+  - MANCOVA: multivariate analysis of covariance
