@@ -33,9 +33,9 @@ tags: MachineLearning
   - kNN
   - SVM
 - neural networks
-  - feedforward neural networks
-  - convolutional neural networks
-  - recurrent neural networks
+  - feedforward neural networks (NN)
+  - convolutional neural networks (CNN)
+  - recurrent neural networks (RNN)
   
 ### Binary classification
 
@@ -179,6 +179,7 @@ $$
   - decision tree
   - random forest
 - boosting
+
 ### Nonlinear classifier
 
 - KNN
@@ -206,3 +207,55 @@ the degree of freedom is n/k
 
 
 #### kernal SVM
+
+#### tree-based method
+
+
+### Ensemble methods
+
+- bagging
+- boosting
+- stacking
+
+
+### neural network 
+
+#### forward-feeding NN
+
+#### convolutional neural network (CNN)
+
+#### recurrent neural network (RNN)
+
+RNN is a special case of feed-forward NN with a single hidden layer, where the hidden layer is a recurrent layer.RNN is a special case of CNN with a single filter.
+
+- What is the purpose of gated recurrent unit (GRU) in a recurrent neural network (RNN)?
+
+The purpose of a gated recurrent unit (GRU) in a recurrent neural network (RNN) is to address the vanishing gradient problem and capture long-range dependencies in sequential data. 
+
+The vanishing gradient problem occurs when the gradients used to update the weights in an RNN diminish exponentially as they propagate back through time, making it difficult for the network to learn long-term dependencies. The GRU helps mitigate this problem by introducing gating mechanisms that control the flow of information within the network.
+
+The GRU has two main gates: the update gate (Gamma_u) and the reset gate (Gamma_r). The update gate determines how much of the previous memory should be retained and how much of the new input should be incorporated. The reset gate decides how much of the previous memory should be forgotten.
+
+By adaptively updating and resetting the memory cell, the GRU can selectively retain important information and discard irrelevant information, allowing it to capture long-range dependencies more effectively. This makes the GRU a powerful tool for tasks such as natural language processing, speech recognition, and time series analysis.
+
+- How does a gated recurrent unit (GRU) work?
+
+Sure! Let's break down the topic of gated recurrent units (GRUs) in a recurrent neural network (RNN) in simple terms.
+
+Imagine you're reading a sentence and trying to understand its meaning. As you read each word, you need to remember important information from earlier in the sentence to make sense of it. The same goes for a computer trying to process sequential data, like sentences or time series.
+
+The problem is that traditional RNNs struggle to remember long-range connections and can't capture important information from earlier in the sequence. This is where GRUs come in.
+
+GRUs are like memory cells in the RNN. They help the network remember important information from earlier in the sequence and use it to make predictions or understand the data better. They do this by using two gates: the update gate and the reset gate.
+
+The update gate decides how much of the previous memory to keep and how much new information to incorporate. It helps the network decide what's important to remember and what can be forgotten.
+
+The reset gate determines how much of the previous memory to forget. It helps the network reset or update the memory cell based on the current input.
+
+By using these gates, GRUs can selectively retain important information and discard irrelevant information, allowing the network to capture long-range connections and dependencies in the data. This makes GRUs very useful for tasks like understanding language, recognizing speech, and analyzing time series data.
+
+
+
+- What is the role of attention mechanism in sequence models?
+- Explain the concept of word embeddings in natural language processing.
+- What is the transformer network and how does it improve upon traditional sequence models?
