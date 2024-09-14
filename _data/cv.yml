@@ -85,13 +85,13 @@
   type: time_table
   contents:
     - title: <a href="https://tuoliu.shinyapps.io/Arizona-Pesticide-Usage-Map/">Arizona Pesticide Use Shiny Application </a>
-      year: 2022/8
+      year: 2022
       description: A web-based Shiny application built with R to explore pesticide use in the State of Arizona, 1992-2016.
     - title: <a href="https://lts-monthly-expense-tracker.streamlit.app/">Expense Tracker</a>
-      year: 2021/12
+      year: 2021
       description: A web-based application built with Streamlit, Python for tracking personal expenses.
     - title: <a href="https://www.linkedin.com/pulse/exploring-neighborhoods-chinese-restaurants-toronto-tuo-liu/?trackingId=NZZXm6lG8Xmu2BDXB%2BuhBA%3D%3D">Where to open a Chinese restaurant in Toronto?</a>
-      year: 2020/05
+      year: 2020
       description: A project exploring the best location to open a new Chinese restaurant in Toranto using Web-scraping, Foursquare API, Folium Map & Machine Learning with Python.
 
 - title: Honors and Awards
@@ -109,9 +109,10 @@
   contents:
     - title: Metabolomics
       items: 
-        - Urinary Metabolomics in Structural Firefighters:Pre-, and Post-fire exposure
-        - Urinary Metabolomics in Structural Firefighters:Differential Metabolic Profiles by Hispanic Ethnicity
-        - Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters:A Comparison with Structural Firefighters
+        - Urinary Metabolomics in Structure Firefighters:Pre-, and Post-fire exposure
+        - Urinary Metabolomics in Structure Firefighters:Differential Metabolic Profiles by Hispanic Ethnicity
+        - Urinary Metabolomics in Wildland-Urban Interface (WUI) Men Firefighters:A Comparison with Structure Firefighters
+        - Urinary Metabolomics in Women Firefighters:Differential Metabolic Profiles by Structure Fire Exposure
         - Evaluating Differential Metabolic Profiles in Prostate Cancer Patients by Prostate Cancer Risk
     - title: Proteomics
       items:
