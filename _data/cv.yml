@@ -61,7 +61,7 @@
       institution: Department of Community, Environment, and Policy, University of Arizona
       year: 2022/8-Now
       description:
-        - FFCCS metabolomics data analyses & management
+        - FFCCS metabolomics data analysis & management
         - AZ HEROES proteomics data analysis
     - title: Research Assistant
       institution: Department of Community, Environment, and Policy, University of Arizona
@@ -122,18 +122,14 @@
 - title: Talks
   type: list
   contents:
-    - title: Metabolomics
-      items: 
-        - Differential Metabolites by Structure Fire Exposure in Male Firefighters., Arizona Cancer Center Scientific Retreat, 2022
-        - Differential Metabolic Profiles by WUI Fires:A Comparison With Structure Fires, FFCCS Data Brown Bag Meeting, 2024
+    - Differential Metabolites by Structure Fire Exposure in Male Firefighters., Arizona Cancer Center Scientific Retreat, 2022
+    - Differential Metabolic Profiles by WUI Fires:A Comparison With Structure Fires, FFCCS Data Brown Bag Meeting, 2024
 
 - title: Certificates
   type: list
   contents:
-    - title: Data Science
-      items: 
-        - Deep Learning Specification. Coursera, 2024
-        - IBM Data Science Professional Certificate. Coursera, 2020
+    - Deep Learning Specification. Coursera, 2024
+    - IBM Data Science Professional Certificate. Coursera, 2020
         
 
 - title: Other Interests

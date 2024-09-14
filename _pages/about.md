@@ -19,7 +19,7 @@ social: true  # includes social icons at the bottom of the page
 
 
 
-Hello I'm **LT** (Tuo Liu). I'm a Ph.D. student at the University of Arizona, pursuing a degree in Environmental Health Sciences, complemented by a minor in Biostatistics. My research integrates omics technologies, advanced statistical methods, and environmental health to tackle complex public health challenges. Specifically:
+Hello I'm **LT** (Tuo Liu). I'm a Ph.D. student at the University of Arizona, pursuing a degree in Environmental Health Sciences, complemented by a minor in Biostatistics. My research integrates omics technologies, advanced statistical methods, and environmental health principles to tackle complex public health challenges. Specifically:
 
 - Omics technologies: Metabolomics & Proteomics
 - Statistical techniques: Multilevel/Longitudinal Data Analysis, Machine Learning
