@@ -7,33 +7,45 @@ importance: 1
 category: work
 ---
 
-- Urinary Metabolomics in Tucson Firefighters: Pre-, and Post-fire exposure:
-  - aims: Characterizing & compare metabolic profiles before and post fire exposure
+- Urinary Metabolomics in Tucson Structure Firefighters: Pre-, and Post-fire exposure:
+  - aims: to characterize & compare metabolic profiles before and post fire exposure
   - data source: Federal Emergency Management Agency(<a href="https://www.fema.gov/">FEMA</a>)
   - research question: Does fire exposure alter the metabolic profiles in firefighters?
+  - contribution: led statistical analyses & drafted manuscript & publication
   - status: published
 
-
-- Urinary Metabolomics in Tucson Firefighters: differential metabolome by Hispanic ethnicity:
-  - aims: Characterizing differential metabolome by Hispanic ethnicity, before and post fire exposure
+- Urinary Metabolomics in Tucson Structure Firefighters: differential metabolome by Hispanic ethnicity:
+  - aims: to characterize differential metabolome by Hispanic ethnicity, before and post structure fire exposure
   - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
   - research question: Is there a difference in the metabolic profiling between Hispanic and Non-Hispanic firefighters? Is the difference exacerbated by fire exposure?
-  - status: manuscript submitted & under journal review
+  - contribution: led statistical analyses & drafted manuscript & publication
+  - status: manuscript under peer review
 
 - Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters: Pre-, and Post-fire exposure:
-  - aims: Characterizing & compare metabolic profiles before and post fire exposure among male WUI firefighters 
+  - aims: to characterize & compare metabolic profiles before and post fire exposure among male WUI firefighters
   - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
-  - research question: 
-    - Does fire exposure alter the metabolic profiles in WUI firefighters?
-    - explore potential health risks associated with the metabolic changes. 
+  - research question:
+    - Does WUI fire exposure alter the metabolic profiles in WUI firefighters?
+    - explore potential health risks associated with the metabolic changes
+  - contribution: led statistical analyses & drafted manuscript & publication
   - status: manuscript under internal review
 
-Active research projects are listed below: 
+Active research projects are listed below:
 
 - Urinary Metabolomics in prostate cancer patients: PCa risk groups:
-  - aims: Characterizing and comparing metabolic profiles between patients with high-grade and low-grade prostate cancer.
+  - aims: to characterize and comparing metabolic profiles between patients with high-grade and low-grade prostate cancer
   - data source: Cancer Center, University of  Arizona
-  -status: manuscript in preparation
+  - contribution: led statistical analyses & manuscript preparation
+  - status: manuscript in preparation
+
+- Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters: Pre-, and Post-fire exposure:
+  - aims: to characterize & compare metabolic profiles before and post fire exposure among male WUI firefighters
+  - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
+  - research question:
+    - Does fire exposure alter the metabolic profiles in WUI firefighters?
+    - explore potential health risks associated with the metabolic changes
+  - contribution: led statistical analyses & drafted manuscript & publication
+  - status: manuscript under internal review
 
 
 <!--- The code is simple.

@@ -7,10 +7,11 @@ importance: 2
 category: work
 ---
 
-This folder commits to the application of biostatistics knowledge on clinical, randomized trials and observational studies. Study goals include: 
+This folder commits to the application of biostatistics knowledge on clinical, randomized trials and observational studies. Goals include:
+
 - write a good statistical analysis plan
 - understand the obstacles when dealing real-world data
-- experience biomedical/research statistical analyses
+- apply biomedical/research statistical analyses
 - excel various analytical models
 
 Code and raw datasets are placed in <a href="https://github.com/TuoooLiu666/Applied-Biostatistics-Projects">this Github repository</a>

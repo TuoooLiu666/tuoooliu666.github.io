@@ -10,6 +10,8 @@
     - name: Languages
       value: English, Chinese
 
+
+
 - title: Education
   type: time_table
   contents:
@@ -52,7 +54,7 @@
           - Major -> Environmental Hlth Sci
           - GPA -> 3.80/4.00  
 
-- title: Experience
+- title: Research Experience
   type: time_table
   contents:
     - title: Research Associate
@@ -102,10 +104,10 @@
       items: 
         - PhD scholarship ($10,000)
 
-- title: Research Summary
+- title: Research Projets
   type: nested_list
   contents:
-    - title: Metabolomics.
+    - title: Metabolomics
       items: 
         - Urinary Metabolomics in Structural Firefighters:Pre-, and Post-fire exposure
         - Urinary Metabolomics in Structural Firefighters:Differential Metabolic Profiles by Hispanic Ethnicity
@@ -115,6 +117,22 @@
       items:
         - Proteomic Profiling to Investigate Biomarkers and Biological Functions Associated with Long COVID in Frontline Workers
         - Serum Proteomics in Omicron SARS-CoV-2 breakthrough:a nested case-control study within a prospective cohort of frontline workers from eight locations in the United States (US).
+        
+- title: Talks
+  type: list
+  contents:
+    - title: Metabolomics
+      items: 
+        - Differential Metabolites by Structure Fire Exposure in Male Firefighters., Arizona Cancer Center Scientific Retreat, 2022
+        - Differential Metabolic Profiles by WUI Fires:A Comparison With Structure Fires, FFCCS Data Brown Bag Meeting, 2024
+
+- title: Certificates
+  type: list
+  contents:
+    - title: Data Science
+      items: 
+        - Deep Learning Specification. Coursera, 2024
+        - IBM Data Science Professional Certificate. Coursera, 2020
         
 
 - title: Other Interests
