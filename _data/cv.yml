@@ -79,7 +79,26 @@
       institution: China NIEH, Beijing, China
       year: 2019/5-2020/8
 
+- title: Research Projets
+  type: nested_list
+  contents:
+    - title: Metabolomics
+      items: 
+        - Urinary Metabolomics in Structure Firefighters:Pre-, and Post-fire exposure
+        - Urinary Metabolomics in Structure Firefighters:Differential Metabolic Profiles by Hispanic Ethnicity
+        - Urinary Metabolomics in Wildland-Urban Interface (WUI) Men Firefighters:A Comparison with Structure Firefighters
+        - Urinary Metabolomics in Women Firefighters:Differential Metabolic Profiles by Structure Fire Exposure
+        - Evaluating Differential Metabolic Profiles in Prostate Cancer Patients by Prostate Cancer Risk
+    - title: Proteomics
+      items:
+        - Proteomic Profiling to Investigate Biomarkers and Biological Functions Associated with Long COVID in Frontline Workers
+        - Serum Proteomics in Omicron SARS-CoV-2 breakthrough:a nested case-control study within a prospective cohort of frontline workers from eight locations in the United States (US).
 
+- title: Talks
+  type: list
+  contents:
+    - Differential Metabolites by Structure Fire Exposure in Male Firefighters., Arizona Cancer Center Scientific Retreat, 2022
+    - Differential Metabolic Profiles by WUI Fires:A Comparison With Structure Fires, FFCCS Data Brown Bag Meeting, 2024
 
 - title: Open Source Projects
   type: time_table
@@ -104,34 +123,12 @@
       items: 
         - PhD scholarship ($10,000)
 
-- title: Research Projets
-  type: nested_list
-  contents:
-    - title: Metabolomics
-      items: 
-        - Urinary Metabolomics in Structure Firefighters:Pre-, and Post-fire exposure
-        - Urinary Metabolomics in Structure Firefighters:Differential Metabolic Profiles by Hispanic Ethnicity
-        - Urinary Metabolomics in Wildland-Urban Interface (WUI) Men Firefighters:A Comparison with Structure Firefighters
-        - Urinary Metabolomics in Women Firefighters:Differential Metabolic Profiles by Structure Fire Exposure
-        - Evaluating Differential Metabolic Profiles in Prostate Cancer Patients by Prostate Cancer Risk
-    - title: Proteomics
-      items:
-        - Proteomic Profiling to Investigate Biomarkers and Biological Functions Associated with Long COVID in Frontline Workers
-        - Serum Proteomics in Omicron SARS-CoV-2 breakthrough:a nested case-control study within a prospective cohort of frontline workers from eight locations in the United States (US).
-        
-- title: Talks
-  type: list
-  contents:
-    - Differential Metabolites by Structure Fire Exposure in Male Firefighters., Arizona Cancer Center Scientific Retreat, 2022
-    - Differential Metabolic Profiles by WUI Fires:A Comparison With Structure Fires, FFCCS Data Brown Bag Meeting, 2024
-
 - title: Certificates
   type: list
   contents:
     - Deep Learning Specification. Coursera, 2024
     - IBM Data Science Professional Certificate. Coursera, 2020
         
-
 - title: Other Interests
   type: list
   contents:

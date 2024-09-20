@@ -217,12 +217,12 @@ the degree of freedom is n/k
 - boosting
 - stacking
 
+### neural network
 
-### neural network 
-
-#### forward-feeding NN
+#### forward feeding neural network
 
 #### convolutional neural network (CNN)
+
 
 #### recurrent neural network (RNN)
 
@@ -254,8 +254,14 @@ The reset gate determines how much of the previous memory to forget. It helps th
 
 By using these gates, GRUs can selectively retain important information and discard irrelevant information, allowing the network to capture long-range connections and dependencies in the data. This makes GRUs very useful for tasks like understanding language, recognizing speech, and analyzing time series data.
 
-
-
 - What is the role of attention mechanism in sequence models?
+
 - Explain the concept of word embeddings in natural language processing.
+
+Word embeddings are a way of representing words as dense vectors in a continuous vector space. They are used in natural language processing (NLP) to capture the semantic and syntactic relationships between words.
+
+Word embeddings are trained on large text corpora and learn to represent words based on their context. For example, the word "king" might be represented as a vector that is close to the vector for "queen" and far from the vector for "car."
+
 - What is the transformer network and how does it improve upon traditional sequence models?
+
+The transformer network is a type of deep learning model that is used for processing sequential data, such as text or time series. It is based on the concept of self-attention, which allows the model to focus on different parts of the input sequence when making predictions.
