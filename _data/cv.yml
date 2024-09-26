@@ -79,7 +79,7 @@
       institution: China NIEH, Beijing, China
       year: 2019/5-2020/8
 
-- title: Research Projets
+- title: Research Projects
   type: nested_list
   contents:
     - title: Metabolomics
