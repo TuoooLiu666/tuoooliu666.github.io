@@ -38,5 +38,8 @@ Code and raw datasets are placed in <a href="https://github.com/TuoooLiu666/Appl
   - data source: National Health and Nutrition Examination Survey Data I Epidemiologic Follow Up Study (NHEFS) 1971&1982 follow-up data
   - research question: Is there an effect of smoking cessation on weight gain?
 
-
+- <a href="https://github.com/TuoooLiu666/Applied-Biostatistics-Projects/tree/main/proj5">Survival Analysis</a>:
+  - analytics: survival analysis, Cox proportional hazards model
+  - data source: simulated Ebola epidemic data
+  - research question: is gender, age a risk factor for Ebola survivability?
 
