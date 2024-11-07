@@ -3,8 +3,8 @@ layout: page
 title: Statistics
 description: A folder of projects on Biostatistics and Statistics
 img: assets/img/statistics.png
-importance: 2
-category: work
+importance: 3
+category: data science
 ---
 
 This folder commits to the application of biostatistics knowledge on clinical, randomized trials and observational studies. Goals include:

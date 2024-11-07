@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Data Science
+title: Visualizations/DS Projects
 description: A folder for Data Science projects
 img: assets/img/8.jpg
 importance: 3
