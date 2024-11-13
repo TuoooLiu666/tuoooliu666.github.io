@@ -43,7 +43,7 @@
         - title: Machine Learning Syllabus
           contents:    
             - MATH 574M:Statistical Machine Learning
-            - Coursera:Deep Learning Specification (ongoing)
+            - Coursera:Deep Learning Specification
 
     - title: MS
       institution: University of Michigan, Ann Arbor, USA
@@ -97,8 +97,9 @@
 - title: Talks
   type: list
   contents:
-    - Differential Metabolites by Structure Fire Exposure in Male Firefighters., Arizona Cancer Center Scientific Retreat, 2022
     - Differential Metabolic Profiles by WUI Fires:A Comparison With Structure Fires, FFCCS Data Brown Bag Meeting, 2024
+    - Differential Metabolites by Structure Fire Exposure in Male Firefighters., Arizona Cancer Center Scientific Retreat, 2022
+    
 
 - title: Open Source Projects
   type: time_table
