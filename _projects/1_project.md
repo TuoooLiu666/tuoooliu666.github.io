@@ -3,7 +3,7 @@ layout: page
 title: Metabolomics
 description: A folder of research projects on Metabolomics
 img: assets/img/metabolomics.jpg
-importance: 1
+importance: 3
 category: work
 ---
 
@@ -19,7 +19,7 @@ category: work
   - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
   - research question: Is there a difference in the metabolic profiling between Hispanic and Non-Hispanic firefighters? Is the difference exacerbated by fire exposure?
   - contribution: led statistical analyses & drafted manuscript & publication
-  - status: manuscript under peer review
+  - status: manuscript accepted
 
 - Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters: Pre-, and Post-fire exposure:
   - aims: to characterize & compare metabolic profiles before and post fire exposure among male WUI firefighters
@@ -28,7 +28,7 @@ category: work
     - Does WUI fire exposure alter the metabolic profiles in WUI firefighters?
     - explore potential health risks associated with the metabolic changes
   - contribution: led statistical analyses & drafted manuscript & publication
-  - status: manuscript under internal review
+  - status: manuscript under CDC clearance
 
 Active research projects are listed below:
 
@@ -38,14 +38,14 @@ Active research projects are listed below:
   - contribution: led statistical analyses & manuscript preparation
   - status: manuscript in preparation
 
-- Urinary Metabolomics in Wildland-Urban Interface (WUI) Firefighters: Pre-, and Post-fire exposure:
-  - aims: to characterize & compare metabolic profiles before and post fire exposure among male WUI firefighters
+- Urinary Metabolomics in Women Firefighters Experiencing Structure Fires: Pre-, and Post-fire exposure:
+  - aims: to characterize & compare metabolic profiles before and post fire exposure among women firefighters
   - data source: Fire Fighter Cancer Cohort Study(<a href="https://ffccs.org">FFCCS</a>)
   - research question:
-    - Does fire exposure alter the metabolic profiles in WUI firefighters?
+    - does fire exposure alter the metabolic profiles in women firefighters?
     - explore potential health risks associated with the metabolic changes
   - contribution: led statistical analyses & drafted manuscript & publication
-  - status: manuscript under internal review
+  - status: study ongoing
 
 
 <!--- The code is simple.

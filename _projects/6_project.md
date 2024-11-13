@@ -3,7 +3,7 @@ layout: page
 title: Proteomics
 description: A folder for Proteomics projects
 img: assets/img/13.jpg
-importance: 1
+importance: 2
 category: work
 ---
 

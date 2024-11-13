@@ -3,7 +3,7 @@ layout: page
 title: Genomics Analysis 
 description: A folder of tutorial and analysis on Genomics
 img: assets/img/1393.jpg
-importance: 1
+importance: 3
 category: work
 ---
 
