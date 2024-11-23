@@ -9,6 +9,10 @@ category: data science
 
 This repository commits to Data Science projects. 
 
+- <a href="https://tuoliu.shinyapps.io/COVID-Vaccine-Efficacy-US/">COVID-19 Vaccine Efficacy in the US</a>:
+  - A Shiny application to explore the efficacy of COVID vaccine in the United States of America with respect to mortality, 2020-2024
+
+
 - <a href="https://tuoliu.shinyapps.io/covid-progression-in-the-us/">COVID-19 Progression in the US</a>:
   - A Shiny application to explore the progression of COVID in the United States of America at county level, 2019-2023
 
@@ -18,9 +22,8 @@ This repository commits to Data Science projects.
 
 
 - <a href="https://lts-monthly-expense-tracker.streamlit.app/">Expense Tracker</a>:
-  - Learnt basics and layout of *Streamlit* app
-  - Built a *Python* web application built using Streamlit
-  - Connected to and stored customer data in *NoSQL* database from deta
+  - A *Python* web application built using Streamlit
+  - Connected to and stored customer data in *NoSQL* database from deta (deta has been shut down, this app needs alternative database)
   - Visualized personal expense with an interactive Sankey chart using *Plotly*
 
 - <a href="https://github.com/TuoooLiu666/Exploring-neighborhoods-Chinese-restaurants-in-Toronto">Exploring neighborhoods & Chinese Restaurants in Toronto</a>:
