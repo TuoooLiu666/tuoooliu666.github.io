@@ -101,18 +101,18 @@
     - Differential Metabolites by Structure Fire Exposure in Male Firefighters., Arizona Cancer Center Scientific Retreat, 2022
     
 
-- title: Open Source Projects
+- title: DS Projects
   type: time_table
   contents:
+    - title: <a href="https://tuoliu.shinyapps.io/COVID-Vaccine-Efficacy-US/">COVID-19 Vaccine Efficacy in the US</a>
+      year: 2024
+      description: A Shiny application to explore the efficacy of COVID vaccine in the United States of America with respect to mortality, 2020-2024.
     - title: <a href="https://tuoliu.shinyapps.io/covid-progression-in-the-us/">US COVID progression, 2019-2023</a>
-      year: 2022
+      year: 2024
       description: A web-based Shiny application built with R to explore pesticide use in the State of Arizona, 1992-2016.
     - title: <a href="https://tuoliu.shinyapps.io/Arizona-Pesticide-Usage-Map/">Arizona Pesticide Use Shiny Application </a>
       year: 2022
       description: A web-based Shiny application built with R to explore pesticide use in the State of Arizona, 1992-2016.
-    # - title: <a href="https://lts-monthly-expense-tracker.streamlit.app/">Expense Tracker</a>
-    #   year: 2021
-    #   description: A web-based application built with Streamlit, Python for tracking personal expenses.
     - title: <a href="https://www.linkedin.com/pulse/exploring-neighborhoods-chinese-restaurants-toronto-tuo-liu/?trackingId=NZZXm6lG8Xmu2BDXB%2BuhBA%3D%3D">Where to open a Chinese restaurant in Toronto?</a>
       year: 2020
       description: A project exploring the best location to open a new Chinese restaurant in Toranto using Web-scraping, Foursquare API, Folium Map & Machine Learning with Python.
