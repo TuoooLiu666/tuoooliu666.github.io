@@ -4,16 +4,16 @@
     - name: Full Name
       value: Tuo Liu
     - name: Date of Birth
-      value: 14th March 1879
+      value: 19th Jan 1994
     - name: Languages
-      value: English, German
+      value: English, Chinese
 
 - title: Education
   type: time_table
   contents:
     - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+      institution: University of Arizona, Tucson, United States
+      year: 2025
       description:
         - Description 1.
         - Description 2.
