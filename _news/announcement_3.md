@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2016-01-15 07:59:00-0400
+date: 2024-09-12 12:17:00-0400
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+My research has been featured in the [UA Health Sciences](https://healthsciences.arizona.edu/news/stories/graduate-student-using-data-analysis-protect-firefighters-cancer)!
