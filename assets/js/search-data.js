@@ -83,6 +83,83 @@ ninja.data = [{
           window.location.href = "/blog/2024/photo-gallery/";
         
       },
+    },{id: "post-statistics-notes",
+      
+        title: "Statistics Notes",
+      
+      description: "Statistics notes",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/statistics-notes/";
+        
+      },
+    },{id: "post-machine-learning-notes",
+      
+        title: "Machine Learning Notes",
+      
+      description: "ML Notes",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/ML-notes/";
+        
+      },
+    },{id: "post-machine-learning-algorithm",
+      
+        title: "Machine Learning Algorithm",
+      
+      description: "ML algorithm",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/machine-learning-algorithm/";
+        
+      },
+    },{id: "post-time-series-theory",
+      
+        title: "Time Series Theory",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/time-series-theory/";
+        
+      },
+    },{id: "post-glm-examples",
+      
+        title: "Glm Examples",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/glm-examples/";
+        
+      },
+    },{id: "post-generalized-linear-models",
+      
+        title: "Generalized_linear_models",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/generalized_linear_models/";
+        
+      },
+    },{id: "post-regression-models",
+      
+        title: "Regression_models",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/regression_models/";
+        
+      },
     },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
       
         title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
@@ -237,6 +314,17 @@ ninja.data = [{
           window.location.href = "/blog/2023/jupyter-notebook/";
         
       },
+    },{id: "post-statistical-learning",
+      
+        title: "Statistical Learning",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2023/statistical-learning/";
+        
+      },
     },{id: "post-a-post-with-custom-blockquotes",
       
         title: "a post with custom blockquotes",
@@ -303,6 +391,94 @@ ninja.data = [{
           window.location.href = "/blog/2023/table-of-contents/";
         
       },
+    },{id: "post-canonical-amp-correspondence-analysis",
+      
+        title: "Canonical &amp; Correspondence Analysis",
+      
+      description: "CCA",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2023/canonical-correspondence-analysis/";
+        
+      },
+    },{id: "post-maximum-likelihood-procedures",
+      
+        title: "Maximum Likelihood Procedures",
+      
+      description: "multivariate-analysis",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2023/Maximum-Likelihood-Procedures/";
+        
+      },
+    },{id: "post-cluster-analysis",
+      
+        title: "Cluster Analysis",
+      
+      description: "multivariate-analysis",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2023/cluster-analysis/";
+        
+      },
+    },{id: "post-partial-least-squares-regression",
+      
+        title: "Partial Least Squares Regression",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2023/partial-least-squares-regression/";
+        
+      },
+    },{id: "post-linear-discriminant-analysis",
+      
+        title: "Linear Discriminant Analysis",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2023/linear-discriminant-analysis/";
+        
+      },
+    },{id: "post-matrix-algebra-statistics",
+      
+        title: "Matrix Algebra Statistics",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2023/Matrix-Algebra-Statistics/";
+        
+      },
+    },{id: "post-principal-component-analysis",
+      
+        title: "Principal Component Analysis",
+      
+      description: "statistical-learning",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2023/principal-component-analysis/";
+        
+      },
+    },{id: "post-linear-algebra-fundamentals",
+      
+        title: "Linear Algebra Fundamentals",
+      
+      description: "statistical-learning",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2023/linear-algebra-fundementals/";
+        
+      },
     },{id: "post-a-post-with-giscus-comments",
       
         title: "a post with giscus comments",
@@ -336,6 +512,17 @@ ninja.data = [{
           window.location.href = "/assets/pdf/example_pdf.pdf";
         
       },
+    },{id: "post-introduction-to-metabolomics",
+      
+        title: "Introduction to metabolomics",
+      
+      description: "metabolomics",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2022/metabolomics-introduction/";
+        
+      },
     },{id: "post-a-post-with-diagrams",
       
         title: "a post with diagrams",
@@ -367,6 +554,17 @@ ninja.data = [{
       handler: () => {
         
           window.location.href = "/blog/2020/twitter/";
+        
+      },
+    },{id: "post-data-sience-project-on-linkedin",
+      
+        title: "Data Sience project on LinkedIn",
+      
+      description: "LT&#39;s first post",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2020/first-post/";
         
       },
     },{id: "post-a-post-with-disqus-comments",
@@ -429,16 +627,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-website-created",
+          title: 'Website Created!',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          section: "News",},{id: "news-my-research-has-been-featured-in-the-ua-health-sciences",
+          title: 'My research has been featured in the UA Health Sciences!',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
